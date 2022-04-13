@@ -62,7 +62,7 @@ function Gallery(path, ...nameFile) {
 }
 
 function changeSrc(imgElement, path, nameFile, counter) {
-  imgElement.style.transition = "0.5s";
+  imgElement.style.transition = "0.25s";
   imgElement.style.opacity = "0";
 
   //set src for gallery
