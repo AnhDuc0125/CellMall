@@ -2,7 +2,7 @@
     <nav class="navbar">
         <ul class="navbar__items">
             <li class="navbar__item" id="logo">
-                <a href="#" class="item__link">
+                <a href="../pages/home.php" class="item__link">
                     <h2>foneMart</h2>
                 </a>
             </li>
@@ -28,8 +28,7 @@
                     <div class="cart__btn">
                         <ion-icon name="cart-outline" class="cart__icon"></ion-icon>
                         <div class="cart__text">
-                            <p>Your</p>
-                            <p>Cart</p>
+                            <p>Your Cart</p>
                         </div>
                     </div>
                 </a>

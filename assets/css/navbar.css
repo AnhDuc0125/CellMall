@@ -94,8 +94,7 @@
 }
 
 .cart__btn {
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 .cart__icon {
