@@ -27,6 +27,7 @@
 .footer__end p {
   width: 65%;
   margin: 0 auto;
+  padding: 5px 0;
 }
 
 .footer__column {
