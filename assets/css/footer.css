@@ -14,8 +14,8 @@
   height: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 30% 20% 30%;
-  grid-column-gap: 10%;
+  grid-template-columns: 30% 25% 30%;
+  grid-column-gap: calc(15% / 2);
 }
 
 .footer__end {
@@ -81,4 +81,16 @@
   height: 25px;
   border-radius: 50%;
   background-color: white;
+}
+
+@media screen and (max-width: 1499px) {
+  .footer__start,
+  .footer__end p {
+    width: 80%;
+  }
+
+  .footer__start {
+    grid-template-columns: 35% 25% 40%;
+    grid-column-gap: calc(5% / 2);
+  }
 }

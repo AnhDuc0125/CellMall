@@ -18,6 +18,10 @@ body {
   background-color: var(--background-color);
 }
 
+a {
+  text-decoration: none;
+}
+
 #main {
   width: 65%;
   margin: 0 auto;
@@ -25,6 +29,8 @@ body {
 
 .banner img {
   width: 100%;
+  height: auto;
+  object-fit: cover;
   user-select: none;
 }
 
@@ -32,7 +38,7 @@ ul {
   list-style-type: none;
 }
 
-@media screen and (max-width: 1223px) {
+@media screen and (max-width: 1499px) {
   #main {
     width: 80%;
   }

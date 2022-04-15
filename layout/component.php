@@ -35,7 +35,7 @@
     <div id="gallery"></div>
     <div id="gallery__footer">
         <div class="gallery__footer">
-            <img src="../assets/photos/banner.jpg" alt="">
+            <img src="../assets/photos/banner.jpg">
         </div>
     </div>
 </div>
