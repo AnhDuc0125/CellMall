@@ -24,7 +24,7 @@
 }
 
 .navbar__items {
-  width: 80%;
+  width: 65%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -116,4 +116,10 @@
 
 .member__text {
   font-weight: bold;
+}
+
+@media screen and (max-width: 1223px) {
+  .navbar__items {
+    width: 80%;
+  }
 }

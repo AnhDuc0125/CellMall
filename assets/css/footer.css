@@ -5,11 +5,12 @@
   color: #aba3a3;
   padding-top: 20px;
   clear: both;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
 }
 
 .footer__start {
-  width: 80%;
+  width: 65%;
   height: 90%;
   margin: 0 auto;
   display: grid;
@@ -24,7 +25,7 @@
 }
 
 .footer__end p {
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
 }
 

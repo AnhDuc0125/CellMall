@@ -1,16 +1,16 @@
 #component {
-  width: 80%;
+  width: 65%;
   height: 450px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 230px 960px;
-  grid-column-gap: calc(100% - 1190px);
+  grid-template-columns: 18% 80%;
+  grid-column-gap: 2%;
   grid-row-gap: calc(100% - 430px);
   margin-bottom: 15px;
 }
 
 #manu {
-  width: 235px;
+  width: 100%;
   height: 100%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
@@ -19,7 +19,7 @@
 }
 
 #gallery {
-  width: 960px;
+  width: 100%;
   height: 300px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
@@ -113,4 +113,10 @@
   width: 100%;
   height: 100%;
   background-size: auto;
+}
+
+@media screen and (max-width: 1223px) {
+  #component {
+    width: 80%;
+  }
 }
