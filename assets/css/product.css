@@ -13,7 +13,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: 19% 19% 19% 19% 19%;
-  grid-template-rows: 355px 355px;
+  grid-template-rows: 340px 340px;
   grid-column-gap: calc(5% / 4);
   grid-row-gap: 15px;
 }
@@ -47,8 +47,8 @@
 }
 
 .card__img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto 10px;
 }
 
