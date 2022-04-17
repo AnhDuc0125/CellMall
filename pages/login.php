@@ -29,7 +29,7 @@
             </div>
             <div class="box__footer">
                 <button class="btn">Log In</button>
-                <a href="signup.php">Create an account</a>
+                <p>Not a member? <a href="signup.php">Sign up</a></p>
             </div>
         </div>
     </form>

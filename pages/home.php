@@ -180,7 +180,7 @@
 
         <!-- Banner -->
         <div class="banner">
-            <img src="../assets/photos/banner1.png">
+            <img src="../assets/photos/banner2.jpg">
         </div>
 
         <!-- On sale -->
@@ -333,7 +333,7 @@
 
         <!-- Banner -->
         <div class="banner">
-            <img src="../assets/photos/banner1.png">
+            <img src="../assets/photos/banner3.png">
         </div>
 
         <!-- Popular -->

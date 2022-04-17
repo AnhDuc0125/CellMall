@@ -54,7 +54,7 @@
             </div>
             <div class="box__footer">
                 <button class="btn">Sign up</button>
-                <a href="login.php">I already have an account</a>
+                <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
         </div>
     </form>
