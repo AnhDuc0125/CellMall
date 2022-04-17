@@ -67,8 +67,13 @@
   align-items: center;
 }
 
-a {
+.another a {
   color: white;
+  transition: 0.25s;
+}
+
+.another a:hover {
+  transform: translateY(-3px);
 }
 
 .contact,

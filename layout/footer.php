@@ -18,7 +18,7 @@
                     </li>
                     <li>
                         <ion-icon name="logo-twitter" class="logo__icon twitter"></ion-icon>
-                        </ion-icon> Follow us on Ttwitter
+                        </ion-icon> Follow us on Twitter
                     </li>
                     <li>
                         <ion-icon name="logo-github" class="logo__icon github"></ion-icon> Source code on Github
