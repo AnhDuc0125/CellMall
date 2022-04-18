@@ -10,29 +10,38 @@
 </head>
 
 <body>
-    <form method="post" id="login">
+    <div class="box__outter">
+        <!-- Background -->
+        <div class="background">
+            <img src="../assets/photos/background.jpg" alt="">
+        </div>
+
+        <!-- Box Form -->
         <div class="box">
             <div class="box__header">
-                <h1>LOG IN</h1>
+                <h2 class="title">Login</h2>
+                <p>Welcome to <span class="logo">CellMall</span></p>
             </div>
-            <div class="box__main">
-                <div class="form__item block">
-                    <input type="email" class="form__input" placeholder=" " id="email">
-                    <label class="form__label">Email</label>
-                    <span class="message"></span>
+            <form method="post" id="login">
+                <div class="box__main">
+                        <div class="form__item block">
+                            <input type="email" class="form__input" placeholder=" " id="email">
+                            <label class="form__label">Email</label>
+                            <span class="message"></span>
+                        </div>
+                        <div class="form__item block">
+                            <input type="password" class="form__input" placeholder=" " id="password">
+                            <label class="form__label">Password</label>
+                            <span class="message"></span>
+                        </div>
                 </div>
-                <div class="form__item block">
-                    <input type="password" class="form__input" placeholder=" " id="password">
-                    <label class="form__label">Password</label>
-                    <span class="message"></span>
+                <div class="box__footer">
+                        <button class="btn">Log In</button>
+                        <p>Not a member? <a href="signup.php">Sign up</a></p>
                 </div>
-            </div>
-            <div class="box__footer">
-                <button class="btn">Log In</button>
-                <p>Not a member? <a href="signup.php">Sign up</a></p>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
 </body>
 <script src="../assets/js/validation.js"></script>
 <script>

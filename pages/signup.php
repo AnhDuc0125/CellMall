@@ -10,11 +10,19 @@
 </head>
 
 <body>
-    <form method="post" id="signup">
+    <div class="box__outter signup">
+        <!-- Background -->
+        <div class="background">
+            <img src="../assets/photos/background.jpg" alt="">
+        </div>
+
+        <!-- Box Form -->
         <div class="box">
             <div class="box__header">
-                <h1>SIGN UP</h1>
+                <h2 class="title">Sign Up</h2>
+                <p>Welcome to <span class="logo">CellMall</span></p>
             </div>
+            <form method="post" id="signup">
             <div class="box__main">
                 <div class="form__item block">
                     <input type="text" class="form__input" placeholder=" " id="fullname">
@@ -56,8 +64,9 @@
                 <button class="btn">Sign up</button>
                 <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
+            </form>
         </div>
-    </form>
+    </div>
 </body>
 <script src="../assets/js/validation.js"></script>
 <script>
