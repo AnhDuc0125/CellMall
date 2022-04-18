@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="box__outter signup">
+    <div class="box__outter">
         <!-- Background -->
         <div class="background">
             <img src="../assets/photos/background.jpg" alt="">
@@ -23,47 +23,47 @@
                 <p>Welcome to <span class="logo">CellMall</span></p>
             </div>
             <form method="post" id="signup">
-            <div class="box__main">
-                <div class="form__item block">
-                    <input type="text" class="form__input" placeholder=" " id="fullname">
-                    <label class="form__label">Full Name</label>
-                    <span class="message"></span>
+                <div class="box__main">
+                    <div class="form__item block">
+                        <input type="text" class="form__input" placeholder=" " id="fullname">
+                        <label class="form__label">Full Name</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item block">
+                        <input type="text" class="form__input" placeholder=" " id="username">
+                        <label class="form__label">Username</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item block">
+                        <input type="text" class="form__input" placeholder=" " id="address">
+                        <label class="form__label">Address</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item">
+                        <input type="email" class="form__input" placeholder=" " id="email">
+                        <label class="form__label">Email</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item">
+                        <input type="number" class="form__input" placeholder=" " id="phone">
+                        <label class="form__label">Phone Number</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item">
+                        <input type="password" class="form__input" placeholder=" " id="password">
+                        <label class="form__label">Password</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item">
+                        <input type="password" class="form__input" placeholder=" " id="confirmPw">
+                        <label class="form__label">Confirm Password</label>
+                        <span class="message"></span>
+                    </div>
                 </div>
-                <div class="form__item block">
-                    <input type="text" class="form__input" placeholder=" " id="username">
-                    <label class="form__label">Username</label>
-                    <span class="message"></span>
+                <div class="box__footer">
+                    <button class="btn">Sign up</button>
+                    <p>Already have an account? <a href="login.php">Login</a></p>
                 </div>
-                <div class="form__item block">
-                    <input type="text" class="form__input" placeholder=" " id="address">
-                    <label class="form__label">Address</label>
-                    <span class="message"></span>
-                </div>
-                <div class="form__item">
-                    <input type="email" class="form__input" placeholder=" " id="email">
-                    <label class="form__label">Email</label>
-                    <span class="message"></span>
-                </div>
-                <div class="form__item">
-                    <input type="number" class="form__input" placeholder=" " id="phone">
-                    <label class="form__label">Phone Number</label>
-                    <span class="message"></span>
-                </div>
-                <div class="form__item">
-                    <input type="password" class="form__input" placeholder=" " id="password">
-                    <label class="form__label">Password</label>
-                    <span class="message"></span>
-                </div>
-                <div class="form__item">
-                    <input type="password" class="form__input" placeholder=" " id="confirmPw">
-                    <label class="form__label">Confirm Password</label>
-                    <span class="message"></span>
-                </div>
-            </div>
-            <div class="box__footer">
-                <button class="btn">Sign up</button>
-                <p>Already have an account? <a href="login.php">Login</a></p>
-            </div>
             </form>
         </div>
     </div>

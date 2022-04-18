@@ -24,20 +24,24 @@
             </div>
             <form method="post" id="login">
                 <div class="box__main">
-                        <div class="form__item block">
-                            <input type="email" class="form__input" placeholder=" " id="email">
-                            <label class="form__label">Email</label>
-                            <span class="message"></span>
-                        </div>
-                        <div class="form__item block">
-                            <input type="password" class="form__input" placeholder=" " id="password">
-                            <label class="form__label">Password</label>
-                            <span class="message"></span>
-                        </div>
+                    <div class="form__item block">
+                        <input type="email" class="form__input" placeholder=" " id="email">
+                        <label class="form__label">Email</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item block">
+                        <input type="password" class="form__input" placeholder=" " id="password">
+                        <label class="form__label">Password</label>
+                        <span class="message"></span>
+                    </div>
+                    <div class="form__item block checkbox">
+                        <input type="checkbox" class="form__checkbox" id="checkbox">
+                        <label>Remember Me</label>
+                    </div>
                 </div>
                 <div class="box__footer">
-                        <button class="btn">Log In</button>
-                        <p>Not a member? <a href="signup.php">Sign up</a></p>
+                    <button class="btn">Log In</button>
+                    <p>Not a member? <a href="signup.php">Sign up</a></p>
                 </div>
             </form>
         </div>
