@@ -96,8 +96,7 @@ function isPhone(selector) {
 }
 
 function isStrongPw(selector) {
-  let strongPw =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  let strongPw = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   return {
     selector: selector,
     action: function (value) {
