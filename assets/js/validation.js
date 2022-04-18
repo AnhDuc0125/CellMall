@@ -24,8 +24,10 @@ function Validation(options) {
           message = actionSelector(inputElement.value);
           isError = true;
           if (message) {
+            inputElement.classList.add("error");
             break;
           }
+          inputElement.classList.remove("error");
         }
         messageElement.textContent = message;
       };
