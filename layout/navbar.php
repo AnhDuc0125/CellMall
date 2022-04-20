@@ -11,7 +11,7 @@
                     <ion-icon name="people-circle-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">About Us</p>
-                        <b class="item__detail">About the team</b>
+                        <b class="item__detail">Our team</b>
                     </div>
                 </a>
                 <a href="#" class="contact">
