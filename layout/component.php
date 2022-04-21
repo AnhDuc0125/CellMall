@@ -1,8 +1,19 @@
+<?php
+  $getManu = "select * from manufacturers";
+  $manuList = executeResult($getManu);
+?>
 <div id="component">
     <div id="manu">
         <div class="manu">
             <ul class="manu__items">
-                <li class="manu__item">
+                <?php
+                  foreach($manuList as $item) {
+                      echo '<li class="manu__item">
+                                <a href="search.php?key='. strtolower($item['name']) .'" class="item__link">'. $item['name'] .'</a>
+                            </li>';
+                  }
+                ?>
+                <!-- <li class="manu__item">
                     <a href="#" class="item__link">Apple</a>
                 </li>
                 <li class="manu__item">
@@ -28,7 +39,7 @@
                 </li>
                 <li class="manu__item">
                     <a href="#" class="item__link">Realme</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
