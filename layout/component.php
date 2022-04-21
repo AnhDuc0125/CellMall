@@ -41,5 +41,5 @@
 </div>
 <script src="../assets/js/gallery.js"></script>
 <script>
-Gallery('../assets/photos/', 'img1.jpg', 'img2.jpg', 'img3.png', 'img4.png');
+Gallery('../assets/photos/', 'slider.png', 'slider1.jpg', 'slider2.jpg', 'slider3.png', 'slider4.png');
 </script>
