@@ -7,6 +7,7 @@
   if(!empty($_POST)){
       $email = getPost("email");
       $password = getPost("password");
+      $rememberLogin = getPost("rememberLogin");
 
       $password = decodeValue($password);
 
@@ -28,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In | FoneMart</title>
+    <title>Log In | CellMall</title>
     <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
@@ -65,7 +66,7 @@
                         <span class="message"></span>
                     </div>
                     <div class="form__item block checkbox">
-                        <input type="checkbox" class="form__checkbox" id="checkbox" name="remember">
+                        <input type="checkbox" class="form__checkbox" id="checkbox" name="rememberLogin" value="yes">
                         <label>Remember Me</label>
                     </div>
                 </div>
