@@ -32,7 +32,15 @@
                     <ion-icon name="person-circle-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Member</p>
-                        <b class="item__detail">Login/Signup</b>
+
+                        <?php
+                          if(isset($_SESSION['currentUser'])) {
+                            echo '<b class="item__detail">'. $_SESSION['currentUser']['username'] .'</b>';
+                          } else {
+                            echo '<b class="item__detail">Login/Signup</b>';
+                          }
+
+                        ?>
                     </div>
                 </a>
             </div>

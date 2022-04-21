@@ -7,6 +7,7 @@
   margin-bottom: 15px;
   position: sticky;
   top: 0;
+  user-select: none;
 }
 
 .navbar {
@@ -92,6 +93,12 @@
 .symbol {
   font-size: 30px;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 1599px) {
+  .navbar {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 1499px) {

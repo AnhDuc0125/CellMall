@@ -1,3 +1,24 @@
+<?php
+  require_once("../database/dbContext.php");
+  require_once("../database/utility.php");
+
+  if(!empty($_POST)){
+      $fullname = getPost("fullname");
+      $username = getPost("username");
+      $address = getPost("address");
+      $email = getPost("email");
+      $phone = getPost("phone");
+      $password = getPost("password");
+
+      $password = decodeValue($password);
+
+      $signup = "insert into users (fullname, username, address, email, phone, password) values ('$fullname', '$username', '$address', '$email', '$phone', '$password')";
+      execute($signup);
+
+      header("Location: home.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +26,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up | FoneMart</title>
+    <title>Sign Up | CellMall</title>
     <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
@@ -25,32 +46,32 @@
             <form method="post" id="signup">
                 <div class="box__main">
                     <div class="form__item block">
-                        <input type="text" class="form__input" placeholder=" " id="fullname">
+                        <input type="text" class="form__input" placeholder=" " id="fullname" name="fullname">
                         <label class="form__label">Full Name</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item block">
-                        <input type="text" class="form__input" placeholder=" " id="username">
+                        <input type="text" class="form__input" placeholder=" " id="username" name="username">
                         <label class="form__label">Username</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item block">
-                        <input type="text" class="form__input" placeholder=" " id="address">
+                        <input type="text" class="form__input" placeholder=" " id="address" name="address">
                         <label class="form__label">Address</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item">
-                        <input type="email" class="form__input" placeholder=" " id="email">
+                        <input type="email" class="form__input" placeholder=" " id="email" name="email">
                         <label class="form__label">Email</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item">
-                        <input type="number" class="form__input" placeholder=" " id="phone">
+                        <input type="number" class="form__input" placeholder=" " id="phone" name="phone">
                         <label class="form__label">Phone Number</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item">
-                        <input type="password" class="form__input" placeholder=" " id="password">
+                        <input type="password" class="form__input" placeholder=" " id="password" name="password">
                         <label class="form__label">Password</label>
                         <span class="message"></span>
                     </div>

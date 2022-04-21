@@ -15,6 +15,10 @@ body {
   overflow: hidden;
 }
 
+.login__error {
+  height: 40px;
+}
+
 .box__outter {
   width: 1045px;
   height: 620px;

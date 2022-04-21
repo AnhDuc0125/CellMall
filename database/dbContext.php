@@ -17,7 +17,9 @@ function executeResult($query, $isOnly = false) {
 	$result = mysqli_query($conn, $query);
 
     if($isOnly == true) {
-        return $result[0];
+        $data = mysqli_fetch_assoc($result);
+        
+        return $data;
     }
     
     $data = [];

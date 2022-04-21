@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   require_once("../database/dbContext.php");
 
   $sql = "select * from products LIMIT 10";

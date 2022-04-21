@@ -37,4 +37,10 @@
     return $value;
   }
 
+  function decodeValue($raw) {
+    $value = md5("uocgicothat".$raw."nhieunguoiyeu");
+
+    return $value;
+  }
+
 ?>

@@ -109,9 +109,7 @@ function confirmPassword(selector, passwordValue) {
   return {
     selector: selector,
     action: function (value) {
-      return value === passwordValue()
-        ? undefined
-        : "Your password is not match!";
+      return value === passwordValue() ? undefined : "Password is not match!";
     },
   };
 }

@@ -1,3 +1,26 @@
+<?php
+  session_start();
+
+  require_once("../database/dbContext.php");
+  require_once("../database/utility.php");
+
+  if(!empty($_POST)){
+      $email = getPost("email");
+      $password = getPost("password");
+
+      $password = decodeValue($password);
+
+      $login = "select * from users where email = '$email' and password = '$password'";
+      $user = executeResult($login, true);
+
+      if(!empty($user)) {
+        $_SESSION['currentUser'] = $user;
+
+        header("Location: home.php");
+      }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,21 +44,28 @@
             <div class="box__header">
                 <h2 class="title">Login</h2>
                 <p>Welcome to <span class="logo">CellMall</span></p>
+                <p class="login__error" style="color: red">
+                    <?php
+                        if(!empty($_POST)){
+                            echo 'Incorrect Email or Password!';
+                        }
+                    ?>
+                </p>
             </div>
             <form method="post" id="login">
                 <div class="box__main">
                     <div class="form__item block">
-                        <input type="email" class="form__input" placeholder=" " id="email">
+                        <input type="email" class="form__input" placeholder=" " id="email" name="email">
                         <label class="form__label">Email</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item block">
-                        <input type="password" class="form__input" placeholder=" " id="password">
+                        <input type="password" class="form__input" placeholder=" " id="password" name="password">
                         <label class="form__label">Password</label>
                         <span class="message"></span>
                     </div>
                     <div class="form__item block checkbox">
-                        <input type="checkbox" class="form__checkbox" id="checkbox">
+                        <input type="checkbox" class="form__checkbox" id="checkbox" name="remember">
                         <label>Remember Me</label>
                     </div>
                 </div>
