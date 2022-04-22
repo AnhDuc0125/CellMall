@@ -1,0 +1,45 @@
+#manu {
+  width: 65%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.manu__items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+.manu__item {
+  width: fit-content;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.25s;
+}
+
+.manu__item:hover {
+  transform: translateY(-5px);
+}
+
+.manu__item a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 1599px) {
+  #manu {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1499px) {
+  #manu {
+    width: 80%;
+  }
+}

@@ -9,37 +9,10 @@
                 <?php
                   foreach($manuList as $item) {
                       echo '<li class="manu__item">
-                                <a href="search.php?key='. strtolower($item['name']) .'" class="item__link">'. $item['name'] .'</a>
+                                <a href="search.php?key='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
                             </li>';
                   }
                 ?>
-                <!-- <li class="manu__item">
-                    <a href="#" class="item__link">Apple</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Samsung</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Bphone</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Vinsmart</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Oppo</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Huawei</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Xiaomi</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Nokia</a>
-                </li>
-                <li class="manu__item">
-                    <a href="#" class="item__link">Realme</a>
-                </li> -->
             </ul>
         </div>
     </div>
