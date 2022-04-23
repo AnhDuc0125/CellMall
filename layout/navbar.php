@@ -21,7 +21,7 @@
                         <b class="item__detail">2466.2469</b>
                     </div>
                 </a>
-                <a href="#" class="cart">
+                <a href="../pages/cart.php" class="cart">
                     <ion-icon name="bag-handle-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Your Cart</p>

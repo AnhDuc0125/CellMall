@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/manu.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-
 </head>
 
 <body>
