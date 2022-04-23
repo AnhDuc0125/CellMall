@@ -81,6 +81,13 @@
   background-color: white;
 }
 
+@media screen and (max-width: 1599px) {
+  .footer__start,
+  .footer__end p {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 1499px) {
   .footer__start,
   .footer__end p {
