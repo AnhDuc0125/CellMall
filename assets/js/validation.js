@@ -56,6 +56,7 @@ function Validation(options) {
           isError = false;
         }
         messageElement.textContent = message;
+        inputElement.classList.add("error");
 
         if (isError) {
           e.preventDefault();

@@ -2,8 +2,8 @@
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
-  $getManu = "select * from manufacturers";
-  $manuList = executeResult($getManu);
+  $getBrand = "select * from brands";
+  $brandList = executeResult($getBrand);
 ?>
 <!DOCTYPE html>
 <html lang="en">
