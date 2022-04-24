@@ -13,15 +13,21 @@
             <div class="column__content">
                 <ul>
                     <li>
-                        <ion-icon name="logo-facebook" class="logo__icon facebook"></ion-icon> Like us on
-                        Facebook
+                        <a href="#">
+                            <ion-icon name="logo-facebook" class="logo__icon facebook"></ion-icon> Like us on
+                            Facebook
+                        </a>
                     </li>
                     <li>
-                        <ion-icon name="logo-twitter" class="logo__icon twitter"></ion-icon>
-                        </ion-icon> Follow us on Twitter
+                        <a href="#">
+                            <ion-icon name="logo-dribbble" class="logo__icon dribble"></ion-icon>
+                            </ion-icon> Follow us on Dribble
+                        </a>
                     </li>
                     <li>
-                        <ion-icon name="logo-github" class="logo__icon github"></ion-icon> Source code on Github
+                        <a href="https://github.com/AnhDuc0125/CellMall" target="_blank">
+                            <ion-icon name="logo-github" class="logo__icon github"></ion-icon> Source code on Github
+                        </a>
                     </li>
                 </ul>
             </div>

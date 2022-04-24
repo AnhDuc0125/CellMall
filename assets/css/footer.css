@@ -46,9 +46,10 @@
   line-height: 40px;
 }
 
-.column__content > ul > li {
+.column__content > ul > li > a {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .column__content table {
@@ -69,8 +70,12 @@
   background-color: white;
 }
 
-.logo__icon.twitter {
-  color: #1d9bf0;
+.logo__icon.dribble {
+  color: #dc4881;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .logo__icon.github {

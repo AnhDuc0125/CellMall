@@ -17,7 +17,7 @@
                 <a href="#" class="contact">
                     <ion-icon name="call-outline" class="symbol"></ion-icon>
                     <div class="content">
-                        <p class="item__title">Contact</p>
+                        <p class="item__title">Contact Us</p>
                         <b class="item__detail">2466.2469</b>
                     </div>
                 </a>

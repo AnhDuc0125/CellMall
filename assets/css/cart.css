@@ -66,6 +66,7 @@
 
 .quantity__btn {
   cursor: pointer;
+  color: var(--secondary-color);
 }
 
 .quantity__btn,
@@ -88,6 +89,7 @@
 .remove > :only-child {
   font-size: 20px;
   cursor: pointer;
+  color: var(--secondary-color);
 }
 
 th {
@@ -133,11 +135,9 @@ td {
   cursor: pointer;
   border: none;
   outline: none;
-  /* background-image: linear-gradient(to right bottom, #1da7ef, #797dfa); */
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
   font-size: 17px;
-  background: none;
   transition: 0.25s;
 }
 

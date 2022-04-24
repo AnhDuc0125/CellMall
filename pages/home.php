@@ -14,7 +14,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>CellMall | Home</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../assets/css/master.css" />
@@ -43,27 +43,147 @@
         <div class="product bestSeller">
             <h1 class="product__title">Best Seller</h1>
             <div class="card__container">
-                <!-- Comment -->
-
-                <?php
-                  foreach($products as $item) {
-                      echo ' <a href="#" class="card">
-                                <div class="card__img">
-                                    <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
-                                        alt="">
-                                </div>
-                                <div class="card__content">
-                                    <h4 class="card__title">'. $item['title'] .'</h4>
-                                    <h4 class="card__price">'. $item['price'] .' đ</h4>
-                                    <p class="card__oldPrice">30.990.000 đ</p>
-                                    <div class="card__voucher"> đ
-                                    </div>
-                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                    </div>
-                                </div>
-                            </a>';
-                  }
-                ?>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ</div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <div class="card__img">
+                        <img src="https://image.cellphones.com.vn/220x/media/catalog/product/s/m/sm-s908_galaxys22ultra_front_green_211119.jpg"
+                            alt="">
+                    </div>
+                    <div class="card__content">
+                        <h4 class="card__title">Samsung Galaxy S22 Ultra</h4>
+                        <h4 class="card__price">29.190.000 đ</h4>
+                        <p class="card__oldPrice">30.990.000 đ</p>
+                        <div class="card__voucher">Thu cũ lên đời - Trợ giá 500.000 đ
+                        </div>
+                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 
