@@ -65,6 +65,7 @@
 }
 
 .card__content {
+  height: 100px;
 }
 
 .card__title {
