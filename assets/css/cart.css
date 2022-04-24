@@ -16,13 +16,15 @@
 .yourCart {
   width: 69%;
   background-color: #fff;
-  min-height: 600px;
+  height: fit-content;
 }
 
 .order {
   width: 29%;
   background-color: #fff;
   height: fit-content;
+  position: sticky;
+  top: 90px;
 }
 
 .title {
@@ -30,17 +32,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #999;
 }
 
-table {
+.yourCart__table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
 }
 
-tr {
-  border-bottom: 1px solid black;
+.yourCart__product {
+  height: 200px;
+  border-bottom: 2px solid #999;
+}
+
+.yourCart__product > .thumbnail {
+  width: 175px;
+  height: 175px;
+}
+
+.thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quantityBox {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #999;
+}
+
+.quantity__btn {
+  cursor: pointer;
+}
+
+.quantity__btn,
+.quantityForm {
+  flex-grow: 1;
+}
+
+.quantityForm {
+  height: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 17px;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.remove > :only-child {
+  font-size: 20px;
+  cursor: pointer;
 }
 
 th {
@@ -50,6 +97,7 @@ th {
 th,
 td {
   padding: 15px;
+  vertical-align: top;
 }
 
 .order__main {
@@ -85,11 +133,15 @@ td {
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: #008e45;
-  color: white;
+  /* background-image: linear-gradient(to right bottom, #1da7ef, #797dfa); */
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   font-size: 17px;
+  background: none;
+  transition: 0.25s;
 }
 
-.thumbnail > img {
-  width: 100px;
+.checkout__btn:hover {
+  background-color: var(--secondary-color);
+  color: white;
 }

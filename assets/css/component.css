@@ -13,7 +13,7 @@
 #manu {
   width: 100%;
   height: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
   overflow: hidden;
   grid-row: 1/3;
@@ -22,7 +22,7 @@
 #gallery {
   width: 100%;
   height: 300px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
@@ -30,7 +30,7 @@
 
 #gallery__footer {
   height: 130px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;

@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 :root {
-  --primary-color: #535962;
+  --primary-color: #1e242f;
+  --secondary-color: #cc9900;
   --background-color: #f4f4f4;
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 /* Css for scroll bar */
@@ -52,11 +54,18 @@ a {
   height: 100%;
   object-fit: cover;
   user-select: none;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--box-shadow);
 }
 
 ul {
   list-style-type: none;
+}
+
+/* remove arrow number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (max-width: 1599px) {

@@ -25,41 +25,80 @@
             <div class="yourCart">
                 <div class="yourCart__title title">
                     <h2>SHOPPING CART</h2>
-                    <p>You have 4 items</p>
+                    <p>You have 3 item(s)</p>
                 </div>
                 <div class="yourCart__main">
                     <table class="yourCart__table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Subtotal</th>
-                                <th>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td class="thumbnail"><img
-                                        src="https://image.cellphones.com.vn/220x/media/catalog/product/8/0/800x800-1-640x640-5_2.png"
-                                        alt=""></td>
-                                <td>Iphone</td>
-                                <td>1555</td>
-                                <td>1</td>
-                                <td>1555</td>
-                            </tr>
-                        </tbody>
+                        <tr class="yourCart__product">
+                            <td class="thumbnail"><img
+                                    src="https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg"
+                                    alt=""></td>
+                            <td class="detail">
+                                <h3 class="detail__title">Iphone SE 2022</h3>
+                                <div class="detail__storage">512 GB</div>
+                            </td>
+                            <td class="quantity">
+                                <div class="quantityBox">
+                                    <ion-icon class="quantity__btn subtraction__btn" name="remove-outline"></ion-icon>
+                                    <input type="number" min="1" max="3" class="quantityForm" value="1" readonly>
+                                    <ion-icon class="quantity__btn addition__btn" name="add-outline"></ion-icon>
+                                </div>
+
+                            </td>
+                            <td class="price">21.000.000 đ</td>
+                            <td class="remove">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+                        </tr>
+                        <tr class="yourCart__product">
+                            <td class="thumbnail"><img
+                                    src="https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone_11_white_4_.png"
+                                    alt=""></td>
+                            <td class="detail">
+                                <h3 class="detail__title">Iphone 11</h3>
+                                <div class="detail__storage">64 GB</div>
+                            </td>
+                            <td class="quantity">
+                                <div class="quantityBox">
+                                    <ion-icon class="quantity__btn subtraction__btn" name="remove-outline"></ion-icon>
+                                    <input type="number" min="1" max="3" class="quantityForm" value="2" readonly>
+                                    <ion-icon class="quantity__btn addition__btn" name="add-outline"></ion-icon>
+                                </div>
+
+                            </td>
+                            <td class="price">21.000.000 đ</td>
+                            <td class="remove">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+                        </tr>
+                        <tr class="yourCart__product">
+                            <td class="thumbnail"><img
+                                    src="https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone_13-_pro-5_4.jpg"
+                                    alt=""></td>
+                            <td class="detail">
+                                <h3 class="detail__title">iPhone 13 Pro Max</h3>
+                                <div class="detail__storage">128 GB</div>
+                            </td>
+                            <td class="quantity">
+                                <div class="quantityBox">
+                                    <ion-icon class="quantity__btn subtraction__btn" name="remove-outline"></ion-icon>
+                                    <input type="number" min="1" max="3" class="quantityForm" value="3" readonly>
+                                    <ion-icon class="quantity__btn addition__btn" name="add-outline"></ion-icon>
+                                </div>
+
+                            </td>
+                            <td class="price">21.000.000 đ</td>
+                            <td class="remove">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
             <div class="order">
                 <div class="order__title title">
                     <h2>TOTAL</h2>
-                    <p>Ready to order</p>
+                    <p>Ready to delivery</p>
                 </div>
                 <div class="order__main">
                     <div class="order__total">
@@ -80,5 +119,33 @@
         </div>
     </div>
 </body>
+<script>
+let quantityBox = document.querySelectorAll('.quantityBox');
+
+quantityBox.forEach((item) => {
+    item.onclick = (e) => {
+        let quantityValue = item.querySelector('.quantityForm');
+        let addBtn = item.querySelector('.addition__btn');
+        let subBtn = item.querySelector('.subtraction__btn');
+
+        switch (e.target) {
+            case addBtn:
+                if (quantityValue.value < 3) {
+                    quantityValue.value++;
+                }
+                break;
+
+            case subBtn:
+                if (quantityValue.value > 1) {
+                    quantityValue.value--;
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+})
+</script>
 
 </html>
