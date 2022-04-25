@@ -106,6 +106,8 @@ $(document).ready(function(){
 		$("input[name='e_product_qty']").val(product.product_qty);
 		$("input[name='e_product_price']").val(product.product_price);
 		$("input[name='e_product_keywords']").val(product.product_keywords);
+		$("input[name='e_product_oldprice']").val(product_oldprice);
+	    $("input[name='e_product_resolution']").val(product.product_resolution);
 		$("input[name='e_product_image']").siblings("img").attr("src", "../product_images/"+product.product_image);
 		$("input[name='pid']").val(product.product_id);
 		$("#edit_product_modal").modal('show');

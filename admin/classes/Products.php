@@ -14,6 +14,8 @@ session_start();
  `product_desc` text NOT NULL,
  `product_image` text NOT NULL,
  `product_keywords` text NOT NULL,
+ `product_oldprice` int(100) NOT NULL,
+ `product_resolution` text NOTNULL,
   CONSTRAINT fk_product_cat FOREIGN KEY fk_product_cat (product_cat) REFERENCES categories(cat_id),
     CONSTRAINT fk_product_brand FOREIGN KEY fk_product_brand (product_brand) REFERENCES brands(brand_id),
  PRIMARY KEY (`product_id`)
@@ -75,6 +77,8 @@ class Products
 								$product_qty,
 								$product_price,
 								$product_keywords,
+								$product_oldprice,
+								$product_resolution,
 								$file){
 
 
@@ -123,6 +127,8 @@ class Products
 										$product_qty,
 										$product_price,
 										$product_keywords,
+										$product_oldprice,
+								        $product_resolution,
 										$file){
 
 
@@ -149,6 +155,8 @@ class Products
 										`product_desc` = '$product_desc', 
 										`product_image` = '$uniqueImageName', 
 										`product_keywords` = '$product_keywords'
+								        `product_oldprice`=  '$product_oldprice',
+							            `product_resolution` ='$product_resolution',
 										WHERE product_id = '$pid'");
 
 					if ($q) {
@@ -178,7 +186,9 @@ class Products
 										$product_desc,
 										$product_qty,
 										$product_price,
-										$product_keywords){
+										$product_keywords,
+									    $product_oldprice,
+							            $product_resolution){
 
 		if ($pid != null) {
 			$q = $this->con->query("UPDATE `products` SET 
@@ -189,6 +199,8 @@ class Products
 										`product_price` = '$product_price', 
 										`product_desc` = '$product_desc',
 										`product_keywords` = '$product_keywords'
+										`product_oldprice`=  '$product_oldprice',
+							            `product_resolution` ='$product_resolution'
 										WHERE product_id = '$pid'");
 
 			if ($q) {
@@ -359,6 +371,8 @@ if (isset($_POST['add_product'])) {
 	&& !empty($product_qty)
 	&& !empty($product_price)
 	&& !empty($product_keywords)
+	&& !empty($product_oldprice)
+    && !empty($product_resolution)
 	&& !empty($_FILES['product_image']['name'])) {
 		
 
@@ -370,6 +384,8 @@ if (isset($_POST['add_product'])) {
 								$product_qty,
 								$product_price,
 								$product_keywords,
+								$product_oldprice,
+                                $product_resolution,
 								$_FILES['product_image']);
 		
 		header("Content-type: application/json");
@@ -399,7 +415,9 @@ if (isset($_POST['edit_product'])) {
 	&& !empty($e_product_desc)
 	&& !empty($e_product_qty)
 	&& !empty($e_product_price)
-	&& !empty($e_product_keywords) ) {
+	&& !empty($e_product_keywords)
+	&& !empty($product_oldprice)
+    && !empty($product_resolution) ) {
 		
 		$p = new Products();
 
@@ -413,6 +431,8 @@ if (isset($_POST['edit_product'])) {
 								$e_product_qty,
 								$e_product_price,
 								$e_product_keywords,
+								$e_product_oldprice,
+                                $e_product_resolution,
 								$_FILES['e_product_image']);
 		}else{
 			$result = $p->editProductWithoutImage($pid,
@@ -422,7 +442,9 @@ if (isset($_POST['edit_product'])) {
 								$e_product_desc,
 								$e_product_qty,
 								$e_product_price,
-								$e_product_keywords);
+								$e_product_keywords,
+								$e_product_oldprice,
+                                $e_product_resolution);
 		}
 
 		echo json_encode($result);

@@ -106,6 +106,19 @@
 		        		<label>Product Keywords <small>(eg: apple, iphone, mobile)</small></label>
 		        		<input type="text" name="product_keywords" class="form-control" placeholder="Enter Product Keywords">
 		        	</div>
+              
+            </div>
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>Product Oldprice</label>
+		        		<input type="number" name="product_oldprice" class="form-control" placeholder="Enter Product OldPrice">
+		        	</div>
+              </div>
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>Product resolution</label>
+		        		<input type="number" name="product_resolution" class="form-control" placeholder="Enter Product resolution">
+		        	</div>
         		</div>
         		<div class="col-12">
         			<div class="form-group">
@@ -183,6 +196,20 @@
               <div class="form-group">
                 <label>Product Keywords <small>(eg: apple, iphone, mobile)</small></label>
                 <input type="text" name="e_product_keywords" class="form-control" placeholder="Enter Product Keywords">
+              </div>
+            </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Product Old price </label>
+                <input type="text" name="e_product_oldprice" class="form-control" placeholder="Enter Product oldprice">
+              </div>
+            </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Product resolution </label>
+                <input type="text" name="e_product_resolution" class="form-control" placeholder="Enter Product resolution">
               </div>
             </div>
             <div class="col-12">

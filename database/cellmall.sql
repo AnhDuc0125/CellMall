@@ -27,6 +27,18 @@ SET time_zone = "+00:00";
 -- Cấu trúc bảng cho bảng `brands`
 --
 
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `is_active` enum('0','1') NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Cấu trúc bảng cho bảng `brands`
+--
+
 CREATE TABLE `brands` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -174,6 +186,14 @@ INSERT INTO `users` (`user_id`, `username`, `fullname`, `email`, `password`, `ad
 --
 
 --
+-- Chỉ mục cho bảng `admin`
+--
+
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Chỉ mục cho bảng `brands`
 --
 ALTER TABLE `brands`
@@ -218,6 +238,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `brands`
