@@ -15,8 +15,14 @@
       $user = executeResult($login, true);
 
       if(!empty($user)) {
-        $_SESSION['currentUser'] = $user;
+          if($email == "admin123@gmail.com" && $password == decodeValue("admin123")) {
+              header("Location: ../admin/products.php");
+              die();
+          }
+      } 
 
+      if(!empty($user)) {
+        $_SESSION['currentUser'] = $user;
         header("Location: home.php");
       }
   }
