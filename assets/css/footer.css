@@ -34,8 +34,11 @@
 }
 
 .column__title {
+  height: 45px;
   margin-bottom: 15px;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
 .column__content {

@@ -25,14 +25,17 @@
 }
 
 .logo {
-  width: fit-content;
+  width: 150px;
   height: 45px;
   display: flex;
   align-items: center;
   font-family: "Pacifico", cursive;
-  color: white;
   font-size: 35px;
+  font-weight: 600;
   cursor: pointer;
+  background: linear-gradient(to right, #bf953f, #fcf6ba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .search {
@@ -75,10 +78,30 @@
 .another a {
   color: white;
   transition: 0.25s;
+  position: relative;
 }
 
-.another a:hover {
+.another a > * {
+  transition: 0.25s ease-in-out;
+}
+
+.underline {
+  position: absolute;
+  top: 110%;
+  height: 2px;
+  width: 0%;
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba);
+  border-radius: 50px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.another a:hover > *:not(.underline) {
   transform: translateY(-3px);
+}
+
+.another a:hover > .underline {
+  width: 100%;
 }
 
 .about,
