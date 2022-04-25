@@ -1,7 +1,9 @@
 <div id="footer">
     <div class="footer__start">
         <div class="footer__column">
-            <h4 class="column__title">MORE ABOUT COMPANY</h4>
+            <h4 class="column__title">ABOUT <span class="logo"
+                    style="margin-left: 5px; display: inline-block; font-size: 25px">
+                    CellMall</span></h4>
             <div class="column__content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio maxime eius quis dicta
                 repudiandae ratione, laboriosam reprehenderit deleniti sed quod aliquid maiores impedit illum rem
@@ -9,7 +11,7 @@
             </div>
         </div>
         <div class="footer__column">
-            <h4 class="column__title">ABOUT US</h4>
+            <h4 class="column__title">OUR SOCIAL NETWORK</h4>
             <div class="column__content">
                 <ul>
                     <li>
