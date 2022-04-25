@@ -8,7 +8,7 @@
             </div>
             <div class="another">
                 <a href="#" class="about">
-                    <ion-icon name="people-circle-outline" class="symbol"></ion-icon>
+                <ion-icon name="people-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">About Us</p>
                         <b class="item__detail">Our team</b>
@@ -29,7 +29,7 @@
                     </div>
                 </a>
                 <a href="login.php" class="member">
-                    <ion-icon name="person-circle-outline" class="symbol"></ion-icon>
+                    <ion-icon name="person-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Member</p>
 
