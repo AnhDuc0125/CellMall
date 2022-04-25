@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 24, 2022 lúc 06:25 PM
+-- Thời gian đã tạo: Th4 25, 2022 lúc 03:02 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -22,18 +22,6 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `brands`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `is_active` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Cấu trúc bảng cho bảng `brands`
@@ -125,11 +113,11 @@ CREATE TABLE `orders` (
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `thumbnail` varchar(200) NOT NULL,
+  `image` varchar(200) DEFAULT NULL,
   `price` int(100) NOT NULL,
-  `detail` text NOT NULL,
-  `star` int(11) NOT NULL,
-  `voucher` int(11) NOT NULL,
+  `description` text DEFAULT NULL,
+  `star` int(11) DEFAULT NULL,
+  `discount` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `brand_id` int(11) NOT NULL,
@@ -141,8 +129,7 @@ CREATE TABLE `products` (
   `chip` varchar(300) NOT NULL,
   `battery` int(11) NOT NULL,
   `resolution` varchar(50) NOT NULL,
-  `old_price` int(11) DEFAULT NULL,
-  `item_image` varchar(255) NOT NULL
+  `old_price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -184,14 +171,6 @@ INSERT INTO `users` (`user_id`, `username`, `fullname`, `email`, `password`, `ad
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `admin`
---
-
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Chỉ mục cho bảng `brands`
@@ -240,12 +219,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT cho bảng `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT cho bảng `brands`
 --
 ALTER TABLE `brands`
@@ -279,7 +252,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
