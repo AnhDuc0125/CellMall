@@ -7,7 +7,7 @@
                 <ion-icon name="search-outline" class="search__icon"></ion-icon>
             </div>
             <div class="another">
-                <a href="#" class="about">
+                <a href="../pages/about.php" class="about">
                     <ion-icon name="people-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">About Us</p>
