@@ -39,13 +39,13 @@
                         <p>Contact Information</p>
                         <div class="profile__social">
                             <div class="social__item">
-                                <ion-icon style="color: #1771e6" name="logo-facebook"></ion-icon>
+                                <ion-icon name="logo-facebook"></ion-icon>
                             </div>
                             <div class="social__item">
-                                <ion-icon style="color: #dd2a7b" name="logo-instagram"></ion-icon>
+                                <ion-icon name="logo-instagram"></ion-icon>
                             </div>
                             <div class="social__item">
-                                <ion-icon style="color: black" name="logo-github"></ion-icon>
+                                <ion-icon name="logo-github"></ion-icon>
                             </div>
                         </div>
                     </div>
@@ -65,13 +65,13 @@
                         <p>Contact Information</p>
                         <div class="profile__social">
                             <div class="social__item">
-                                <ion-icon style="color: #1771e6" name="logo-facebook"></ion-icon>
+                                <ion-icon name="logo-facebook"></ion-icon>
                             </div>
                             <div class="social__item">
-                                <ion-icon style="color: #dd2a7b" name="logo-instagram"></ion-icon>
+                                <ion-icon name="logo-instagram"></ion-icon>
                             </div>
                             <div class="social__item">
-                                <ion-icon style="color: black" name="logo-github"></ion-icon>
+                                <ion-icon name="logo-github"></ion-icon>
                             </div>
                         </div>
                     </div>

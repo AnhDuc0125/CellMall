@@ -14,7 +14,7 @@
   background-image: linear-gradient(
     to right bottom,
     var(--primary-color),
-    rgb(75, 71, 71) 0%,
+    rgb(83, 82, 77),
     var(--primary-color)
   );
   text-align: center;
@@ -23,35 +23,6 @@
   cursor: pointer;
   box-shadow: var(--box-shadow);
   transition: 0.5s;
-}
-
-/* @keyframes shine {
-  from {
-    background-image: linear-gradient(
-      to right bottom,
-      var(--primary-color),
-      rgb(75, 71, 71) 0%,
-      var(--primary-color)
-    );
-  }
-
-  to {
-    background-image: linear-gradient(
-      to right bottom,
-      var(--primary-color),
-      rgb(75, 71, 71) 50%,
-      var(--primary-color)
-    );
-  }
-} */
-
-.profile:hover {
-  background-image: linear-gradient(
-    to right bottom,
-    var(--primary-color),
-    rgb(75, 71, 71) 50%,
-    var(--primary-color)
-  );
 }
 
 .profile__inner {
@@ -64,6 +35,7 @@
   background: linear-gradient(to right, #bf953f, #fcf6ba);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
 }
 
 .profile__img {
@@ -78,6 +50,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .profile__footer {
@@ -96,7 +69,7 @@
 }
 
 .profile__social {
-  width: 30%;
+  width: 45%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -104,10 +77,10 @@
 }
 
 .social__item {
-  width: 30%;
   cursor: pointer;
 }
 
 .social__item > * {
-  font-size: 25px;
+  color: var(--secondary-color);
+  font-size: 30px;
 }
