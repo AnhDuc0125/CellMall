@@ -93,7 +93,7 @@
                 </div>
                 <div class="box__footer">
                     <button class="btn">Sign up</button>
-                    <p>Already have an account? <a href="login.php">Login</a></p>
+                    <p>Already have an account? <a href="loginPage.php">Login</a></p>
                 </div>
             </form>
         </div>

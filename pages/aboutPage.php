@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CellMall | Cart</title>
+    <title>CellMall | About Us</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../assets/css/master.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/about.css">
+    <link rel="stylesheet" href="../assets/css/aboutPage.css">
 </head>
 
 <body>
@@ -23,6 +23,7 @@
     <div id="main">
         <center>
             <h1>MEET OUR TEAM</h1>
+            <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
         </center>
         <div class="profile__container">
             <div class="profile">
@@ -36,7 +37,6 @@
                         <p class="profile__locate">Leader</p>
                         <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
                             quam ab doloribus sint temporibus tempora.</p>
-                        <p>Contact Information</p>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
@@ -62,7 +62,6 @@
                         <p class="profile__locate">Developer</p>
                         <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
                             quam ab doloribus sint temporibus tempora.</p>
-                        <p>Contact Information</p>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/navbar.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
     <link rel="stylesheet" href="../assets/css/component.css" />
-    <link rel="stylesheet" href="../assets/css/product.css" />
+    <link rel="stylesheet" href="../assets/css/productCard.css" />
 </head>
 
 <body>

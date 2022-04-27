@@ -1,7 +1,7 @@
 .profile__container {
   width: 100%;
   height: fit-content;
-  margin: 50px auto 0;
+  margin: 25px auto 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -10,18 +10,18 @@
 .profile {
   width: 375px;
   height: fit-content;
-  /* background-color: var(--primary-color); */
+  background-color: var(--primary-color);
   background-image: linear-gradient(
     to right bottom,
     var(--primary-color),
-    rgb(83, 82, 77),
+    rgb(73 74 68),
     var(--primary-color)
   );
   text-align: center;
   padding: 20px;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 0.5s;
 }
 
@@ -74,6 +74,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.25s;
+  opacity: 0;
+}
+
+.profile:hover .profile__social {
+  opacity: 1;
 }
 
 .social__item {

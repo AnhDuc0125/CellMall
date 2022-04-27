@@ -83,7 +83,7 @@
                 </div>
                 <div class="box__footer">
                     <button class="btn">Log In</button>
-                    <p>Not a member? <a href="signup.php">Sign up</a></p>
+                    <p>Not a member? <a href="signupPage.php">Sign up</a></p>
                 </div>
             </form>
         </div>
@@ -98,7 +98,7 @@ Validation({
         isRequired('#password'),
         isEmail('#email')
     ]
-})
+});
 </script>
 
 </html>

@@ -1,13 +1,13 @@
 <div id="navbar">
     <div class="navbar">
         <div class="navbar__item">
-            <a href="home.php" class="logo">CellMall</a>
+            <a href="homePage.php" class="logo">CellMall</a>
             <div class="search">
                 <input type="text" class="search__input" placeholder="Search">
                 <ion-icon name="search-outline" class="search__icon"></ion-icon>
             </div>
             <div class="another">
-                <a href="../pages/about.php" class="about">
+                <a href="../pages/aboutPage.php" class="about">
                     <ion-icon name="people-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">About Us</p>
@@ -15,7 +15,7 @@
                     </div>
                     <span class="underline"></span>
                 </a>
-                <a href="#" class="contact">
+                <a href="../pages/contactPage.php" class="contact">
                     <ion-icon name="call-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Contact Us</p>
@@ -23,7 +23,7 @@
                     </div>
                     <span class="underline"></span>
                 </a>
-                <a href="../pages/cart.php" class="cart">
+                <a href="../pages/cartPage.php" class="cart">
                     <ion-icon name="bag-handle-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Your Cart</p>
@@ -31,7 +31,7 @@
                     </div>
                     <span class="underline"></span>
                 </a>
-                <a href="login.php" class="member">
+                <a href="loginPage.php" class="member">
                     <ion-icon name="person-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Member</p>
