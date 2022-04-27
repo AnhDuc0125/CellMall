@@ -1,9 +1,7 @@
-#main {
+.contact__box {
+  transform: translateY(25%);
   background-color: #fff;
   border-radius: 20px;
-}
-
-.contact__box {
   width: 100%;
   height: 650px;
   display: flex;
