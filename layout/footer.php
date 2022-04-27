@@ -42,19 +42,19 @@
                         <th>
                             <ion-icon name="home-outline" class="logo__icon"></ion-icon>
                         </th>
-                        <td>Address of the Company: A-65, ACME Co., Street no 12, New York</td>
+                        <td>A-65, ACME Co., Street no 12, New York</td>
                     </tr>
                     <tr>
                         <th>
                             <ion-icon name="phone-portrait-outline" class="logo__icon"></ion-icon>
                         </th>
-                        <td>Phone Numbers: +001-28272300, 2466, 2469</td>
+                        <td>+001-28272300, 2466, 2469</td>
                     </tr>
                     <tr>
                         <th>
                             <ion-icon name="mail-outline" class="logo__icon"></ion-icon>
                         </th>
-                        <td>Email Address: webmaster@cellinfo.com</td>
+                        <td>webmaster@cellinfo.com</td>
                     </tr>
                 </table>
             </div>

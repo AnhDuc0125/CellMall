@@ -9,7 +9,7 @@
                 <?php
                   foreach($brandList as $item) {
                       echo '<li class="manu__item">
-                                <a href="search.php?key='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
+                                <a href="searchPage.php?key='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
                             </li>';
                   }
                 ?>
