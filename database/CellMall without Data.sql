@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 25, 2022 lúc 03:02 PM
+-- Thời gian đã tạo: Th4 28, 2022 lúc 03:55 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -41,13 +41,12 @@ CREATE TABLE `brands` (
 INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Apple', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
 (2, 'Samsung', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
-(3, 'Bphone', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
-(4, 'Vinsmart', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
+(3, 'Asus', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
+(4, 'Vivo', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
 (5, 'Oppo', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
-(6, 'Huawei', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
+(6, 'Realme', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
 (7, 'Xiaomi', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
-(8, 'Nokia', '2022-04-21 11:02:06', '2022-04-21 11:02:06'),
-(9, 'Realme', '2022-04-21 11:02:06', '2022-04-21 11:02:06');
+(8, 'Nokia', '2022-04-21 11:02:06', '2022-04-21 11:02:06');
 
 -- --------------------------------------------------------
 
@@ -123,7 +122,7 @@ CREATE TABLE `products` (
   `brand_id` int(11) NOT NULL,
   `status_id` int(11) NOT NULL,
   `cate_id` int(11) DEFAULT NULL,
-  `herf_pram` varchar(200) DEFAULT NULL,
+  `href_param` varchar(200) DEFAULT NULL,
   `storage` int(11) NOT NULL,
   `camera` varchar(300) NOT NULL,
   `chip` varchar(300) NOT NULL,
@@ -140,10 +139,18 @@ CREATE TABLE `products` (
 
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `status`
+--
+
+INSERT INTO `status` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'In stock', '2022-04-28 03:41:27', '2022-04-28 03:41:27'),
+(2, 'Out of stock', '2022-04-28 03:41:27', '2022-04-28 03:41:27');
 
 -- --------------------------------------------------------
 
@@ -206,7 +213,8 @@ ALTER TABLE `products`
 -- Chỉ mục cho bảng `status`
 --
 ALTER TABLE `status`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Chỉ mục cho bảng `users`
@@ -247,6 +255,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

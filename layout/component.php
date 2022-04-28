@@ -6,6 +6,9 @@
     <div id="manu">
         <div class="manu">
             <ul class="manu__items">
+                <li class="manu__item title">
+                    <h2 class="brand__title">Brands</h2>
+                </li>
                 <?php
                   foreach($brandList as $item) {
                       echo '<li class="manu__item">
