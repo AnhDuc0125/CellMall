@@ -11,6 +11,12 @@
     $oldPrice = getPost('product_oldPrice');
     $resolution = getPost('product_resolution');
     $image = getPost('product_image');
+    $discount = getPost('product_discount');
+    $status = getPost('product_status');
+    $storage = getPost('product_storage');
+    $Camera = getPost('product_ocamera');
+    $Chip = getPost('product_chip');
+    $Battery = getPost('product_battery');
 
     $add = "insert into products(title, brand_id, category_id, description, price, old_price, resolution)";
   }
@@ -55,7 +61,7 @@
                         <th>Price</th>
                         <th>Category</th>
                         <th>Brand</th>
-                        <th>Action</th>
+                        
                     </tr>
                 </thead>
                 <tbody id="product_list">
@@ -69,6 +75,12 @@
                                 <td>'. $item['price'] .'</td>
                                 <td>'. $item['category'] .'</td>
                                 <td>'. $item['brand'] .'</td>
+                                <td>'. $item['discount'] .'</td>
+                                <td>'. $item['status'] .'</td>
+                                <td>'. $item['storage'] .'</td> 
+                                <td>'. $item['camera'] .'</td>
+                                <td>'. $item['chip'] .'</td>
+                                <td>'. $item['battery'] .'</td>
                                 <td><a style="cursor: pointer" class="btn btn-sm btn-warning"><ion-icon name="brush-outline"></ion-icon></a><a style="cursor: pointer" class="mx-2 btn btn-sm text-light btn-danger"><ion-icon name="trash-outline"></ion-icon></a></td>
                               </tr>';
                       }
@@ -163,6 +175,47 @@
                                 <input type="text" name="product_image" class="form-control"
                                     placeholder="Enter Product Image URL">
                             </div>
+                            </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product discount</label>
+                                <input type="number" name="product_discount" class="form-control"
+                                    placeholder="Enter Product discount">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product status</label>
+                                <input type="text" name="product_status" class="form-control"
+                                    placeholder="Enter Product status">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product storage</label>
+                                <input type="text" name="product_Storage" class="form-control"
+                                    placeholder="Enter Product Storage">
+                            </div>
+                            </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product camera</label>
+                                <input type="number" name="product_Camera" class="form-control"
+                                    placeholder="Enter Product Camera">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product chip</label>
+                                <input type="text" name="product_chip" class="form-control"
+                                    placeholder="Enter Product Chip">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Product Battery</label>
+                                <input type="text" name="product_Battery" class="form-control"
+                                    placeholder="Enter Product Image URL">
                         </div>
                         <input type="hidden" name="add_product" value="1">
                         <div class="col-12">
@@ -262,6 +315,7 @@
                     <img src="../product_images/1.0x0.jpg" class="img-fluid" width="50">
                 </div>
             </div>
+            
             <input type="hidden" name="pid">
             <input type="hidden" name="edit_product" value="1">
             <div class="col-12">
