@@ -4,6 +4,12 @@
 
   $getBrand = "select * from brands";
   $brandList = executeResult($getBrand);
+
+    if(!empty($_GET)){
+        $key = getGet('key');
+        $resultSql = "select products.*, brands.name from products, brands where products.brand_id = brands.id and brands.name = '$key'";
+        $result = executeResult($resultSql);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +26,7 @@
     <link rel="stylesheet" href="../assets/css/manu.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/searchPage.css">
+    <link rel="stylesheet" href="../assets/css/productCard.css">
 </head>
 
 <body>
@@ -131,6 +138,29 @@
                         <div class="sort__content">Best Seller</div>
                     </a>
                 </div>
+            </div>
+        </div>
+        <div class="product result">
+            <h1 class="product__title"><?=$key?></h1>
+            <div class="card__container">
+                <?php
+                  foreach($result as $item) {
+                      echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                                <div class="card__img">
+                                    <img src="'. $item['image'] .'"
+                                        alt="">
+                                </div>
+                                <div class="card__content">
+                                    <h4 class="card__title">'. $item['title'] .'</h4>
+                                    <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
+                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
+                                    <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
+                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                                    </div>
+                                </div>
+                            </a>';
+                  }
+                ?>
             </div>
         </div>
     </div>
