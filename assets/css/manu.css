@@ -3,15 +3,14 @@
   margin: 0 auto;
   margin-bottom: 15px;
   padding: 15px;
-  /* background-color: rgb(100 100 111 / 20%); */
-  background-color: #d39d07d6;
+  background-color: var(--primary-color);
   border-radius: 5px;
 }
 
 .manu__items {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   list-style-type: none;
 }

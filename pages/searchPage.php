@@ -47,7 +47,7 @@
             <div class="filter">
                 <h2 class="filter__title">Filter</h2>
                 <div class="filter__content">
-                    <a href="#" class="filter__item onSale">
+                    <a href="&12" class="filter__item onSale">
                         <div class="onSale__content">On Sale</div>
                     </a>
                     <a href="#" class="filter__item popular">
