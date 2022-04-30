@@ -2,6 +2,8 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  
+
   if(!empty($_POST)) {
     $name = getPost('product_name');
     $brand = getPost('product_brand');
@@ -22,7 +24,7 @@
   }
 
   //get product list
-  $select = "select * from products";
+  $select = "select products.*, brands.name as brand_name, categories.name as cate_name from products, brands, categories where products.cate_id = categories.id and products.brand_id = brands.id;";
   $productList = executeResult($select);
   
   //get brand list
@@ -61,7 +63,7 @@
                         <th>Price</th>
                         <th>Category</th>
                         <th>Brand</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody id="product_list">
@@ -71,16 +73,10 @@
                         echo '<tr>
                                 <td>'. ++$index .'</td>
                                 <td>'. $item['title'] .'</td>
-                                <td><img src="'. $item['thumbnail'] .'"></td>
+                                <td><img style="width: 100px" src="'. $item['image'] .'"></td>
                                 <td>'. $item['price'] .'</td>
-                                <td>'. $item['category'] .'</td>
-                                <td>'. $item['brand'] .'</td>
-                                <td>'. $item['discount'] .'</td>
-                                <td>'. $item['status'] .'</td>
-                                <td>'. $item['storage'] .'</td> 
-                                <td>'. $item['camera'] .'</td>
-                                <td>'. $item['chip'] .'</td>
-                                <td>'. $item['battery'] .'</td>
+                                <td>'. $item['cate_name'] .'</td>
+                                <td>'. $item['brand_name'] .'</td>
                                 <td><a style="cursor: pointer" class="btn btn-sm btn-warning"><ion-icon name="brush-outline"></ion-icon></a><a style="cursor: pointer" class="mx-2 btn btn-sm text-light btn-danger"><ion-icon name="trash-outline"></ion-icon></a></td>
                               </tr>';
                       }
@@ -175,7 +171,7 @@
                                 <input type="text" name="product_image" class="form-control"
                                     placeholder="Enter Product Image URL">
                             </div>
-                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Product discount</label>
@@ -196,7 +192,7 @@
                                 <input type="text" name="product_Storage" class="form-control"
                                     placeholder="Enter Product Storage">
                             </div>
-                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Product camera</label>
@@ -216,12 +212,12 @@
                                 <label>Product Battery</label>
                                 <input type="text" name="product_Battery" class="form-control"
                                     placeholder="Enter Product Image URL">
+                            </div>
+                            <input type="hidden" name="add_product" value="1">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-primary add-product">Add Product</button>
+                            </div>
                         </div>
-                        <input type="hidden" name="add_product" value="1">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary add-product">Add Product</button>
-                        </div>
-                    </div>
 
                 </form>
             </div>
@@ -315,7 +311,7 @@
                     <img src="../product_images/1.0x0.jpg" class="img-fluid" width="50">
                 </div>
             </div>
-            
+
             <input type="hidden" name="pid">
             <input type="hidden" name="edit_product" value="1">
             <div class="col-12">

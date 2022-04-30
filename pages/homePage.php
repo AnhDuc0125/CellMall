@@ -46,8 +46,8 @@
         </div>
 
         <!-- Best Seller -->
-        <div class="product bestSeller">
-            <h1 class="product__title">Best Seller</h1>
+        <div class="category bestSeller">
+            <h1 class="category__title">Best Seller</h1>
             <div class="card__container">
                 <?php
                   foreach($bestSeller as $item) {
@@ -76,8 +76,8 @@
         </div>
 
         <!-- On sale -->
-        <div class="product onSale">
-            <h1 class="product__title">On Sale</h1>
+        <div class="category onSale">
+            <h1 class="category__title">On Sale</h1>
             <div class="card__container">
                 <?php
                   foreach($onSale as $item) {
@@ -106,8 +106,8 @@
         </div>
 
         <!-- Popular -->
-        <div class="product popular">
-            <h1 class="product__title">Popular</h1>
+        <div class="category popular">
+            <h1 class="category__title">Popular</h1>
             <div class="card__container">
                 <?php
                   foreach($popular as $item) {

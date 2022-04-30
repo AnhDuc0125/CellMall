@@ -1,10 +1,10 @@
-.product {
+.category {
   width: 100%;
   height: fit-content;
   margin-bottom: 15px;
 }
 
-.product * {
+.category * {
   color: black;
 }
 
@@ -18,14 +18,14 @@
   grid-row-gap: 15px;
 }
 
-.product__title {
+.category__title {
   margin-bottom: 5px;
   user-select: none;
   cursor: pointer;
   display: inline-block;
 }
 
-.product__title:hover {
+.category__title:hover {
   text-decoration: underline;
 }
 
