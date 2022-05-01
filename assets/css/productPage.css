@@ -1,44 +1,65 @@
 .product {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
 }
 
 .product__title {
+  margin: 15px 0;
 }
 
 .product__detail {
   width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .detail__left {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
+  padding: 15px;
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid #d7d5d5;
 }
 
 .detail__image {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.detail__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.product__middle {
+  width: 400px;
 }
 
 .product__right {
-  width: 50%;
-  margin-left: 50px;
+  width: 250px;
+  height: fit-content;
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid #d7d5d5;
+  overflow: hidden;
 }
 
-.product__right > * {
+.product__middle * {
   margin-bottom: 15px;
 }
 
-.product__price > h1 {
+.product__price h2 {
   color: red;
+  margin-bottom: 0;
+}
+
+.product__price {
+  margin-bottom: 5px;
 }
 
 .product__oldPrice {
@@ -46,24 +67,46 @@
   font-weight: normal;
 }
 
-.product__oldPrice > span {
+.product__oldPrice span {
   text-decoration: line-through;
 }
 
 .product__desc {
   padding: 10px;
-  background-color: #cccfd7;
+  background-color: #f4f4f4;
   border-radius: 5px;
+  padding-left: 25px;
+  font-size: 14px;
 }
 
-.product__desc > ul > li {
-  margin-bottom: 5px;
+.product__desc ul {
+  list-style-type: circle;
 }
 
-.product__desc > ul > li::before {
-  /* list-style-type: circle; */
-  content: "•";
-  margin-right: 10px;
+.product__desc ul li {
+  margin-bottom: 10px;
+}
+
+.product__right table {
+  width: 100%;
+}
+
+.product__right table caption {
+  padding: 7px;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+}
+
+.product__right table tr {
+  height: 50px;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.product__right table tr td {
+  vertical-align: top;
+}
+
+.icon__detail {
   font-size: 20px;
 }
 
@@ -71,9 +114,12 @@
   width: 100%;
   height: 50px;
   font-size: 20px;
-  color: var(--secondary-color);
-  background: none;
-  border: 2px solid var(--secondary-color);
+  /* color: var(--secondary-color); */
+  /* background: none; */
+  /* border: 2px solid var(--secondary-color); */
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
   outline: none;
   cursor: pointer;
   transition: 0.25s;
