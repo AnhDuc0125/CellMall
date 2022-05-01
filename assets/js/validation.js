@@ -50,13 +50,13 @@ function Validation(options) {
           message = actionSelector(inputElement.value);
           isError = true;
           if (message) {
+            messageElement.textContent = message;
+            inputElement.classList.add("error");
             isError = true;
             break;
           }
           isError = false;
         }
-        messageElement.textContent = message;
-        inputElement.classList.add("error");
 
         if (isError) {
           e.preventDefault();
