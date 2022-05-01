@@ -22,11 +22,11 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../assets/css/master.css">
-    <link rel="stylesheet" href="../assets/css/navbar.css">
-    <link rel="stylesheet" href="../assets/css/manu.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/searchPage.css">
-    <link rel="stylesheet" href="../assets/css/productCard.css">
+    <link rel="stylesheet" href="../assets/css/layouts/manu.css">
+    <link rel="stylesheet" href="../assets/css/layouts/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/layouts/footer.css" />
+    <link rel="stylesheet" href="../assets/css/layouts/productCard.css">
+    <link rel="stylesheet" href="../assets/css/pages/searchPage.css">
 </head>
 
 <body>
