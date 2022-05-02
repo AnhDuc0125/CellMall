@@ -1,7 +1,11 @@
-.product {
-  border-radius: 10px;
-  padding: 10px;
+#main {
   background-color: #fff;
+  padding: 10px;
+}
+
+.product {
+  padding-bottom: 25px;
+  border-bottom: 2px solid #d7d5d5;
 }
 
 .product__title {
@@ -128,4 +132,40 @@
 .product__addToCart_btn:hover {
   color: white;
   background-color: var(--secondary-color);
+}
+
+/* Compare table css */
+.compare {
+  width: 100%;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.compare__table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
+
+.heading {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 50px;
+}
+
+.compare__table tr {
+  text-align: left;
+}
+
+.compare__table tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.compare__table th,
+.compare__table td {
+  padding: 10px;
 }

@@ -6,6 +6,12 @@
       $key = getGet('key');
       $select = "select * from products where href_param = '$key'";
       $product = executeResult($select, true);
+
+      $otherBrandProductSQL = "SELECT * FROM products where brand_id != '". $product['brand_id'] ."' LIMIT 2";
+      $otherBrandProduct = executeResult($otherBrandProductSQL);
+
+      $sameBrandProductSQL = "SELECT * FROM products where brand_id = '". $product['brand_id'] ."' AND title NOT LIKE '". $product['title'] ."' LIMIT 5";
+      $sameBrandProduct = executeResult($sameBrandProductSQL);
   }
 ?>
 
@@ -82,10 +88,55 @@
                 </div>
             </div>
         </div>
+        <div class="compare">
+            <h1>Compare Products</h1>
+            <table class="compare__table">
+                <tr class="heading">
+                    <th>Products</th>
+                    <th>Storage</th>
+                    <th style="width: 300px">Camera</th>
+                    <th style="width: 150px">Chipset</th>
+                    <th>Battery</th>
+                    <th>Resolution</th>
+                </tr>
+                <?php
+                    echo '<tr>
+                            <th>'. $product['title'] .'</th>
+                            <td>'. $product['storage'] .' GB</td>
+                            <td>'. $product['camera'] .'</td>
+                            <td>'. $product['chip'] .'</td>
+                            <td>'. $product['battery'] .' mAh</td>
+                            <td>'. $product['resolution'] .'</td>
+                        </tr>';
+                  foreach($sameBrandProduct as $item) {
+                    echo '<tr>
+                            <th>'. $item['title'] .'</th>
+                            <td>'. $item['storage'] .' GB</td>
+                            <td>'. $item['camera'] .'</td>
+                            <td>'. $item['chip'] .'</td>
+                            <td>'. $item['battery'] .' mAh</td>
+                            <td>'. $item['resolution'] .'</td>
+                        </tr>';
+                  }
+
+                  foreach($otherBrandProduct as $item) {
+                    echo '<tr>
+                            <th>'. $item['title'] .'</th>
+                            <td>'. $item['storage'] .' GB</td>
+                            <td>'. $item['camera'] .'</td>
+                            <td>'. $item['chip'] .'</td>
+                            <td>'. $item['battery'] .' mAh</td>
+                            <td>'. $item['resolution'] .'</td>
+                        </tr>';
+                  }
+                ?>
+            </table>
+        </div>
     </div>
+
     <!-- Footer -->
     <?php
-    //   include_once('../layout/footer.php');
+      include_once('../layout/footer.php');
     ?>
 </body>
 
