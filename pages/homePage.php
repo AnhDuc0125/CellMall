@@ -59,7 +59,7 @@
                                 <div class="card__content">
                                     <h4 class="card__title">'. $item['title'] .'</h4>
                                     <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
+                                    <p class="card__oldPrice">'. number_format($item['old_price'] + 2000000) .' đ</p>
                                     <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
                                     <div class="card__star">'. rand('4', '5') .'<ion-icon name="star" class="star__icon"></ion-icon>
                                     </div>

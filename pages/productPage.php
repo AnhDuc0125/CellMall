@@ -52,7 +52,7 @@
                     </div>
 
                     <h3 class="product__oldPrice">
-                        Giá cũ: <span><?=number_format($product['old_price'])?> <u>đ</u></span>
+                        Giá cũ: <span><?=number_format($product['old_price'] + 2000000)?> <u>đ</u></span>
                     </h3>
                     <div class="product__desc">
                         <?=$product['description']?>

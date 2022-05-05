@@ -13,9 +13,10 @@
   height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 19%);
-  grid-template-rows: repeat(2, 325px);
+  /* grid-template-rows: repeat(2, 325px); */
   grid-column-gap: calc(5% / 4);
   grid-row-gap: 15px;
+  margin-bottom: 15px;
 }
 
 .category__title {
@@ -31,7 +32,7 @@
 
 .card {
   width: 100%;
-  height: fit-content;
+  height: 325px;
   background-color: #fff;
   padding: 10px;
   cursor: pointer;

@@ -1,5 +1,5 @@
 <?php
-  $getBrand = "select * from brands";
+  $getBrand = "select * from brands LIMIT 8";
   $brandList = executeResult($getBrand);
 ?>
 <div id="component">
@@ -12,7 +12,7 @@
                 <?php
                   foreach($brandList as $item) {
                       echo '<li class="manu__item">
-                                <a href="searchPage.php?key='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
+                                <a href="searchPage.php?brand='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
                             </li>';
                   }
                 ?>
