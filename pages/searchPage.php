@@ -9,7 +9,8 @@
         $searchByBrand = getGet('brand');
         $resultSql = "select products.*, brands.name from products, brands where products.brand_id = brands.id and brands.name = '$searchByBrand'";
         $resultByBrand = executeResult($resultSql);
-
+        $resultByName = null;
+        
         if(isset($_GET['key'])){
             $searchByName = getGet('key');
             $resultSql = "select * from products where title LIKE '%$searchByName%'";
@@ -174,25 +175,24 @@
                               </a>';
                     }
                 }
-
-                if($resultByName != null) {
-                    foreach($resultByName as $item) {
-                        echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
-                                  <div class="card__img">
-                                      <img src="'. $item['image'] .'"
-                                          alt="">
-                                  </div>
-                                  <div class="card__content">
-                                      <h4 class="card__title">'. $item['title'] .'</h4>
-                                      <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                      <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                      <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
-                                      <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                      </div>
-                                  </div>
-                              </a>';
+                if(isset($_GET['key'])){
+                        foreach($resultByName as $item) {
+                            echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                                    <div class="card__img">
+                                        <img src="'. $item['image'] .'"
+                                            alt="">
+                                    </div>
+                                    <div class="card__content">
+                                        <h4 class="card__title">'. $item['title'] .'</h4>
+                                        <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
+                                        <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
+                                        <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
+                                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                                        </div>
+                                    </div>
+                                </a>';
+                        }
                     }
-                }
                 ?>
             </div>
         </div>
