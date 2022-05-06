@@ -1,6 +1,6 @@
 #component {
   width: 65%;
-  height: 450px;
+  height: fit-content;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 18% 80%;
@@ -145,5 +145,23 @@
 @media screen and (max-width: 1499px) {
   #component {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #component {
+    display: block;
+  }
+
+  #gallery {
+    height: 250px;
+  }
+
+  #manu {
+    display: none;
+  }
+
+  #gallery__footer {
+    display: none;
   }
 }

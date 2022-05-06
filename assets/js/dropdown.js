@@ -1,16 +1,18 @@
-let dropElements = document.querySelectorAll("div.filter__item");
-let dropDownElements = document.querySelectorAll("div.filter__dropdown");
+let dropDownElements = document.querySelectorAll("div.filter__item");
 
-dropElements.forEach((item, index) => {
-  item.onclick = (e) => {
-    for (i = 0; i < dropDownElements.length; i++) {
-      if (i == index) {
-        continue;
+dropDownElements.forEach((item, index) => {
+  item.onclick = () => {
+    if (item.classList.contains("active")) {
+      item.classList.remove("active");
+      console.log(1);
+    } else {
+      item.classList.add("active");
+      for (i = 0; i < dropDownElements.length; i++) {
+        if (i == index) {
+          continue;
+        }
+        dropDownElements[i].classList.remove("active");
       }
-      dropDownElements[i].classList.remove("active");
     }
-
-    let dropdown = item.querySelector(".filter__dropdown");
-    dropdown.classList.toggle("active");
   };
 });

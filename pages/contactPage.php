@@ -50,7 +50,7 @@
             <div class="contact__right">
                 <div class="contact__form">
                     <h1 class="contact__title">
-                        <center>CONTACT TO US</center>
+                        <center>FEEDBACK</center>
                     </h1>
                     <form method="post" id="contact">
                         <div class="form__main">
@@ -74,7 +74,7 @@
                                 <span class="message"></span>
                             </div>
                             <div class="form__item block">
-                                <textarea placeholder=" " name="message" id="message" cols="30" rows="10"></textarea>
+                                <textarea placeholder=" " name="message" id="message"></textarea>
                                 <label class="form__label">Message</label>
                                 <ion-icon name="chatbox-outline" class="form__symbol"></ion-icon>
                                 <span class="message"></span>

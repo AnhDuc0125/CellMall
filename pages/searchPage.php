@@ -29,7 +29,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../assets/css/master.css">
-    <link rel="stylesheet" href="../assets/css/layouts/manu.css">
+    <link rel="stylesheet" href="../assets/css/layouts/brands.css">
     <link rel="stylesheet" href="../assets/css/layouts/navbar.css" />
     <link rel="stylesheet" href="../assets/css/layouts/footer.css" />
     <link rel="stylesheet" href="../assets/css/layouts/productCard.css">
@@ -40,7 +40,7 @@
     <!-- Navbar and Component -->
     <?php
       include_once('../layout/navbar.php');
-      include_once('../layout/manu.php');
+      include_once('../layout/brands.php');
     ?>
 
     <div id="main">
@@ -54,18 +54,17 @@
             <div class="filter">
                 <h2 class="filter__title">Filter</h2>
                 <div class="filter__content">
-                    <a href="&12" class="filter__item onSale">
-                        <div class="onSale__content">On Sale</div>
-                    </a>
-                    <a href="#" class="filter__item popular">
-                        <div class="popular__content">Popular</div>
-                    </a>
-                    <a href="#" class="filter__item bestSeller">
-                        <div class="bestSeller__content">Best Seller</div>
-                    </a>
-                    <a href="#" class="filter__item available">
-                        <div class="available__content">Available</div>
-                    </a>
+                    <div class="filter__item onSale">
+                        <a href="#" class="filter__content filter__btn bestSeller__content">On Sale</a>
+
+                    </div>
+                    <div class="filter__item popular">
+                        <a href="#" class="filter__content filter__btn bestSeller__content">Popular</a>
+
+                    </div>
+                    <div class="filter__item bestSeller">
+                        <a href="#" class="filter__content filter__btn bestSeller__content">Best Seller</a>
+                    </div>
                     <div class="filter__item" id="price">
                         <div class="filter__btn">
                             <div class="filter__content">Price</div>
@@ -75,11 +74,16 @@
                         </div>
                         <div class="filter__dropdown">
                             <ul class="dropdown__list">
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">1 - 3 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">3 - 6 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">6 - 9 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">9 - 12 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">Trên 12 triệu</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">1 -
+                                        3 triệu</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">3 -
+                                        6 triệu</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">6 -
+                                        9 triệu</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">9 -
+                                        12 triệu</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">Trên
+                                        12 triệu</a></li>
                             </ul>
                         </div>
                     </div>
@@ -92,9 +96,12 @@
                         </div>
                         <div class="filter__dropdown">
                             <ul class="dropdown__list">
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">Dưới 4 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">4 - 6 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">6 - 8 GB</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">Dưới 4
+                                        GB</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">4 -
+                                        6 GB</a></li>
+                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">6 -
+                                        8 GB</a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,11 +114,16 @@
                         </div>
                         <div class="filter__dropdown">
                             <ul class="dropdown__list">
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">Dưới 64 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">64 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">128 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">256 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="dropdown__link">512 GB</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">Dưới
+                                        64 GB</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">64
+                                        GB</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">128
+                                        GB</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">256
+                                        GB</a></li>
+                                <li class="dropdown__item"><a class="dropdown__link">512
+                                        GB</a></li>
                             </ul>
                         </div>
                     </div>
@@ -204,5 +216,6 @@
     ?>
 </body>
 <script src="../assets/js/dropdown.js"></script>
+<script src="../assets/js/urlProcess.js"></script>
 
 </html>

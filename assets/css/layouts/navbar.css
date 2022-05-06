@@ -134,11 +134,25 @@
     display: none;
   }
 
+  .underline {
+    display: none;
+  }
+
   .about,
   .contact,
   .cart,
   .member {
     display: block;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .search {
+    width: 65%;
+  }
+
+  .another {
+    display: none;
   }
 }

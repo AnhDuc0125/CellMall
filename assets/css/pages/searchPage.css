@@ -31,7 +31,17 @@
 }
 
 a.sort__item,
-a.filter__item,
+a.filter__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
 .filter__btn {
   display: flex;
   justify-content: space-between;
@@ -41,6 +51,9 @@ a.filter__item,
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
 
 .down__icon {
@@ -64,7 +77,7 @@ div.filter__item {
   z-index: 99;
 }
 
-.filter__dropdown.active {
+.filter__item.active .filter__dropdown {
   display: block;
 }
 
@@ -76,13 +89,17 @@ div.filter__item {
 }
 
 .dropdown__item {
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 15px 0;
 }
 
 a.dropdown__link {
-  padding: 5px 10px;
+  padding: 10px 10px;
   background-color: #f3f4f6;
   border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .sort__item {

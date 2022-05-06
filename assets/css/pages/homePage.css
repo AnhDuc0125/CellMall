@@ -1,0 +1,9 @@
+#brand {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  #brand {
+    display: block;
+  }
+}

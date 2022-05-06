@@ -27,7 +27,9 @@
     <link rel="stylesheet" href="../assets/css/layouts/navbar.css" />
     <link rel="stylesheet" href="../assets/css/layouts/footer.css" />
     <link rel="stylesheet" href="../assets/css/layouts/component.css" />
+    <link rel="stylesheet" href="../assets/css/pages/homePage.css" />
     <link rel="stylesheet" href="../assets/css/layouts/productCard.css" />
+    <link rel="stylesheet" href="../assets/css/layouts/brands.css" />
 </head>
 
 <body>
@@ -35,6 +37,7 @@
     <?php
       include_once('../layout/navbar.php');
       include_once('../layout/component.php');
+      include_once('../layout/brands.php');
     ?>
 
     <!-- Main -->

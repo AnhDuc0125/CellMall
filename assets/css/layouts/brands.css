@@ -1,4 +1,4 @@
-#manu {
+#brand {
   width: 65%;
   margin: 0 auto;
   margin-bottom: 15px;
@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-.manu__items {
+.brand__items {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -15,7 +15,7 @@
   list-style-type: none;
 }
 
-.manu__item {
+.brand__item {
   width: fit-content;
   padding: 10px 0;
   background-color: #f3f4f6;
@@ -24,24 +24,24 @@
   transition: 0.25s;
 }
 
-.manu__item:hover {
+.brand__item:hover {
   transform: translateY(-5px);
 }
 
-.manu__item a {
+.brand__item a {
   padding: 10px 20px;
   text-decoration: none;
   color: black;
 }
 
 @media screen and (max-width: 1599px) {
-  #manu {
+  #brand {
     width: 70%;
   }
 }
 
 @media screen and (max-width: 1499px) {
-  #manu {
+  #brand {
     width: 80%;
   }
 }

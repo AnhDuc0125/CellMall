@@ -21,7 +21,7 @@
     ?>
 
     <div id="main">
-        <center>
+        <center style="user-select: none">
             <h1>MEET OUR TEAM</h1>
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
         </center>
@@ -79,7 +79,7 @@
             <div class="profile">
                 <div class="profile__inner">
                     <div class="profile__img">
-                        <img src="https://images.unsplash.com/photo-1650773403327-e3e46922c19b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80"
+                        <img src="https://images.unsplash.com/photo-1651774034646-a354463bf516?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                             alt="">
                     </div>
                     <div class="profile__footer">
@@ -104,7 +104,7 @@
             <div class="profile">
                 <div class="profile__inner">
                     <div class="profile__img">
-                        <img src="https://images.unsplash.com/photo-1650773403327-e3e46922c19b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80"
+                        <img src="https://images.unsplash.com/photo-1651763087839-4221cf6e30a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                             alt="">
                     </div>
                     <div class="profile__footer">

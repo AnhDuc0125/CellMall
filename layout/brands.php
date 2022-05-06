@@ -1,9 +1,9 @@
-<div id="manu">
-    <div class="manu">
-        <ul class="manu__items">
+<div id="brand">
+    <div class="brand">
+        <ul class="brand__items">
             <?php
                   foreach($brandList as $item) {
-                      echo '<li class="manu__item">
+                      echo '<li class="brand__item">
                                 <a href="searchPage.php?brand='. $item['name'] .'" class="item__link">'. $item['name'] .'</a>
                             </li>';
                   }
