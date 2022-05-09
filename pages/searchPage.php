@@ -6,14 +6,22 @@
   $brandList = executeResult($getBrand);
 
     if(!empty($_GET)){
-        $searchByBrand = getGet('brand');
-        $resultSql = "select products.*, brands.name from products, brands where products.brand_id = brands.id and brands.name = '$searchByBrand'";
-        $resultByBrand = executeResult($resultSql);
-        $resultByName = null;
+        if(isset($_GET['brand'])){
+            $searchByBrand = getGet('brand');
+            $resultSql = "SELECT products.*, brands.name FROM products, brands WHERE products.brand_id = brands.id AND brands.name = '$searchByBrand'";
+            $result = executeResult($resultSql);
+            $resultByName = null;
+
+            if(isset($_GET['filter'])){
+                $searchByFilter = getGet('filter');
+                $filterSql = "SELECT products.*, categories.name, brands.name FROM products, categories, brands WHERE products.cate_id = categories.id AND categories.name = '$searchByFilter' AND products.brand_id = brands.id AND brands.name = '$searchByBrand'";
+                $result = executeResult($filterSql);
+            }
+        }
         
         if(isset($_GET['key'])){
             $searchByName = getGet('key');
-            $resultSql = "select * from products where title LIKE '%$searchByName%'";
+            $resultSql = "SELECT * FROM products WHERE title LIKE '%$searchByName%'";
             $resultByName = executeResult($resultSql);
         }
     }
@@ -55,77 +63,16 @@
                 <h2 class="filter__title">Filter</h2>
                 <div class="filter__content">
                     <div class="filter__item onSale">
-                        <a href="#" class="filter__content filter__btn bestSeller__content">On Sale</a>
-
+                        <a class="filter__content filter__btn bestSeller__content" onclick="addFilter('on sale')">On
+                            Sale</a>
                     </div>
                     <div class="filter__item popular">
-                        <a href="#" class="filter__content filter__btn bestSeller__content">Popular</a>
-
+                        <a class="filter__content filter__btn bestSeller__content"
+                            onclick="addFilter('popular')">Popular</a>
                     </div>
                     <div class="filter__item bestSeller">
-                        <a href="#" class="filter__content filter__btn bestSeller__content">Best Seller</a>
-                    </div>
-                    <div class="filter__item" id="price">
-                        <div class="filter__btn">
-                            <div class="filter__content">Price</div>
-                            <div class="down__icon">
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                        </div>
-                        <div class="filter__dropdown">
-                            <ul class="dropdown__list">
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">1 -
-                                        3 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">3 -
-                                        6 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">6 -
-                                        9 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">9 -
-                                        12 triệu</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">Trên
-                                        12 triệu</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="filter__item" id="RAM">
-                        <div class="filter__btn">
-                            <div class="filter__content">RAM</div>
-                            <div class="down__icon">
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                        </div>
-                        <div class="filter__dropdown">
-                            <ul class="dropdown__list">
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">Dưới 4
-                                        GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">4 -
-                                        6 GB</a></li>
-                                <li class="dropdown__item"><a href="#" class="filter__content dropdown__link">6 -
-                                        8 GB</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="filter__item" id="storage">
-                        <div class="filter__btn">
-                            <div class="filter__content">Storage</div>
-                            <div class="down__icon">
-                                <ion-icon name="chevron-down-outline"></ion-icon>
-                            </div>
-                        </div>
-                        <div class="filter__dropdown">
-                            <ul class="dropdown__list">
-                                <li class="dropdown__item"><a class="dropdown__link">Dưới
-                                        64 GB</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">64
-                                        GB</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">128
-                                        GB</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">256
-                                        GB</a></li>
-                                <li class="dropdown__item"><a class="dropdown__link">512
-                                        GB</a></li>
-                            </ul>
-                        </div>
+                        <a class="filter__content filter__btn bestSeller__content"
+                            onclick="addFilter('best seller')">Best Seller</a>
                     </div>
                 </div>
             </div>
@@ -162,15 +109,15 @@
         <div class="product result">
             <h1 class="product__title"><?=$searchByBrand?>
                 <?php  
-                if($resultByBrand == null && $resultByName == null) {
+                if($result == null && $resultByName == null) {
                     echo "<h1>Oops! Sorry, we don't have that products :(</h1>";
                 }
             ?>
             </h1>
             <div class="card__container">
                 <?php
-                if($resultByBrand != null) {
-                    foreach($resultByBrand as $item) {
+                if($result != null) {
+                    foreach($result as $item) {
                         echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
                                   <div class="card__img">
                                       <img src="'. $item['image'] .'"

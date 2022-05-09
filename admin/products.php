@@ -124,7 +124,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <div class="form-group">
                                 <label>Category Name</label>
                                 <select class="form-control category_list" name="category_id">
@@ -206,7 +206,7 @@
                                 <input type="text" name="product_chip" class="form-control"
                                     placeholder="Enter Product Chip">
                             </div>
-                        </div>
+                        </div>-->
                         <div class="col-12">
                             <div class="form-group">
                                 <label>Product Battery</label>
