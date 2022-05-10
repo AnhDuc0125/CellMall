@@ -21,10 +21,21 @@
     ?>
 
     <div id="main">
-        <center style="user-select: none">
-            <h1>MEET OUR TEAM</h1>
+        <!-- <center style="user-select: none">
+            <h1>ABOUT US</h1>
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
-        </center>
+        </center> -->
+        <div class="about__box">
+            <div class="about__img">
+                <img src="../assets/photos/store.png" alt="">
+            </div>
+            <div class="about__logo">
+                <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
+            </div>
+            <div class="about__content">
+
+            </div>
+        </div>
         <div class="profile__container">
             <div class="profile">
                 <div class="profile__inner">
