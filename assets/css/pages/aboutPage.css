@@ -2,10 +2,59 @@
   width: 85%;
 }
 
+/* About Box CSS */
+.about__box {
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: grid;
+}
+
+.about__box.general,
+.about__box.vision {
+  grid-template-columns: 50% 45%;
+  grid-column-gap: 5%;
+}
+
+.about__box.target {
+  grid-template-columns: 45% 50%;
+  grid-column-gap: 5%;
+}
+
+.about__img {
+  width: 100%;
+}
+
+.about__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.about__content {
+  line-height: 30px;
+  margin-top: 15px;
+}
+
+.about__content h1 {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: var(--secondary-color) 2px solid;
+}
+
+.about__list {
+  list-style-type: circle;
+}
+
+/* Member Cards CSS */
 .profile__container {
   width: 100%;
   height: fit-content;
-  margin: 25px auto 0;
+  margin: 25px auto;
   display: grid;
   grid-template-columns: repeat(4, 23%);
   grid-column-gap: calc(8% / 3);
