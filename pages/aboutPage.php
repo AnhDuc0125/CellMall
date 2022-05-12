@@ -21,6 +21,7 @@
     ?>
 
     <div id="main">
+<<<<<<< HEAD
         <!-- <center style="user-select: none">
             <h1>ABOUT US</h1>
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
@@ -36,6 +37,94 @@
 
             </div>
         </div>
+=======
+        <center style="user-select: none; margin-bottom: 25px">
+            <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
+        </center>
+        <div class="about__box general">
+            <div class="about__img">
+                <img src="../assets/photos/store.png" alt="">
+            </div>
+            <div class="about__content">
+                <h1>General infomation</h1>
+                <table class="about__table">
+                    <p>
+                        CellMall is a genuine authorized retail system of Apple Vietnam!</p>
+                    <tr>
+                        <td>
+                            <ul class="about__list">
+                                <li>Enthusiastic, friendly staff, free parking & Wifi</li>
+                                <li>Experience it firsthand, and try the product for free</li>
+                                <li>Selling price, promotion is always the best in the market</li>
+                                <li>Business sales service: best price - with commission</li>
+                                <li>Genuine warranty, 1 month free replacement</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="about__box target">
+            <div class="about__content">
+                <h1>Target</h1>
+                <p>
+                    CellMall always operates on the principle of putting the customer as the center, every effort to
+                    achieve the highest goal is to satisfy users through the products provided and customer service.
+                    Hoang
+                    Ha Mobile is gradually building outstanding customer service, worthy of being the leading retailer
+                    in
+                    Vietnam. The trust and enthusiastic support of customers at the branch chain has partly confirmed
+                    the
+                    operational efficiency of CellMall's staff.
+                </p>
+                <p>
+                    For our customers, we always put the heart as the root, working with a serious, honest and
+                    responsible
+                    spirit, to bring the best service experience.
+                </p>
+                <p>
+                    For colleagues, we promote a culture of learning, solidarity and mutual assistance to create a
+                    respectful - fair - civilized working environment for employees in the company.
+                </p>
+                <p>
+                    For partners, CellMall always works on the principle of respect, creating value for the community
+                    and developing together sustainably.
+                </p>
+            </div>
+            <div class="about__img">
+                <img src="../assets/photos/target.jpg" alt="">
+            </div>
+        </div>
+        <div class="about__box vision">
+            <div class="about__img">
+                <img src="../assets/photos/vision.jpg" alt="">
+            </div>
+            <div class="about__content">
+                <h1>Vision</h1>
+                <p>
+                    Over the years, we have constantly improved our services at branches and supported customers through
+                    online channels. Hoang Ha Mobile is committed to bringing quality products and prestigious warranty,
+                    ready to support customers in the fastest time.
+                </p>
+                <p>
+                    In the future, Hoang Ha Mobile will continue to expand its branch system, aiming to be present in 63
+                    provinces and cities nationwide. At the same time, improve service quality, limit risks, listen and
+                    absorb customers' suggestions to bring the best experience when shopping at Hoang Ha Mobile.
+                </p>
+                <p>
+                    Finally, Hoang Ha Mobile hopes to become a pioneer in bringing the latest technology products to
+                    users
+                    as soon as possible, creating a modern life where technology connects people, technology serves
+                    people.
+                </p>
+            </div>
+        </div>
+        <center style="user-select: none; margin: 25px 0">
+            <h1>MEET US</h1>
+            <h3>Members of project</h3>
+        </center>
+>>>>>>> 7a6adc6156bfb2dd6009cba1bc731b5b2d3462e3
         <div class="profile__container">
             <div class="profile">
                 <div class="profile__inner">
@@ -139,7 +228,10 @@
             </div>
         </div>
     </div>
-
+    <!-- Footer -->
+    <?php
+      include_once('../layout/footer.php');
+    ?>
 </body>
 
 </html>
