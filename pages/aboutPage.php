@@ -21,23 +21,6 @@
     ?>
 
     <div id="main">
-<<<<<<< HEAD
-        <!-- <center style="user-select: none">
-            <h1>ABOUT US</h1>
-            <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
-        </center> -->
-        <div class="about__box">
-            <div class="about__img">
-                <img src="../assets/photos/store.png" alt="">
-            </div>
-            <div class="about__logo">
-                <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
-            </div>
-            <div class="about__content">
-
-            </div>
-        </div>
-=======
         <center style="user-select: none; margin-bottom: 25px">
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
         </center>
@@ -124,7 +107,6 @@
             <h1>MEET US</h1>
             <h3>Members of project</h3>
         </center>
->>>>>>> 7a6adc6156bfb2dd6009cba1bc731b5b2d3462e3
         <div class="profile__container">
             <div class="profile">
                 <div class="profile__inner">
