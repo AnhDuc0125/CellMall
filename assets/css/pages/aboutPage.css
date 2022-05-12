@@ -2,6 +2,10 @@
   width: 85%;
 }
 
+p.indent {
+  text-indent: 50px;
+}
+
 /* About Box CSS */
 .about__box {
   width: 100%;
@@ -48,6 +52,10 @@
 
 .about__list {
   list-style-type: circle;
+}
+
+.about__list li {
+  margin-left: 25px;
 }
 
 /* Member Cards CSS */

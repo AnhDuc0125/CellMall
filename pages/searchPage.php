@@ -4,7 +4,7 @@
 
   $getBrand = "select * from brands";
   $brandList = executeResult($getBrand);
-
+  $result = null;
     if(!empty($_GET)){
         if(isset($_GET['brand'])){
             $searchByBrand = getGet('brand');
@@ -12,10 +12,20 @@
             $result = executeResult($resultSql);
             $resultByName = null;
 
+            if(isset($_GET['cate'])){
+                $searchByCate = getGet('cate');
+                $cateSql = "SELECT products.*, categories.name, brands.name FROM products, categories, brands WHERE products.cate_id = categories.id AND categories.name = '$searchByCate' AND products.brand_id = brands.id AND brands.name = '$searchByBrand'";
+                $result = executeResult($cateSql);
+            }
+
             if(isset($_GET['filter'])){
-                $searchByFilter = getGet('filter');
-                $filterSql = "SELECT products.*, categories.name, brands.name FROM products, categories, brands WHERE products.cate_id = categories.id AND categories.name = '$searchByFilter' AND products.brand_id = brands.id AND brands.name = '$searchByBrand'";
-                $result = executeResult($filterSql);
+                if(isset($_GET['cate'])) {
+                    $resultSql = "SELECT products.*, categories.name, brands.name FROM products, categories, brands WHERE products.cate_id = categories.id AND categories.name = '$searchByCate' AND products.brand_id = brands.id AND brands.name = '$searchByBrand' ORDER BY products.price ".$_GET['filter'];
+                    $result = executeResult($resultSql);
+                } else {
+                    $resultSql = "SELECT products.*, brands.name FROM products, brands WHERE products.brand_id = brands.id AND brands.name = '$searchByBrand' ORDER BY products.price ". $_GET['filter'] ."";
+                    $result = executeResult($resultSql);
+                }
             }
         }
         
@@ -24,6 +34,7 @@
             $resultSql = "SELECT * FROM products WHERE title LIKE '%$searchByName%'";
             $resultByName = executeResult($resultSql);
         }
+
     }
 ?>
 <!DOCTYPE html>
@@ -58,56 +69,52 @@
             <img src="../assets/photos/banner3.png">
         </div>
 
+        <p class="headerSearch">Your search:
+            <span><?=$_GET['brand']?></span>
+        </p>
+
         <div id="options">
-            <div class="filter">
-                <h2 class="filter__title">Filter</h2>
-                <div class="filter__content">
-                    <div class="filter__item onSale">
-                        <a class="filter__content filter__btn bestSeller__content" onclick="addFilter('on sale')">On
+            <div class="cate">
+                <h3 class="cate__title">Category</h3>
+                <div class="cate__content">
+                    <div class="cate__item onSale">
+                        <a class="cate__content cate__btn bestSeller__content" id="onSale"
+                            onclick="addCategory('on Sale')">On
                             Sale</a>
                     </div>
-                    <div class="filter__item popular">
-                        <a class="filter__content filter__btn bestSeller__content"
-                            onclick="addFilter('popular')">Popular</a>
+                    <div class="cate__item popular">
+                        <a class="cate__content cate__btn bestSeller__content" id="popular"
+                            onclick="addCategory('popular')">Popular</a>
                     </div>
-                    <div class="filter__item bestSeller">
-                        <a class="filter__content filter__btn bestSeller__content"
-                            onclick="addFilter('best seller')">Best Seller</a>
+                    <div class="cate__item bestSeller">
+                        <a class="cate__content cate__btn bestSeller__content" id="bestSeller"
+                            onclick="addCategory('best Seller')">Best
+                            Seller</a>
                     </div>
+                    <p class="remove__btn" onclick="removeParam('cate')">Remove Category</p>
                 </div>
             </div>
-            <div class="sort">
-                <h2 class="sort__title">Sort by</h2>
-                <div class="sort__content">
-                    <a href="#" class="sort__item">
-                        <div class="sort__icon">
+            <div class="filter">
+                <h3 class="filter__title">Filter</h3>
+                <div class="filter__content">
+                    <a href="#" class="filter__item" id="ASC" onclick="addFilter('ASC')">
+                        <div class="filter__icon">
                             <ion-icon name="trending-up-outline"></ion-icon>
                         </div>
-                        <div class="sort__content">Price low to high</div>
+                        <div class="filter__content">Price low to high</div>
                     </a>
-                    <a href="#" class="sort__item">
-                        <div class="sort__icon">
+                    <a href="#" class="filter__item" id="DESC" onclick="addFilter('DESC')">
+                        <div class="filter__icon">
                             <ion-icon name="trending-down-outline"></ion-icon>
                         </div>
-                        <div class="sort__content">Price high to low</div>
+                        <div class="filter__content">Price high to low</div>
                     </a>
-                    <a href="#" class="sort__item">
-                        <div class="sort__icon">
-                            <ion-icon name="flame-outline"></ion-icon>
-                        </div>
-                        <div class="sort__content">On sale</div>
-                    </a>
-                    <a href="#" class="sort__item">
-                        <div class="sort__icon">
-                            <ion-icon name="trophy-outline"></ion-icon>
-                        </div>
-                        <div class="sort__content">Best Seller</div>
-                    </a>
+                    <p class="remove__btn" onclick="removeParam('filter')">Remove Filter</p>
                 </div>
             </div>
         </div>
         <div class="product result">
-            <h1 class="product__title"><?=$searchByBrand?>
+            <h1 class="product__title">
                 <?php  
                 if($result == null && $resultByName == null) {
                     echo "<h1>Oops! Sorry, we don't have that products :(</h1>";

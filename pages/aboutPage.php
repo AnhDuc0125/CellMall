@@ -31,8 +31,8 @@
             <div class="about__content">
                 <h1>General infomation</h1>
                 <table class="about__table">
-                    <p>
-                        CellMall is a genuine authorized retail system of Apple Vietnam!</p>
+                    <h4>
+                        CellMall is a genuine authorized retail system of Apple Vietnam!</h4>
                     <tr>
                         <td>
                             <ul class="about__list">
@@ -51,7 +51,7 @@
         <div class="about__box target">
             <div class="about__content">
                 <h1>Target</h1>
-                <p>
+                <p class="indent">
                     CellMall always operates on the principle of putting the customer as the center, every effort to
                     achieve the highest goal is to satisfy users through the products provided and customer service.
                     Hoang
@@ -61,16 +61,16 @@
                     the
                     operational efficiency of CellMall's staff.
                 </p>
-                <p>
+                <p class="indent">
                     For our customers, we always put the heart as the root, working with a serious, honest and
                     responsible
                     spirit, to bring the best service experience.
                 </p>
-                <p>
+                <p class="indent">
                     For colleagues, we promote a culture of learning, solidarity and mutual assistance to create a
                     respectful - fair - civilized working environment for employees in the company.
                 </p>
-                <p>
+                <p class="indent">
                     For partners, CellMall always works on the principle of respect, creating value for the community
                     and developing together sustainably.
                 </p>
@@ -85,17 +85,17 @@
             </div>
             <div class="about__content">
                 <h1>Vision</h1>
-                <p>
+                <p class="indent">
                     Over the years, we have constantly improved our services at branches and supported customers through
                     online channels. Hoang Ha Mobile is committed to bringing quality products and prestigious warranty,
                     ready to support customers in the fastest time.
                 </p>
-                <p>
+                <p class="indent">
                     In the future, Hoang Ha Mobile will continue to expand its branch system, aiming to be present in 63
                     provinces and cities nationwide. At the same time, improve service quality, limit risks, listen and
                     absorb customers' suggestions to bring the best experience when shopping at Hoang Ha Mobile.
                 </p>
-                <p>
+                <p class="indent">
                     Finally, Hoang Ha Mobile hopes to become a pioneer in bringing the latest technology products to
                     users
                     as soon as possible, creating a modern life where technology connects people, technology serves
@@ -116,9 +116,10 @@
                     </div>
                     <div class="profile__footer">
                         <h3 class="profile__name">Vũ Đức Anh</h3>
-                        <p class="profile__locate">Leader</p>
-                        <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
-                            quam ab doloribus sint temporibus tempora.</p>
+                        <center class="profile__locate">Leader</center>
+                        <span class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa
+                            quod
+                            quam ab doloribus sint temporibus tempora.</span>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
@@ -141,9 +142,10 @@
                     </div>
                     <div class="profile__footer">
                         <h3 class="profile__name">Nguyễn Phan Anh</h3>
-                        <p class="profile__locate">Developer</p>
-                        <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
-                            quam ab doloribus sint temporibus tempora.</p>
+                        <center class="profile__locate">Developer</center>
+                        <span class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa
+                            quod
+                            quam ab doloribus sint temporibus tempora.</span>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
@@ -166,9 +168,10 @@
                     </div>
                     <div class="profile__footer">
                         <h3 class="profile__name">Phan Trọng Dương</h3>
-                        <p class="profile__locate">Developer</p>
-                        <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
-                            quam ab doloribus sint temporibus tempora.</p>
+                        <center class="profile__locate">Developer</center>
+                        <span class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa
+                            quod
+                            quam ab doloribus sint temporibus tempora.</span>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
@@ -191,9 +194,10 @@
                     </div>
                     <div class="profile__footer">
                         <h3 class="profile__name">Nguyễn Tấn Dũng</h3>
-                        <p class="profile__locate">Developer</p>
-                        <p class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa quod
-                            quam ab doloribus sint temporibus tempora.</p>
+                        <center class="profile__locate">Developer</center>
+                        <span class="profile_detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsa
+                            quod
+                            quam ab doloribus sint temporibus tempora.</span>
                         <div class="profile__social">
                             <div class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
@@ -210,6 +214,7 @@
             </div>
         </div>
     </div>
+
     <!-- Footer -->
     <?php
       include_once('../layout/footer.php');
