@@ -152,3 +152,47 @@ p.indent {
   color: var(--secondary-color);
   font-size: 30px;
 }
+
+.feedback__box {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-column-gap: 0.5%;
+  grid-row-gap: 10px;
+}
+
+.feedback__card {
+  height: fit-content;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  line-height: 25px;
+  box-shadow: var(--shadow-box);
+}
+
+.feedback__body {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d7d5d5;
+}
+
+.feedback__title {
+}
+
+.feedback__feeling {
+  color: orange;
+}
+
+.feedback__desc {
+}
+
+.feedback__footer {
+  padding-top: 10px;
+}
+
+.feedback__date {
+}
+
+.feedback__name {
+}
+
+.feedback__email {
+}

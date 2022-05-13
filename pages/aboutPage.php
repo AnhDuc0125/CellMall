@@ -220,7 +220,73 @@
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">Feedback</span>
         </center>
         <div class="feedback__box">
-
+            <div class="feedback__card">
+                <div class="feedback__body">
+                    <h3 class="feedback__title">Amazing!!!</h3>
+                    <div class="feedback__feeling">Happy</div>
+                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
+                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
+                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
+                </div>
+                <div class="feedback__footer">
+                    <div class="feedback__date">Date: 13/05/2022</div>
+                    <b class="feedback__name">Doctor Strange</b>
+                    <p class="feedback__email">@lalungemhoi</p>
+                </div>
+            </div>
+            <div class="feedback__card">
+                <div class="feedback__body">
+                    <h3 class="feedback__title">Amazing!!!</h3>
+                    <div class="feedback__feeling">Happy</div>
+                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur!!</p>
+                </div>
+                <div class="feedback__footer">
+                    <div class="feedback__date">Date: 13/05/2022</div>
+                    <b class="feedback__name">Doctor Strange</b>
+                    <p class="feedback__email">@lalungemhoi</p>
+                </div>
+            </div>
+            <div class="feedback__card">
+                <div class="feedback__body">
+                    <h3 class="feedback__title">Amazing!!!</h3>
+                    <div class="feedback__feeling">Happy</div>
+                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
+                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
+                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
+                </div>
+                <div class="feedback__footer">
+                    <div class="feedback__date">Date: 13/05/2022</div>
+                    <b class="feedback__name">Doctor Strange</b>
+                    <p class="feedback__email">@lalungemhoi</p>
+                </div>
+            </div>
+            <div class="feedback__card">
+                <div class="feedback__body">
+                    <h3 class="feedback__title">Amazing!!!</h3>
+                    <div class="feedback__feeling">Happy</div>
+                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
+                        illum dignissimos repudiandae culpa magnam at nihil, voluptate?</p>
+                </div>
+                <div class="feedback__footer">
+                    <div class="feedback__date">Date: 13/05/2022</div>
+                    <b class="feedback__name">Doctor Strange</b>
+                    <p class="feedback__email">@lalungemhoi</p>
+                </div>
+            </div>
+            <div class="feedback__card">
+                <div class="feedback__body">
+                    <h3 class="feedback__title">Amazing!!!</h3>
+                    <div class="feedback__feeling">Happy</div>
+                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
+                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
+                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
+                </div>
+                <div class="feedback__footer">
+                    <div class="feedback__date">Date: 13/05/2022</div>
+                    <b class="feedback__name">Doctor Strange</b>
+                    <p class="feedback__email">@lalungemhoi</p>
+                </div>
+            </div>
         </div>
     </div>
 
