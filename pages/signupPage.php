@@ -15,7 +15,7 @@
       $signup = "insert into users (fullname, username, address, email, phone, password) values ('$fullname', '$username', '$address', '$email', '$phone', '$password')";
       execute($signup);
 
-      header("Location: home.php");
+      header("Location: homePage.php");
   }
 ?>
 

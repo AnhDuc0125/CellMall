@@ -15,15 +15,8 @@
       $user = executeResult($login, true);
 
       if(!empty($user)) {
-          if($email == "admin123@gmail.com" && $password == decodeValue("admin123")) {
-              header("Location: ../admin/products.php");
-              die();
-          }
-      } 
-
-      if(!empty($user)) {
         $_SESSION['currentUser'] = $user;
-        header("Location: home.php");
+        header("Location: homePage.php");
       }
   }
 ?>
@@ -78,7 +71,7 @@
                     </div>
                     <div class="form__item block checkbox">
                         <input type="checkbox" class="form__checkbox" id="checkbox" name="rememberLogin" value="yes">
-                        <label>Remember Me</label>
+                        <label>Show password</label>
                     </div>
                 </div>
                 <div class="box__footer">
@@ -96,9 +89,19 @@ Validation({
     'rules': [
         isRequired('#email'),
         isRequired('#password'),
-        isEmail('#email')
+        isEmail('#email'),
     ]
 });
+
+let checkBox = document.querySelector('#checkbox');
+let pwField = document.querySelector('input[type=password]');
+checkBox.onclick = () => {
+    if (checkBox.checked == true) {
+        pwField.type = "text";
+    } else {
+        pwField.type = "password";
+    }
+}
 </script>
 
 </html>

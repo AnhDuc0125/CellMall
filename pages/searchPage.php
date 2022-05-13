@@ -70,7 +70,15 @@
         </div>
 
         <p class="headerSearch">Your search:
-            <span><?=$_GET['brand']?></span>
+            <span>
+                <?php 
+                    if(!empty($_GET['brand'])){
+                        echo $_GET['brand'];
+                    } else {
+                        echo $_GET['key'];
+                    }
+                ?>
+            </span>
         </p>
 
         <div id="options">

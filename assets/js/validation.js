@@ -39,7 +39,6 @@ function Validation(options) {
 
     //submit
     formElement.onsubmit = (e) => {
-      console.log(isError);
       rules.forEach((rule) => {
         let inputElement = formElement.querySelector(rule.selector);
         let messageElement =

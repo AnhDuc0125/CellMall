@@ -50,10 +50,24 @@
             <div class="contact__right">
                 <div class="contact__form">
                     <h1 class="contact__title">
-                        <center>FEEDBACK</center>
+                        <center style="user-select: none">
+                            <span class="logo" style="display: inline-block; width: 500px; height: 50px">Feedback</span>
+                        </center>
                     </h1>
                     <form method="post" id="contact">
                         <div class="form__main">
+                            <center>
+                                <h4>How do you feel? Sad or Happy?</h4>
+                            </center>
+                            <div class="form__group">
+                                <div class="form__item">
+                                    <input type="radio" required class="form__input" placeholder=" " id="happy"
+                                        name="feeling">
+                                </div>
+                                <div class="form__item">
+                                    <input type="radio" class="form__input" placeholder=" " id="sad" name="feeling">
+                                </div>
+                            </div>
                             <div class="form__item block">
                                 <input type="text" class="form__input" placeholder=" " id="name" name="name">
                                 <label class="form__label">Name</label>
@@ -68,14 +82,14 @@
                                 <span class="message"></span>
                             </div>
                             <div class="form__item block">
-                                <input type="number" class="form__input" placeholder=" " id="phone" name="phone">
-                                <label class="form__label">Phone</label>
-                                <ion-icon name="call-outline" class="form__symbol"></ion-icon>
+                                <input type="number" class="form__input" placeholder=" " id="title" name="title">
+                                <label class="form__label">Title</label>
+                                <ion-icon name="bulb-outline" class="form__symbol"></ion-icon>
                                 <span class="message"></span>
                             </div>
-                            <div class="form__item block">
+                            <div class="form__item block textarea">
                                 <textarea placeholder=" " name="message" id="message"></textarea>
-                                <label class="form__label">Message</label>
+                                <label class="form__label">Description</label>
                                 <ion-icon name="chatbox-outline" class="form__symbol"></ion-icon>
                                 <span class="message"></span>
                             </div>
@@ -96,7 +110,7 @@ Validation({
     'rules': [
         isRequired('#name'),
         isRequired('#email'),
-        isRequired('#phone'),
+        isRequired('#title'),
         isRequired('#message'),
         isEmail('#email')
     ]

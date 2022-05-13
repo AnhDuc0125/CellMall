@@ -4,8 +4,8 @@
 
   if(!empty($_GET)) {
       $key = getGet('key');
-      $select = "select * from products where href_param = '$key'";
-      $product = executeResult($select, true);
+      $productSQl = "SELECT products.*, brands.name as brand_name FROM products, brands WHERE products.brand_id = brands.id AND href_param = '$key'";
+      $product = executeResult($productSQl, true);
 
       $otherBrandProductSQL = "SELECT * FROM products where brand_id != '". $product['brand_id'] ."' LIMIT 2";
       $otherBrandProduct = executeResult($otherBrandProductSQL);
@@ -39,6 +39,14 @@
 
     <!-- navbar -->
     <div id="main">
+        <div class="shortcut">
+            <a class="shortcut__link" href="homePage.php">Home</a>
+            >
+            <a class="shortcut__link"
+                href="searchPage.php?brand=<?=$product['brand_name']?>"><?=$product['brand_name']?></a>
+            >
+            <a class="shortcut__link" href="#"><?=$product['title']?></a>
+        </div>
         <div class="product">
             <h2 class="product__title"><?=$product['title']?> | Chính hãng VN/A</h2>
             <div class="product__detail">

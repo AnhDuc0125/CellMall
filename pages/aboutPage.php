@@ -22,7 +22,7 @@
 
     <div id="main">
         <center style="user-select: none; margin-bottom: 25px">
-            <span class="logo" style="display: inline-block; width: 500px; height: 50px">--CellMall--</span>
+            <span class="logo" style="display: inline-block; width: 500px; height: 50px">About CellMall</span>
         </center>
         <div class="about__box general">
             <div class="about__img">
@@ -103,9 +103,10 @@
                 </p>
             </div>
         </div>
-        <center style="user-select: none; margin: 25px 0">
-            <h1>MEET US</h1>
-            <h3>Members of project</h3>
+
+        <!-- Member -->
+        <center style="user-select: none; margin-bottom: 25px">
+            <span class="logo" style="display: inline-block; width: 500px; height: 50px">Members</span>
         </center>
         <div class="profile__container">
             <div class="profile">
@@ -212,6 +213,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Feedback -->
+        <center style="user-select: none; margin-bottom: 25px">
+            <span class="logo" style="display: inline-block; width: 500px; height: 50px">Feedback</span>
+        </center>
+        <div class="feedback__box">
+
         </div>
     </div>
 

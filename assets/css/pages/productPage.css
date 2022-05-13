@@ -118,9 +118,6 @@
   width: 100%;
   height: 50px;
   font-size: 20px;
-  /* color: var(--secondary-color); */
-  /* background: none; */
-  /* border: 2px solid var(--secondary-color); */
   color: white;
   background-color: var(--primary-color);
   border: none;
@@ -168,4 +165,19 @@
 .compare__table th,
 .compare__table td {
   padding: 10px;
+}
+
+.shortcut {
+  padding-bottom: 3px;
+  border-bottom: 2px solid #d7d5d5;
+  color: var(--primary-color);
+  user-select: none;
+}
+
+.shortcut__link {
+  color: var(--secondary-color);
+}
+
+.shortcut__link:hover {
+  text-decoration: underline;
 }

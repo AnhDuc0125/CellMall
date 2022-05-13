@@ -77,8 +77,10 @@ body {
 }
 
 .form__item.checkbox {
-  height: 40px;
-  margin-bottom: 0;
+  height: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .form__item.block {
@@ -125,6 +127,7 @@ body {
   width: 15px;
   height: 15px;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 label {
