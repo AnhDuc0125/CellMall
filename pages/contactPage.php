@@ -60,12 +60,15 @@
                                 <h4>How do you feel? Sad or Happy?</h4>
                             </center>
                             <div class="form__group">
-                                <div class="form__item">
-                                    <input type="radio" required class="form__input" placeholder=" " id="happy"
+                                <div class="form__item radio">
+                                    <img src="../assets/photos/happy.jpg" alt="" class="feeling__img">
+                                    <input type="radio" required class="form__input radio" placeholder=" " id="happy"
                                         name="feeling">
                                 </div>
-                                <div class="form__item">
-                                    <input type="radio" class="form__input" placeholder=" " id="sad" name="feeling">
+                                <div class="form__item radio">
+                                    <img src="../assets/photos/sad.jpg" alt="" class="feeling__img">
+                                    <input type="radio" class="form__input radio" placeholder=" " id="sad"
+                                        name="feeling">
                                 </div>
                             </div>
                             <div class="form__item block">
