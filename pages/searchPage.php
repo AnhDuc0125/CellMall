@@ -85,6 +85,10 @@
             <div class="cate">
                 <h3 class="cate__title">Category</h3>
                 <div class="cate__content">
+                    <div class="cate__item">
+                        <a class="cate__content cate__btn bestSeller__content <?php if(empty($_GET['cate'])) echo "chosen"?>"
+                            onclick="removeParam('cate')">All</a>
+                    </div>
                     <div class="cate__item onSale">
                         <a class="cate__content cate__btn bestSeller__content" id="onSale"
                             onclick="addCategory('on Sale')">On
@@ -99,12 +103,15 @@
                             onclick="addCategory('best Seller')">Best
                             Seller</a>
                     </div>
-                    <p class="remove__btn" onclick="removeParam('cate')">Remove Category</p>
                 </div>
             </div>
             <div class="filter">
                 <h3 class="filter__title">Filter</h3>
                 <div class="filter__content">
+                    <a href="#" class="filter__item <?php if(empty($_GET['filter'])) echo "chosen"?>"
+                        onclick="removeParam('filter')">
+                        <div class="filter__content">All</div>
+                    </a>
                     <a href="#" class="filter__item" id="ASC" onclick="addFilter('ASC')">
                         <div class="filter__icon">
                             <ion-icon name="trending-up-outline"></ion-icon>
@@ -117,7 +124,6 @@
                         </div>
                         <div class="filter__content">Price high to low</div>
                     </a>
-                    <p class="remove__btn" onclick="removeParam('filter')">Remove Filter</p>
                 </div>
             </div>
         </div>

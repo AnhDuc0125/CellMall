@@ -13,8 +13,8 @@ function addFilter(content) {
   window.location.replace(url.search);
 }
 
-function removeParam(method) {
-  url.searchParams.delete(method);
+function removeParam(key) {
+  url.searchParams.delete(key);
 
   window.location.replace(url.search);
 }

@@ -43,12 +43,6 @@
   gap: 15px;
 }
 
-.remove__btn {
-  cursor: pointer;
-  color: red;
-  border-bottom: 2px solid red;
-}
-
 a.filter__item {
   display: flex;
   justify-content: space-between;
@@ -62,8 +56,10 @@ a.filter__item {
 
 .filter__item.chosen,
 .cate__btn.chosen {
-  border: 3px solid var(--secondary-color);
-  box-shadow: none;
+  /* border: 3px solid orange;
+   */
+  background-color: var(--secondary-color);
+  color: white;
 }
 
 .cate__btn {
