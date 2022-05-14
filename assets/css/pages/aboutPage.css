@@ -132,7 +132,7 @@ p.indent {
 
 .profile__social {
   width: 60%;
-  margin: 0 auto;
+  margin: 5px auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,7 +171,7 @@ p.indent {
   background-color: #fff;
   border-radius: 10px;
   line-height: 25px;
-  box-shadow: var(--shadow-box);
+  box-shadow: var(--box-shadow);
 }
 
 .feedback__body {
