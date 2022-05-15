@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 29, 2022 lúc 07:52 AM
+-- Thời gian đã tạo: Th5 15, 2022 lúc 10:22 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -89,6 +89,21 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `feeling` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `orders`
 --
 
@@ -136,9 +151,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `image`, `price`, `description`, `star`, `discount`, `created_at`, `updated_at`, `brand_id`, `status_id`, `cate_id`, `href_param`, `storage`, `camera`, `chip`, `battery`, `resolution`, `old_price`) VALUES
-(1, 'iPhone 11 64GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_11_white_4_.png', 11790000, '\"<ul>\r\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\r\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\r\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\r\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\r\n</ul>\"', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 2, 'iPhone-11-64GB', 64, 'Dual Camera 12MP:\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3110, '1792 x 828 pixels', 11790000),
-(2, 'iPhone 11 128GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/l/a/layer_20_1.jpg', 13700000, '\"<ul>\r\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\r\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\r\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\r\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\r\n</ul>\"', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 3, 'iPhone-11-128GB', 128, 'Dual Camera 12MP:\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3110, '1792 x 828 pixels', 13700000),
-(3, 'iPhone 11 Pro 512GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/l/a/layer_23_2.jpg', 21600000, '\"<ul>\r\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\r\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\r\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\r\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\r\n</ul>\"', NULL, 20, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 1, 'iPhone-11-Pro-512GB', 512, '3 Camera 12MP:\r\n- Camera tele: ƒ/2.0 aperture\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3046, '2436 x 1125 pixels', 27000000),
+(1, 'iPhone 11 64GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_11_white_4_.png', 11790000, '<ul>\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\n</ul>', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 2, 'iPhone-11-64GB', 64, 'Dual Camera 12MP:\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3110, '1792 x 828 pixels', 11790000),
+(2, 'iPhone 11 128GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/l/a/layer_20_1.jpg', 13700000, '<ul>\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\n</ul>', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 3, 'iPhone-11-128GB', 128, 'Dual Camera 12MP:\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3110, '1792 x 828 pixels', 13700000),
+(3, 'iPhone 11 Pro 512GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/l/a/layer_23_2.jpg', 21600000, '<ul>\n    <li>Colors to match your personality - 6 eye-catching colors to choose from</li>\n    <li>Smooth, stable performance - A13 chip, 4GB RAM</li>\n    <li>Capture full frame - Dual camera supports wide angle, Night Mode</li>\n    <li>Use with confidence - IP68 waterproof, dustproof, Gorilla tempered glass</li>\n</ul>', NULL, 20, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 1, 'iPhone-11-Pro-512GB', 512, '3 Camera 12MP:\r\n- Camera tele: ƒ/2.0 aperture\r\n- Wide-angle Camera: ƒ/1.8 aperture\r\n- Ultra-wide Camera: ƒ/2.4 aperture', 'A13 Bionic', 3046, '2436 x 1125 pixels', 27000000),
 (4, 'iPhone 12 64GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-12_2__3.jpg', 16800000, '<ul>\r\n    <li>Powerful, super fast with A14 chip, 4GB RAM, high speed 5G network</li>\r\n    <li>Brilliant, sharp, high-brightness - Premium OLED display, Super Retina XDR with HDR10, Dolby Vision support</li>\r\n    <li>Impressive night photography - Night Mode for 2 cameras, Deep Fusion algorithm, Smart HDR 3</li>\r\n    <li>Excellent durability - IP68 waterproof, dustproof, Ceramic Shield back</li>\r\n</ul>', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 2, 'iPhone-12-64GB', 64, '12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixels PDAF, OIS\r\n12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6\"', ' Apple A14 Bionic (5 nm)', 2815, '1170 x 2532 pixels', 16800000),
 (5, 'iPhone 12 128GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-12_7__6_3.jpg', 18800000, '<ul>\r\n    <li>Powerful, super fast with A14 chip, 4GB RAM, high speed 5G network</li>\r\n    <li>Brilliant, sharp, high-brightness - Premium OLED display, Super Retina XDR with HDR10, Dolby Vision support</li>\r\n    <li>Impressive night photography - Night Mode for 2 cameras, Deep Fusion algorithm, Smart HDR 3</li>\r\n    <li>Excellent durability - IP68 waterproof, dustproof, Ceramic Shield back</li>\r\n</ul>', NULL, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 3, 'iPhone-12-128GB', 128, '12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixels PDAF, OIS\r\n12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6\"', ' Apple A14 Bionic (5 nm)', 2815, '1170 x 2532 pixels', 18800000),
 (6, 'iPhone 12 Pro 128GB', 'https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-12-pro-max_3__9.jpg', 18750000, '<ul>\r\n    <li>Powerful, super fast with A14 chip, 4GB RAM, high speed 5G network</li>\r\n    <li>Brilliant, sharp, high-brightness - Premium OLED display, Super Retina XDR with HDR10, Dolby Vision support</li>\r\n    <li>Impressive night photography - Night Mode for 2 cameras, Deep Fusion algorithm, Smart HDR 3</li>\r\n    <li>Excellent durability - IP68 waterproof, dustproof, Ceramic Shield back</li>\r\n</ul>', NULL, 25, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 1, 1, 'iPhone-12-Pro-128GB', 128, '12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixels PDAF, OIS\r\n12 MP, f/2.0, 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS, 2x optical zoom\r\n12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6\"\r\nTOF 3D LiDAR scanner (depth)', ' Apple A14 Bionic (5 nm)', 2815, '1170 x 2532 pixels', 25000000),
@@ -280,6 +295,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
@@ -325,6 +346,12 @@ ALTER TABLE `carts`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`

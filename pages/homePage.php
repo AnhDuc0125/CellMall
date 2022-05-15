@@ -54,7 +54,7 @@
             <div class="card__container">
                 <?php
                   foreach($bestSeller as $item) {
-                      echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
                                     <img src="'. $item['image'] .'"
                                         alt="">
@@ -84,7 +84,7 @@
             <div class="card__container">
                 <?php
                   foreach($onSale as $item) {
-                      echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
                                     <img src="'. $item['image'] .'"
                                         alt="">
@@ -114,7 +114,7 @@
             <div class="card__container">
                 <?php
                   foreach($popular as $item) {
-                      echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
                                     <img src="'. $item['image'] .'"
                                         alt="">

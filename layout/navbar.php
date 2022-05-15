@@ -1,7 +1,7 @@
 <div id="navbar">
     <div class="navbar">
         <div class="navbar__item">
-            <a href="homePage.php" class="logo">CellMall</a>
+            <a href="../pages/homePage.php" class="logo">CellMall</a>
             <form class="search" action="searchPage.php" method="get">
                 <input type="text" name="key" class="search__input" placeholder="Search">
                 <button>
@@ -33,7 +33,7 @@
                     </div>
                     <span class="underline"></span>
                 </a>
-                <a href="loginPage.php" class="member">
+                <a href="../pages/loginPage.php" class="member">
                     <ion-icon name="person-outline" class="symbol"></ion-icon>
                     <div class="content">
                         <p class="item__title">Member</p>
