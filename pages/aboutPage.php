@@ -1,3 +1,10 @@
+<?php
+  require_once("../database/dbContext.php");
+  require_once("../database/utility.php");
+
+  $selectFeedbackSQL = "SELECT * FROM feedback ORDER BY date DESC LIMIT 9";
+  $feedbackList = executeResult($selectFeedbackSQL);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,6 +227,7 @@
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">Feedback</span>
         </center>
         <div class="feedback__box">
+
             <div class="feedback__card">
                 <div class="feedback__body">
                     <h3 class="feedback__title">Amazing!!!</h3>
@@ -234,126 +242,24 @@
                     <p class="feedback__email">@lalungemhoi</p>
                 </div>
             </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur!!</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptate?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur...</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates.</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
+            <?php
+              if(count($feedbackList) > 0) {
+                  foreach($feedbackList as $feedback) {
+                      echo  "<div class='feedback__card'>
+                                <div class='feedback__body'>
+                                    <h3 class='feedback__title'>". ucfirst($feedback['title']) ."</h3>
+                                    <div class='feedback__feeling ". $feedback['feeling'] ." '>". ucfirst($feedback['feeling']) ."</div>
+                                    <p class='feedback__desc'>". ucfirst($feedback['description']) ."</p>
+                                </div>
+                                <div class='feedback__footer'>
+                                    <div class='feedback__date'>Date: ". $feedback['date'] ."</div>
+                                    <b class='feedback__name'>". $feedback['name'] ."</b>
+                                    <p class='feedback__email'>". $feedback['email'] ."</p>
+                                </div>
+                            </div>";
+                  }
+              }
+            ?>
         </div>
     </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 15, 2022 lúc 10:22 AM
+-- Thời gian đã tạo: Th5 16, 2022 lúc 02:15 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -98,8 +98,23 @@ CREATE TABLE `feedback` (
   `email` varchar(25) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `feeling` varchar(25) DEFAULT NULL
+  `feeling` varchar(25) DEFAULT NULL,
+  `title` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `date`, `description`, `feeling`, `title`) VALUES
+(1, 'Vũ Đức Anh', 'vuducanh0125@gmail.com', '2022-05-16 13:34:55', 'I love this design so much and i love the leader too', 'happy', 'So lovely web'),
+(2, 'Doctor Strange', 'doctorstrange123@gmail.co', '2022-05-16 13:48:58', 'I lost my magic by using this web, I don\'t feel you have a nice target, stay away from my world. Get outtt...', 'sad', 'I hate this beautiful website i never seen before'),
+(3, 'Elizabeth Olsen', 'scarletWitch@gmail.com', '2022-05-16 13:51:58', 'I love this colorful website, and finally, I can buy new smartphone by this site. Keep going boys!. Moah', 'happy', 'I love this madness site'),
+(4, 'Harry Potter', 'harrythewitch@gmail.com', '2022-05-16 13:54:03', 'I love this site, these smartphone is so beautiful more than my magic. So I very like your website. Keep going', 'happy', 'So good site'),
+(5, 'Chú gà mơ mộng', 'kfcKitchen@gmail.com', '2022-05-16 14:01:39', 'Tôi rất thích màu vàng của thóc, màu đen của đất trong trang web của bạn. Bạn giỏi quá, bạn là nhất, bạn là số một rồi đấy.\r\n', 'sad', 'Web đẹp, tốt, chất lượng!!!'),
+(6, 'Boydetinh', 'detinhboy26@gmail.com', '2022-05-16 14:03:02', 'Em xin gửi tặng team anh một lời khen chân thành của em. Đội ngũ của anh thật là giỏi, thật đáng ghen tụ, fighting!!!', 'sad', 'Web đẹp quá ạ'),
+(7, 'Cây xanh thân thiện', 'lemontree@gmail.com', '2022-05-16 14:06:57', 'Tôi không thể tượng tượng được trang web lại đẹp đến như vậy blah blah blah. Bạn là nhất là số một...\r\n', 'happy', 'Thật bất ngờ vì trang web!'),
+(8, 'Nguyễn Phan Anh', 'phananhnguyen@gmail.com', '2022-05-16 14:08:53', 'Thiết kế đẹp, sang trọng mà không kém phần hoàn mĩ, ôi thật là đẹp, i love CellMall forever. Tôi thật đẹp trai', 'sad', 'Toàn điện thoại đẹp thôi!!!');
 
 -- --------------------------------------------------------
 
@@ -351,7 +366,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`

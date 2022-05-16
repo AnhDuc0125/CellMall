@@ -131,7 +131,7 @@
 }
 
 .form__input,
-textarea#message {
+textarea#desc {
   width: 100%;
   height: 100%;
   padding: 10px 50px 10px 10px;
@@ -142,25 +142,25 @@ textarea#message {
   font-size: 16px;
 }
 
-textarea#message {
+textarea#desc {
   height: 100px;
 }
 
 .form__input.error,
-textarea#message.error {
+textarea#desc.error {
   border-color: red;
 }
 
 .form__input:focus,
-textarea#message:focus {
+textarea#desc:focus {
   border-color: #546ce8;
 }
 
 /* focus input effect */
 .form__input:not(:placeholder-shown) + .form__label,
 .form__input:focus + .form__label,
-textarea#message:not(:placeholder-shown) + .form__label,
-textarea#message:focus + .form__label {
+textarea#desc:not(:placeholder-shown) + .form__label,
+textarea#desc:focus + .form__label {
   top: 0;
   display: inline-block;
   padding: 0 5px;

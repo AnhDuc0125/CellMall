@@ -1,3 +1,19 @@
+<?php
+
+require_once("../database/dbContext.php");
+require_once("../database/utility.php");
+  if(!empty($_POST)) {
+      $feeling = getPost('feeling');
+      $name = getPost('name');
+      $email = getPost('email');
+      $title = getPost('title');
+      $desc = getPost('desc');
+      $createdAt = date('Y-m-d H:i:s');
+      
+      $feedbackSQL = "INSERT INTO feedback (feeling, name, title, email, description, date) values ('$feeling', '$name', '$title', '$email', '$desc', '$createdAt')";
+      execute($feedbackSQL);  
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,12 +78,12 @@
                             <div class="feeling__group">
                                 <div class="form__item radio">
                                     <input type="radio" required class="form__input radio" placeholder=" " id="sad"
-                                        name="feeling">
+                                        name="feeling" value="sad">
                                     <img src="../assets/photos/sad.jpg" alt="" class="feeling__img">
                                 </div>
                                 <div class="form__item radio">
                                     <input type="radio" class="form__input radio" placeholder=" " id="happy"
-                                        name="feeling">
+                                        name="feeling" value="happy">
                                     <img src="../assets/photos/happy.jpg" alt="" class="feeling__img">
                                 </div>
                             </div>
@@ -85,13 +101,13 @@
                                 <span class="message"></span>
                             </div>
                             <div class="form__item block">
-                                <input type="number" class="form__input" placeholder=" " id="title" name="title">
+                                <input type="text" class="form__input" placeholder=" " id="title" name="title">
                                 <label class="form__label">Title</label>
                                 <ion-icon name="bulb-outline" class="form__symbol"></ion-icon>
                                 <span class="message"></span>
                             </div>
                             <div class="form__item block textarea">
-                                <textarea placeholder=" " name="message" id="message"></textarea>
+                                <textarea placeholder=" " name="desc" id="desc"></textarea>
                                 <label class="form__label">Description</label>
                                 <ion-icon name="chatbox-outline" class="form__symbol"></ion-icon>
                                 <span class="message"></span>
@@ -106,7 +122,7 @@
         </div>
     </div>
 </body>
-<script src="./assets/js/validation.js"></script>
+<script src="../assets/js/validation.js"></script>
 <script>
 Validation({
     'form': '#contact',
@@ -114,8 +130,11 @@ Validation({
         isRequired('#name'),
         isRequired('#email'),
         isRequired('#title'),
-        isRequired('#message'),
-        isEmail('#email')
+        isRequired('#desc'),
+        isEmail('#email'),
+        minLength('#name', 5),
+        minLength('#title', 5),
+        minLength('#desc', 100),
     ]
 });
 </script>

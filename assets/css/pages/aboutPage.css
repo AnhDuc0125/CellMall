@@ -186,6 +186,10 @@ p.indent {
   color: orange;
 }
 
+.feedback__feeling.sad {
+  color: gray;
+}
+
 .feedback__desc {
 }
 
