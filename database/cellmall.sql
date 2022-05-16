@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 16, 2022 lúc 02:15 PM
+-- Thời gian đã tạo: Th5 16, 2022 lúc 06:31 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.2
 
@@ -114,7 +114,12 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `date`, `description`, `feeling`,
 (5, 'Chú gà mơ mộng', 'kfcKitchen@gmail.com', '2022-05-16 14:01:39', 'Tôi rất thích màu vàng của thóc, màu đen của đất trong trang web của bạn. Bạn giỏi quá, bạn là nhất, bạn là số một rồi đấy.\r\n', 'sad', 'Web đẹp, tốt, chất lượng!!!'),
 (6, 'Boydetinh', 'detinhboy26@gmail.com', '2022-05-16 14:03:02', 'Em xin gửi tặng team anh một lời khen chân thành của em. Đội ngũ của anh thật là giỏi, thật đáng ghen tụ, fighting!!!', 'sad', 'Web đẹp quá ạ'),
 (7, 'Cây xanh thân thiện', 'lemontree@gmail.com', '2022-05-16 14:06:57', 'Tôi không thể tượng tượng được trang web lại đẹp đến như vậy blah blah blah. Bạn là nhất là số một...\r\n', 'happy', 'Thật bất ngờ vì trang web!'),
-(8, 'Nguyễn Phan Anh', 'phananhnguyen@gmail.com', '2022-05-16 14:08:53', 'Thiết kế đẹp, sang trọng mà không kém phần hoàn mĩ, ôi thật là đẹp, i love CellMall forever. Tôi thật đẹp trai', 'sad', 'Toàn điện thoại đẹp thôi!!!');
+(8, 'Nguyễn Phan Anh', 'phananhnguyen@gmail.com', '2022-05-16 14:08:53', 'Thiết kế đẹp, sang trọng mà không kém phần hoàn mĩ, ôi thật là đẹp, i love CellMall forever. Tôi thật đẹp trai', 'sad', 'Toàn điện thoại đẹp thôi!!!'),
+(9, 'Anya Forger', 'tomteo1693@gmail.com', '2022-05-16 14:57:29', 'Em xin gửi tặng team anh một lời khen chân thành của em. Tuyệt vời web quá đã k thể chê được vào đâu k thể đẹp hơn được nữa ', 'happy', 'good!'),
+(10, 'Scarlet Witch', 'ntdung@kcc.vn', '2022-05-16 15:00:55', 'đội ngũ làm việc quá chuyên nghiệp, thiết kế trang web vô cùng châu âu, quá chi tiết và dễ hiểu để tham khảo sản phẩm ', 'happy', 'quá tuyệt'),
+(11, 'Gojo Satouru', 'dung.nt.1937@aptechlearni', '2022-05-16 15:02:29', 'thiết kế đẹp, chi tiết, tôi đã có 1 trải nghiệm tuyệt vời tại cellmall và hi vọng sau này có thể tiếp tục thấy cellmall duy trì và phát triển ', 'happy', 'đỉnh quá'),
+(12, 'Uchiha Obito', 'bestboyhanoi@gmail.com', '2022-05-16 15:03:53', 'tôi đã mất niềm tin vào thế giới này nhưng trang web này là tia sáng dẫn tôi tới cuộc sống mới. Quá đẹp qúa tuyệt', 'sad', 'không ổn'),
+(13, 'Nguyễn Tấn Dũng', 'kz90292003@gmail.com', '2022-05-16 15:05:18', 'trang web sơ sài hoàn thiện chưa tốt, cần cải thiện nhiều trong tương lai cả về thiết kế và nội dung', 'sad', 'bad exp');
 
 -- --------------------------------------------------------
 
@@ -366,7 +371,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`

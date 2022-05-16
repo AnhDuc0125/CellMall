@@ -23,16 +23,20 @@
     $add = "insert into products(title, brand_id, category_id, description, price, old_price, resolution)";
   }
 
+  //get number of products
+  $countSQL = "SELECT COUNT(*) FROM products";
+  $countResult = executeResult($countSQL, true);
+
   //get product list
-  $select = "select products.*, brands.name as brand_name, categories.name as cate_name from products, brands, categories where products.cate_id = categories.id and products.brand_id = brands.id;";
+  $select = "SELECT products.*, brands.name AS brand_name, categories.name AS cate_name FROM products, brands, categories WHERE products.cate_id = categories.id AND products.brand_id = brands.id;";
   $productList = executeResult($select);
   
   //get brand list
-  $select = "select * from brands";
+  $select = "SELECT * FROM brands";
   $brandList = executeResult($select);
 
   //get categories list
-  $select = "select * from categories";
+  $select = "SELECT * FROM categories";
   $cateList = executeResult($select);
 ?>
 <?php session_start(); ?>
@@ -45,7 +49,7 @@
 
         <div class="row">
             <div class="col-10">
-                <h2>Product List</h2>
+                <h2>Product List (<?=$countResult['COUNT(*)']?>)</h2>
             </div>
             <div class="col-2">
                 <a href="#" data-toggle="modal" data-target="#add_product_modal" class="btn btn-primary btn-sm">Add

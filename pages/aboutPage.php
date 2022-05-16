@@ -227,24 +227,10 @@
             <span class="logo" style="display: inline-block; width: 500px; height: 50px">Feedback</span>
         </center>
         <div class="feedback__box">
-
-            <div class="feedback__card">
-                <div class="feedback__body">
-                    <h3 class="feedback__title">Amazing!!!</h3>
-                    <div class="feedback__feeling">Happy</div>
-                    <p class="feedback__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus a
-                        illum dignissimos repudiandae culpa magnam at nihil, voluptates eos et necessitatibus earum?
-                        Optio libero perspiciatis doloribus corrupti autem commodi non?</p>
-                </div>
-                <div class="feedback__footer">
-                    <div class="feedback__date">Date: 13/05/2022</div>
-                    <b class="feedback__name">Doctor Strange</b>
-                    <p class="feedback__email">@lalungemhoi</p>
-                </div>
-            </div>
             <?php
               if(count($feedbackList) > 0) {
                   foreach($feedbackList as $feedback) {
+                      $date = strtotime($feedback['date']);
                       echo  "<div class='feedback__card'>
                                 <div class='feedback__body'>
                                     <h3 class='feedback__title'>". ucfirst($feedback['title']) ."</h3>
@@ -252,7 +238,7 @@
                                     <p class='feedback__desc'>". ucfirst($feedback['description']) ."</p>
                                 </div>
                                 <div class='feedback__footer'>
-                                    <div class='feedback__date'>Date: ". $feedback['date'] ."</div>
+                                    <div class='feedback__date'>Date: ". date('d/m/Y', $date) ."</div>
                                     <b class='feedback__name'>". $feedback['name'] ."</b>
                                     <p class='feedback__email'>". $feedback['email'] ."</p>
                                 </div>
