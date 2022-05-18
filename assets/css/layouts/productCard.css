@@ -19,14 +19,12 @@
 }
 
 .category__title {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   user-select: none;
   cursor: pointer;
   display: inline-block;
-}
-
-.category__title:hover {
-  text-decoration: underline;
+  transition: 0.5s;
+  border-bottom: 3px solid var(--secondary-color);
 }
 
 .card {

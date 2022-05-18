@@ -1,11 +1,15 @@
 <?php
     session_start();
 
+    if(!isset($_SESSION['currentUser'])) {
+        header("Location: loginPage.php");  
+    }
+    
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
     // Get orders of user
-    $orderSQL = "SELECT order_items.*, products.title AS 'p-title', products.image AS 'p-image', products.storage AS 'p-storage', products.price AS 'p-price' FROM order_items, products WHERE order_items.product_id = products.id AND order_items.user_id = ". $_SESSION['currentUser']['id'];
+    $orderSQL = "SELECT order_items.*, products.title AS 'p-title', products.image AS 'p-image', products.storage AS 'p-storage', products.price AS 'p-price', products.href_param AS 'p-href' FROM order_items, products WHERE order_items.product_id = products.id AND order_items.user_id = ". $_SESSION['currentUser']['id'];
     $orderResult = executeResult($orderSQL);
     
     // count of orders
@@ -53,12 +57,14 @@
                         <?php
                          if($countResult['COUNT(*)'] > 0) {
                              foreach($orderResult as $order) {
-                                 echo  '<tr class="yourCart__product">
-                                           <td class="thumbnail"><img
-                                                   src="'. $order['p-image'] .'"
-                                                   alt=""></td>
+                                 echo   '<tr class="yourCart__product">
+                                            <td class="thumbnail">
+                                                <img src="'. $order['p-image'] .'">
+                                            </td>
                                            <td class="detail">
-                                               <h3 class="detail__title">'. $order['p-title'] .'</h3>
+                                               <a href="productPage.php?key='. $order['p-href'] .'">
+                                                   <h3 class="detail__title">'. $order['p-title'] .'</h3>
+                                               </a>
                                                <div class="detail__storage">'. $order['p-storage'] .' GB</div>
                                            </td>
                                            <td class="quantity">
@@ -91,7 +97,7 @@
                 <div class="order__main">
                     <div class="order__total">
                         <h4>Sub-total</h4>
-                        <p><?=number_format($subPriceResult['total_price'])?> <u>đ</u></p>
+                        <h4><?=number_format($subPriceResult['total_price'])?> <u>đ</u></h4>
                     </div>
                     <div class="order__delivery">
                         <h4>Delivery</h4>
@@ -112,7 +118,7 @@ function removeFromCart(id) {
     let removeConfirm =
         confirm("You want to remove this product from your cart ? ");
     if (removeConfirm) {
-        $.post('order_api.php', {
+        $.post('../api/order_api.php', {
                 'id': id,
                 'method': 'remove'
             },
@@ -126,7 +132,7 @@ function plus(id, quantityUpdated) {
     if (quantityUpdated > 3) {
         return;
     }
-    $.post('order_api.php', {
+    $.post('../api/order_api.php', {
             'id': id,
             'method': 'plus',
             'q': quantityUpdated
@@ -141,7 +147,7 @@ function minus(id, quantityUpdated) {
     if (quantityUpdated < 1) {
         return;
     }
-    $.post('order_api.php', {
+    $.post('../api/order_api.php', {
             'id': id,
             'method': 'minus',
             'q': quantityUpdated

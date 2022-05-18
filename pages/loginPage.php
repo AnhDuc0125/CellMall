@@ -46,14 +46,13 @@
         <div class="box">
             <div class="box__header">
                 <h2 class="title">Login</h2>
-                <p>Welcome to <span class="logo">CellMall</span></p>
-                <p class="login__error" style="color: red">
-                    <?php
-                        if(!empty($_POST)){
-                            echo 'Incorrect Email or Password!';
-                        }
-                    ?>
-                </p>
+                <?php
+                  if(!empty($_POST)){
+                    echo '<p class="invalid">Incorrect Email or Password!</p>'; 
+                  } else {
+                    echo '<p>Welcome to <span class="logo">CellMall</span></p>';
+                  }
+                ?>
             </div>
             <form method="post" id="login">
                 <div class="box__main">

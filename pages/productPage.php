@@ -155,7 +155,7 @@
 </body>
 <script>
 function addToCart(id) {
-    $.post("order_api.php", {
+    $.post("../api/order_api.php", {
         'id': id,
         'method': 'add'
     }, function(data) {})
