@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
@@ -12,11 +14,17 @@
 
       $password = decodeValue($password);
 
-      $signup = "insert into users (fullname, username, address, email, phone, password) values ('$fullname', '$username', '$address', '$email', '$phone', '$password')";
-      execute($signup);
-
-      header("Location: homePage.php");
-  }
+    // Check unique of email
+    $emailSQL = "SELECT * FROM users WHERE email = '$email'";
+    $emailResult = executeResult($emailSQL, true);
+    if($emailResult == null) {
+        // Create account
+          $signup = "INSERT INTO users (fullname, username, address, email, phone, password) VALUES ('$fullname', '$username', '$address', '$email', '$phone', '$password')";
+          execute($signup);
+    
+          header("Location: loginPage.php");
+    }
+  }    
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +52,13 @@
         <div class="box">
             <div class="box__header">
                 <h2 class="title">Sign Up</h2>
-                <p>Welcome to <span class="logo">CellMall</span></p>
+                <?php
+                  if(!empty($_POST)){
+                      echo '<p class="invalid">Existed E-mail, please use another E-mail!</p>';
+                  } else {
+                      echo '<p>Welcome to <span class="logo">CellMall</span></p>';
+                  }
+                ?>
             </div>
             <form method="post" id="signup">
                 <div class="box__main">
@@ -99,7 +113,7 @@
         </div>
     </div>
 </body>
-<script src="./assets/js/validation.js"></script>
+<script src="../assets/js/validation.js"></script>
 <script>
 Validation({
     'form': '#signup',

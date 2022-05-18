@@ -21,11 +21,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.box__outter {
-  width: 1045px;
-  height: 620px;
-}
-
 .background {
   width: 620px;
   height: 620px;
@@ -180,4 +175,8 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.box__header p.invalid {
+  color: red;
 }

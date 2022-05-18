@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
@@ -29,6 +31,10 @@
     <link rel="stylesheet" href="../assets/css/layouts/navbar.css" />
     <link rel="stylesheet" href="../assets/css/layouts/footer.css" />
     <link rel="stylesheet" href="../assets/css/pages/productPage.css" />
+    <!--Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -65,7 +71,7 @@
                     <div class="product__desc">
                         <?=$product['description']?>
                     </div>
-                    <button class="product__addToCart_btn">
+                    <button class="product__addToCart_btn" onclick="addToCart(<?=$product['id']?>)">
                         ADD TO CART
                     </button>
                 </div>
@@ -147,5 +153,13 @@
       include_once('../layout/footer.php');
     ?>
 </body>
+<script>
+function addToCart(id) {
+    $.post("order_api.php", {
+        'id': id,
+        'method': 'add'
+    }, function(data) {})
+}
+</script>
 
 </html>

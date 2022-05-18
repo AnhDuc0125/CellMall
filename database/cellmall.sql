@@ -51,10 +51,10 @@ INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `carts`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
-CREATE TABLE `carts` (
+CREATE TABLE `orders` (
   `cart_id` int(11) NOT NULL,
   `recipient` varchar(25) NOT NULL,
   `phone` varchar(16) DEFAULT NULL,
@@ -124,16 +124,16 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `date`, `description`, `feeling`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Cấu trúc bảng cho bảng `order_items`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `quantity` int(11) DEFAULT NULL,
   `price` int(11) NOT NULL,
   `total_price` int(11) NOT NULL,
-  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -276,7 +276,7 @@ INSERT INTO `status` (`id`, `name`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `email` varchar(25) NOT NULL,
@@ -289,7 +289,7 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `fullname`, `email`, `password`, `address`, `phone`) VALUES
+INSERT INTO `users` (`id`, `username`, `fullname`, `email`, `password`, `address`, `phone`) VALUES
 (1, 'anhduc0125', 'Vũ Đức Anh', 'vuducanh0125@gmail.com', '5b021fb6fe122183c19b8752d818df8c', 'Hà Nội', '0975502334');
 
 --
@@ -303,9 +303,9 @@ ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `carts`
+-- Chỉ mục cho bảng `orders`
 --
-ALTER TABLE `carts`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`cart_id`);
 
 --
@@ -321,9 +321,9 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Chỉ mục cho bảng `order_items`
 --
-ALTER TABLE `orders`
+ALTER TABLE `order_items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -343,7 +343,7 @@ ALTER TABLE `status`
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -356,9 +356,9 @@ ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `carts`
+-- AUTO_INCREMENT cho bảng `orders`
 --
-ALTER TABLE `carts`
+ALTER TABLE `orders`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -374,9 +374,9 @@ ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT cho bảng `order_items`
 --
-ALTER TABLE `orders`
+ALTER TABLE `order_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -395,7 +395,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
