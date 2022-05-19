@@ -141,6 +141,15 @@
   margin-top: 15px;
 }
 
+.compare h1 {
+  margin-bottom: 10px;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
 .compare__table {
   width: 100%;
   border-collapse: collapse;
