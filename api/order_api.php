@@ -30,14 +30,14 @@
           
       case 'plus':
           $q = getPost('q');
-          $plusSQL = "UPDATE order_items SET quantity = '$q' WHERE id = '$id'";
+          $plusSQL = "UPDATE order_items SET quantity = '$q', total_price = price * '$q' WHERE id = '$id'";
           execute($plusSQL);
           echo $plusSQL;
           break;
           
       case 'minus':
           $q = getPost('q');
-          $minusSQL = "UPDATE order_items SET quantity = '$q' WHERE id = '$id'";
+          $minusSQL = "UPDATE order_items SET quantity = '$q', total_price = price * '$q' WHERE id = '$id'";
           execute($minusSQL);
           echo $minusSQL;
           break;

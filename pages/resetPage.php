@@ -1,25 +1,23 @@
 <?php
   session_start();
 
-  unset($_SESSION['currentUser']);
-
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
   if(!empty($_POST)){
-      $email = getPost("email");
-      $password = getPost("password");
-      $rememberLogin = getPost("rememberLogin");
+    //   $email = getPost("email");
+    //   $password = getPost("password");
+    //   $rememberLogin = getPost("rememberLogin");
 
-      $password = decodeValue($password);
+    //   $password = decodeValue($password);
 
-      $login = "select * from users where email = '$email' and password = '$password'";
-      $user = executeResult($login, true);
+    //   $login = "select * from users where email = '$email' and password = '$password'";
+    //   $user = executeResult($login, true);
 
-      if(!empty($user)) {
-        $_SESSION['currentUser'] = $user;
-        header("Location: homePage.php");
-      }
+    //   if(!empty($user)) {
+    //     $_SESSION['currentUser'] = $user;
+    //     header("Location: homePage.php");
+    //   }
   }
 ?>
 
@@ -47,26 +45,27 @@
         <!-- Box Form -->
         <div class="box">
             <div class="box__header">
-                <h2 class="title">Login</h2>
+                <h2 class="title">Reset Password</h2>
                 <?php
                   if(!empty($_POST)){
-                    echo '<p class="invalid">Incorrect Email or Password!</p>'; 
+                    echo '<p class="invalid">Incorrect Password!</p>'; 
                   } else {
                     echo '<p>Welcome to <span class="logo">CellMall</span></p>';
                   }
                 ?>
             </div>
-            <form method="post" id="login">
+            <form method="post" id="reset">
                 <div class="box__main">
                     <div class="form__item block">
-                        <input maxlength="320" type="email" class="form__input" placeholder=" " id="email" name="email">
-                        <label class="form__label">Email</label>
-                        <ion-icon name="at-outline" class="symbol"></ion-icon>
+                        <input maxlength="320" type="password" class="form__input" placeholder=" " id="oldPassword"
+                            name="oldPassword">
+                        <label class="form__label">Old Password</label>
+                        <ion-icon name="lock-closed-outline" class="symbol"></ion-icon>
                         <span class="message"></span>
                     </div>
                     <div class="form__item block">
-                        <input type="password" class="form__input" placeholder=" " id="password" name="password">
-                        <label class="form__label">Password</label>
+                        <input type="password" class="form__input" placeholder=" " id="newPassword" name="newPassword">
+                        <label class="form__label">New Password</label>
                         <ion-icon name="lock-closed-outline" class="symbol"></ion-icon>
                         <span class="message"></span>
                     </div>
@@ -76,8 +75,8 @@
                     </div>
                 </div>
                 <div class="box__footer">
-                    <button class="btn">Log In</button>
-                    <p>Not a member? <a href="signupPage.php">Sign up</a></p>
+                    <button class="btn">Reset</button>
+                    <a href="homePage.php" style="display: block">Back to home</a>
                 </div>
             </form>
         </div>
@@ -86,21 +85,24 @@
 <script src="../assets/js/validation.js"></script>
 <script>
 Validation({
-    'form': '#login',
+    'form': '#reset',
     'rules': [
-        isRequired('#email'),
-        isRequired('#password'),
-        isEmail('#email'),
+        isRequired('#oldPassword'),
+        isRequired('#newPassword'),
     ]
 });
 
 let checkBox = document.querySelector('#checkbox');
-let pwField = document.querySelector('input[type=password]');
+let pwField = document.querySelectorAll('input[type=password]');
 checkBox.onclick = () => {
     if (checkBox.checked == true) {
-        pwField.type = "text";
+        pwField.forEach((item) => {
+            item.type = "text";
+        })
     } else {
-        pwField.type = "password";
+        pwField.forEach((item) => {
+            item.type = "password";
+        })
     }
 }
 </script>

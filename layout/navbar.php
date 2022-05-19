@@ -33,22 +33,36 @@
                     </div>
                     <span class="underline"></span>
                 </a>
-                <a href="../pages/loginPage.php" class="member">
-                    <ion-icon name="person-outline" class="symbol"></ion-icon>
-                    <div class="content">
-                        <p class="item__title">Member</p>
-
-                        <?php
-                          if(isset($_SESSION['currentUser'])) {
-                            echo '<b class="item__detail">'. $_SESSION['currentUser']['username'] .'</b>';
-                          } else {
-                            echo '<b class="item__detail">Login/Signup</b>';
-                          }
-
-                        ?>
-                    </div>
-                    <span class="underline"></span>
-                </a>
+                <?php
+                    if(isset($_SESSION['currentUser'])) {
+                    echo    '<div class="member" style="color: white">
+                                <ion-icon name="person-outline" class="symbol"></ion-icon>
+                                <div class="content">
+                                    <p class="item__title">Member</p>
+                                        <b class="item__detail">'. $_SESSION['currentUser']['username'] .'</b>
+                                </div>
+                                <span class="underline"></span>
+                                <div class="dropdown">
+                                    <a href="loginPage.php" class="dropdown__item">Log out</a>
+                                    <a href="../admin/login.php" class="dropdown__item">Admin</a>
+                                    <a href="resetPage.php" class="dropdown__item">Reset Password</a>
+                                </div>
+                            </div>';
+                    } else {
+                    echo    '<a href="../pages/loginPage.php" class="member">
+                                <ion-icon name="person-outline" class="symbol"></ion-icon>
+                                <div class="content">
+                                    <p class="item__title">Member</p>
+                                        <b class="item__detail">Login/Signup</b>
+                                </div>
+                                <span class="underline"></span>
+                                <div class="dropdown">
+                                    <a href="loginPage.php" class="dropdown__item">Log out</a>
+                                    <a href="../admin/login.php" class="dropdown__item">Admin</a>
+                                </div>
+                            </a>';
+                    }
+                ?>
             </div>
         </div>
     </div>

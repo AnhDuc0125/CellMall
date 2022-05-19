@@ -11,7 +11,7 @@
     // Get orders of user
     $orderSQL = "SELECT order_items.*, products.title AS 'p-title', products.image AS 'p-image', products.storage AS 'p-storage', products.price AS 'p-price', products.href_param AS 'p-href' FROM order_items, products WHERE order_items.product_id = products.id AND order_items.user_id = ". $_SESSION['currentUser']['id'];
     $orderResult = executeResult($orderSQL);
-    
+
     // count of orders
     $countSQL = "SELECT COUNT(*) FROM order_items WHERE user_id = ".$_SESSION['currentUser']['id'];
     $countResult = executeResult($countSQL, true);
@@ -139,7 +139,6 @@ function plus(id, quantityUpdated) {
         },
         function(data) {
             location.reload();
-            // console.log(data)
         })
 }
 
@@ -154,7 +153,6 @@ function minus(id, quantityUpdated) {
         },
         function(data) {
             location.reload();
-            // console.log(data)
         })
 }
 </script>
