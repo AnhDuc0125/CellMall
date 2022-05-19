@@ -129,15 +129,15 @@
                             quod
                             quam ab doloribus sint temporibus tempora.</span>
                         <div class="profile__social">
-                            <div class="social__item">
+                            <a class="social__item">
                                 <ion-icon name="logo-facebook"></ion-icon>
-                            </div>
-                            <div class="social__item">
+                            </a>
+                            <a class="social__item">
                                 <ion-icon name="logo-instagram"></ion-icon>
-                            </div>
-                            <div class="social__item">
+                            </a>
+                            <a class="social__item">
                                 <ion-icon name="logo-github"></ion-icon>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

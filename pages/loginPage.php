@@ -78,6 +78,8 @@
                 <div class="box__footer">
                     <button class="btn">Log In</button>
                     <p>Not a member? <a href="signupPage.php">Sign up</a></p>
+                    <div style="margin: 10px 0">Or</div>
+                    <a href="homePage.php">Continue as guest</a>
                 </div>
             </form>
         </div>

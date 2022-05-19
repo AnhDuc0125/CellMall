@@ -103,7 +103,7 @@ body {
 }
 
 .form__input.error {
-  border-color: red;
+  border-color: #ef233c;
 }
 
 .form__input:focus {
@@ -141,7 +141,7 @@ label {
 }
 
 .message {
-  color: red;
+  color: #ef233c;
   font-size: 16px;
 }
 
@@ -178,5 +178,5 @@ input:-webkit-autofill:active {
 }
 
 .box__header p.invalid {
-  color: red;
+  color: #ef233c;
 }
