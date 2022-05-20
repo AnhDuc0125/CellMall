@@ -1,7 +1,7 @@
 #navbar {
   width: 100%;
   height: 75px;
-  background-color: var(--primary-color);
+  background-color: #1e242f;
   z-index: 99;
   margin-bottom: 15px;
   position: sticky;
@@ -60,8 +60,7 @@
   right: 10px;
   height: 100%;
   font-size: 25px;
-  /* color: rgb(117, 116, 116); */
-  color: var(--secondary-color);
+  color: #bf953f;
   cursor: pointer;
 }
 
@@ -136,7 +135,7 @@
 .dropdown__item {
   width: 100%;
   height: 35px;
-  background-color: var(--primary-color);
+  background-color: #1e242f;
   color: white;
   display: flex;
   align-items: center;
@@ -145,13 +144,13 @@
 }
 
 .dropdown__item:hover {
-  background-color: var(--secondary-color);
+  background-color: #bf953f;
 }
 
 .symbol {
   font-size: 30px;
   margin-right: 5px;
-  color: var(--secondary-color);
+  color: #bf953f;
 }
 
 @media screen and (max-width: 1599px) {

@@ -39,7 +39,7 @@
 }
 
 .title > h2 {
-  border-bottom: 3px solid var(--secondary-color);
+  border-bottom: 3px solid #bf953f;
 }
 
 .yourCart__table {
@@ -73,7 +73,7 @@
 
 .quantity__btn {
   cursor: pointer;
-  color: var(--secondary-color);
+  color: #bf953f;
 }
 
 .quantity__btn,
@@ -96,7 +96,7 @@
 .remove > :only-child {
   font-size: 20px;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: #bf953f;
 }
 
 .yourCart__table th {
@@ -146,17 +146,17 @@ td.price {
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: var(--primary-color);
+  background-color: #1e242f;
   color: white;
   font-size: 17px;
   transition: 0.25s;
 }
 
 .checkout__btn:hover {
-  background-color: var(--secondary-color);
+  background-color: #bf953f;
   color: white;
 }
 
 .highlightText > a {
-  color: var(--secondary-color);
+  color: #bf953f;
 }

@@ -8,7 +8,7 @@
   display: inline-block;
   padding-bottom: 3px;
   margin-bottom: 10px;
-  border-bottom: 3px solid var(--secondary-color);
+  border-bottom: 3px solid #bf953f;
 }
 
 .headerSearch span {
@@ -50,15 +50,13 @@ a.filter__item {
   padding: 7px 10px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 }
 
 .filter__item.chosen,
 .cate__btn.chosen {
-  /* border: 3px solid orange;
-   */
-  background-color: var(--secondary-color);
+  background-color: #bf953f;
   color: white;
 }
 
@@ -69,7 +67,7 @@ a.filter__item {
   padding: 7px 10px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   border: none;
   outline: none;

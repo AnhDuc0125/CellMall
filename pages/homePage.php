@@ -50,7 +50,7 @@
 
         <!-- Best Seller -->
         <div class="category bestSeller">
-            <h1 class="category__title">Best Seller</h1>
+            <h1 class="header">Best Seller</h1>
             <div class="card__container">
                 <?php
                   foreach($bestSeller as $item) {
@@ -80,7 +80,7 @@
 
         <!-- On sale -->
         <div class="category onSale">
-            <h1 class="category__title">On Sale</h1>
+            <h1 class="header">On Sale</h1>
             <div class="card__container">
                 <?php
                   foreach($onSale as $item) {
@@ -110,7 +110,7 @@
 
         <!-- Popular -->
         <div class="category popular">
-            <h1 class="category__title">Popular</h1>
+            <h1 class="header">Popular</h1>
             <div class="card__container">
                 <?php
                   foreach($popular as $item) {
@@ -131,6 +131,63 @@
                   }
                 ?>
             </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <img src="../assets/photos/banner3.jpg">
+        </div>
+
+        <!-- News -->
+        <h1 class="header">News</h1>
+        <div id="news">
+            <div class="news__banner left">
+                <img src="../assets/photos/news.jpg">
+            </div>
+            <div class="news__banner right">
+                <img src="../assets/photos/news2.jpg">
+            </div>
+            <div class="news__card">
+                <div class="news__img">
+                    <img src="../assets/photos/news3.jpg">
+                </div>
+                <div class="news__footer">
+                    <h3 class="news__title">Thiết kế Oppo Find X5 Pro gây ấn tượng</h3>
+                    <p class="news__desc">Oppo Find X5 Pro với loạt công nghệ hiện đại cùng thiết kế bằng gốm tinh xảo
+                        đã nhận được giải thưởng iF Design Award 2022.</p>
+                </div>
+            </div>
+            <div class="news__card">
+                <div class="news__img">
+                    <img src="../assets/photos/news4.jpg">
+                </div>
+                <div class="news__footer">
+                    <h3 class="news__title">Reno Series - nỗ lực sáng tạo của Oppo</h3>
+                    <p class="news__desc">Chưa đầy ba năm, 7 thế hệ Oppo Reno Series liên tục cải tiến cả về thiết kế
+                        lẫn công nghệ.</p>
+                </div>
+            </div>
+            <div class="news__card">
+                <div class="news__img">
+                    <img src="../assets/photos/news5.jpg">
+                </div>
+                <div class="news__footer">
+                    <h3 class="news__title">iPhone 11 là smartphone Apple bán chạy nhất 2020</h3>
+                    <p class="news__desc">Apple được cho là sẽ hạ giá iPhone 11 vào giữa tháng 9 cùng tai nghe
+                        AirPods Pro 2 và ba mẫu Apple Watch.</p>
+                </div>
+            </div>
+            <div class="news__card">
+                <div class="news__img">
+                    <img src="../assets/photos/news6.jpg">
+                </div>
+                <div class="news__footer">
+                    <h3 class="news__title">Samsung Galaxy S20 FE thêm bản dùng chip Snapdragon</h3>
+                    <p class="news__desc">So với model cũ dùng Exynos 990, Galaxy S20 FE bản 2021 sử dụng chip
+                        Snapdragon 865 nhưng vẫn chưa có kết nối 5G.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 

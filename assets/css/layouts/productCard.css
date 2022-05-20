@@ -18,13 +18,13 @@
   margin-bottom: 15px;
 }
 
-.category__title {
+.header {
   margin-bottom: 10px;
   user-select: none;
   cursor: pointer;
   display: inline-block;
   transition: 0.5s;
-  border-bottom: 3px solid var(--secondary-color);
+  border-bottom: 3px solid #bf953f;
 }
 
 .card {
@@ -34,17 +34,14 @@
   background-color: #fff;
   padding: 10px;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.25s;
   border-radius: 5px;
   position: relative;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
-    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
-    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+.card:hover .card__img img {
+  transform: scale(108%);
 }
 
 .card * {
@@ -62,6 +59,7 @@
   height: 100%;
   margin: 0 auto;
   user-select: none;
+  transition: 0.25s;
 }
 
 .card__content {

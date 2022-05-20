@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-:root {
-  --primary-color: #1e242f;
-  --secondary-color: #bf953f;
-  --background-color: #f4f4f4;
-  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
 html {
   height: 100%;
 }
@@ -21,7 +14,7 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: #f4f4f4;
   height: fit-content;
 }
 
@@ -47,7 +40,7 @@ a {
   height: 100%;
   object-fit: cover;
   user-select: none;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 ul {

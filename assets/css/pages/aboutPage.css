@@ -47,7 +47,7 @@ p.indent {
   display: inline-block;
   margin-bottom: 5px;
   padding-bottom: 5px;
-  border-bottom: var(--secondary-color) 3px solid;
+  border-bottom: #bf953f 3px solid;
 }
 
 .about__list {
@@ -70,12 +70,12 @@ p.indent {
 
 .profile {
   height: 465px;
-  background-color: var(--primary-color);
+  background-color: #1e242f;
   background-image: linear-gradient(
     to right bottom,
-    var(--primary-color),
+    #1e242f,
     rgb(73 74 68),
-    var(--primary-color)
+    #1e242f
   );
   text-align: center;
   padding: 20px;
@@ -89,7 +89,7 @@ p.indent {
   height: 100%;
   padding: 10px;
   border-radius: 20px;
-  border: 3px solid var(--secondary-color);
+  border: 3px solid #bf953f;
 }
 
 .profile > * {
@@ -149,7 +149,7 @@ p.indent {
 }
 
 .social__item > * {
-  color: var(--secondary-color);
+  color: #bf953f;
   font-size: 30px;
 }
 
@@ -171,7 +171,7 @@ p.indent {
   background-color: #fff;
   border-radius: 10px;
   line-height: 25px;
-  box-shadow: var(--box-shadow);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .feedback__body {
