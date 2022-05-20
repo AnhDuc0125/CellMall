@@ -121,6 +121,11 @@ require_once("../database/utility.php");
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <?php
+      include_once('../layout/footer.php');
+    ?>
 </body>
 <script src="../assets/js/validation.js"></script>
 <script>

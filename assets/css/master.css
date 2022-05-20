@@ -8,16 +8,8 @@
   --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* Css for scroll bar */
-body::-webkit-scrollbar {
-  width: 10px;
-  padding: 0 2px;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background-color: #929292;
-  background-clip: padding-box;
+html {
+  height: 100%;
 }
 
 * {

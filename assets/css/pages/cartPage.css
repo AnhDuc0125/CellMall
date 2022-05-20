@@ -1,3 +1,7 @@
+#main {
+  height: 90vh;
+}
+
 #cart {
   width: 100%;
   display: flex;
@@ -95,12 +99,12 @@
   color: var(--secondary-color);
 }
 
-th {
+.yourCart__table th {
   font-size: 20px;
 }
 
-th,
-td {
+.yourCart__table th,
+.yourCart__table td {
   padding: 15px;
   vertical-align: top;
 }

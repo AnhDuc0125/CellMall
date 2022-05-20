@@ -14,7 +14,10 @@
 
       $sameBrandProductSQL = "SELECT * FROM products where brand_id = '". $product['brand_id'] ."' AND title NOT LIKE '". $product['title'] ."' LIMIT 5";
       $sameBrandProduct = executeResult($sameBrandProductSQL);
-  }
+
+      $relatedProductSQL = "SELECT * FROM products where brand_id = '". $product['brand_id'] ."' LIMIT 5";
+      $realtedProducts = executeResult($relatedProductSQL);
+ }
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +34,7 @@
     <link rel="stylesheet" href="../assets/css/layouts/navbar.css" />
     <link rel="stylesheet" href="../assets/css/layouts/footer.css" />
     <link rel="stylesheet" href="../assets/css/pages/productPage.css" />
+    <link rel="stylesheet" href="../assets/css/layouts/productCard.css" />
     <!--Jquery cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -54,7 +58,7 @@
             <a class="shortcut__link" href="#"><?=$product['title']?></a>
         </div>
         <div class="product">
-            <h2 class="product__title"><?=$product['title']?> | Chính hãng VN/A</h2>
+            <h2 class="product__title"><?=$product['title']?> | VN/A</h2>
             <div class="product__detail">
                 <div class="detail__left">
                     <img src="<?=$product['image']?>" alt="" class="detail__image" />
@@ -62,7 +66,7 @@
                 <div class="product__middle">
                     <div class="product__price">
                         <h2 style="display: inline-block"><?=number_format($product['price'])?> <u>đ</u></h2>
-                        | Giá đã bao gồm VAT
+                        | VAT included
                     </div>
 
                     <h3 class="product__oldPrice">
@@ -145,6 +149,30 @@
                   }
                 ?>
             </table>
+        </div>
+        <!-- Related Products -->
+        <div class="category popular">
+            <h1 class="category__title">Related Products</h1>
+            <div class="card__container">
+                <?php
+                  foreach($realtedProducts as $item) {
+                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
+                                <div class="card__img">
+                                    <img src="'. $item['image'] .'"
+                                        alt="">
+                                </div>
+                                <div class="card__content">
+                                    <h4 class="card__title">'. $item['title'] .'</h4>
+                                    <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
+                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
+                                    <div class="card__voucher">Quà tặng lên đến 200.000 đ</div>
+                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
+                                    </div>
+                                </div>
+                            </a>';
+                  }
+                ?>
+            </div>
         </div>
     </div>
 

@@ -136,9 +136,11 @@
   width: 100%;
   height: fit-content;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
-  margin-top: 15px;
+  margin: 15px 0;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #d7d5d5;
 }
 
 .compare h1 {

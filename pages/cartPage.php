@@ -112,11 +112,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <?php
+      include_once('../layout/footer.php');
+    ?>
 </body>
 <script>
 function removeFromCart(id) {
     let removeConfirm =
-        confirm("You want to remove this product from your cart ? ");
+        confirm("You want to remove this product from your cart?");
     if (removeConfirm) {
         $.post('../api/order_api.php', {
                 'id': id,
