@@ -2,25 +2,21 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
-  
+  if(!empty($_GET)) {
+    if(isset($_GET['perPage'])) {
+        $perPage = getGet('perPage');
+    } else {
+        $perPage = 5;
+    }
 
-  if(!empty($_POST)) {
-    $name = getPost('product_name');
-    $brand = getPost('product_brand');
-    $category = getPost('product_category');
-    $desc = getPost('product_desc');
-    $price = getPost('product_price');
-    $oldPrice = getPost('product_oldPrice');
-    $resolution = getPost('product_resolution');
-    $image = getPost('product_image');
-    $discount = getPost('product_discount');
-    $status = getPost('product_status');
-    $storage = getPost('product_storage');
-    $Camera = getPost('product_ocamera');
-    $Chip = getPost('product_chip');
-    $Battery = getPost('product_battery');
-
-    $add = "insert into products(title, brand_id, category_id, description, price, old_price, resolution)";
+    if(isset($_GET['page'])) {
+        $page = getGet('page');
+    } else {
+        $page = 1;
+    }
+  } else {
+      $page = 1;
+      $perPage = 5;
   }
 
   //get number of products
@@ -28,310 +24,221 @@
   $countResult = executeResult($countSQL, true);
 
   //get product list
-  $select = "SELECT products.*, brands.name AS brand_name, categories.name AS cate_name FROM products, brands, categories WHERE products.cate_id = categories.id AND products.brand_id = brands.id;";
+  $select = "SELECT products.*, brands.name AS brand_name, categories.name AS cate_name FROM products, brands, categories WHERE products.cate_id = categories.id AND products.brand_id = brands.id AND products.id >= ". $page * 7 - 6 ." ORDER BY products.id ASC LIMIT 7";
   $productList = executeResult($select);
   
   //get brand list
-  $select = "SELECT * FROM brands";
-  $brandList = executeResult($select);
+  $brandSQL = "SELECT * FROM brands";
+  $brandList = executeResult($brandSQL);
 
   //get categories list
   $select = "SELECT * FROM categories";
   $cateList = executeResult($select);
 ?>
-<?php session_start(); ?>
-<?php include_once("./templates/top.php"); ?>
-<?php include_once("./templates/navbar.php"); ?>
-<div class="container-fluid">
-    <div class="row">
+<!DOCTYPE html>
+<html lang="en">
 
-        <?php include "./templates/sidebar.php"; ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--bootstrap 5 and Jquery cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
 
+<body>
+    <!-- Header -->
+    <div class="bg-secondary">
         <div class="row">
-            <div class="col-10">
-                <h2>Product List (<?=$countResult['COUNT(*)']?>)</h2>
+            <div class="col-11">
+                <h1>Product Manager (<?=$countResult['COUNT(*)']?>)</h1>
             </div>
-            <div class="col-2">
-                <a href="#" data-toggle="modal" data-target="#add_product_modal" class="btn btn-primary btn-sm">Add
-                    Product</a>
-            </div>
-        </div>
-
-        <div class="table-responsive">
-            <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Brand</th>
-
-                    </tr>
-                </thead>
-                <tbody id="product_list">
-                    <?php
-                      $index = 0;
-                      foreach($productList as $item) {
-                        echo '<tr>
-                                <td>'. ++$index .'</td>
-                                <td>'. $item['title'] .'</td>
-                                <td><img style="width: 100px" src="'. $item['image'] .'"></td>
-                                <td>'. $item['price'] .'</td>
-                                <td>'. $item['cate_name'] .'</td>
-                                <td>'. $item['brand_name'] .'</td>
-                                <td><a style="cursor: pointer" class="btn btn-sm btn-warning"><ion-icon name="brush-outline"></ion-icon></a><a style="cursor: pointer" class="mx-2 btn btn-sm text-light btn-danger"><ion-icon name="trash-outline"></ion-icon></a></td>
-                              </tr>';
-                      }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-        </main>
-    </div>
-</div>
-
-
-
-<!-- Add Product Modal start -->
-<div class="modal fade" id="add_product_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form method="post" id="add-product-form" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Name</label>
-                                <input type="text" name="product_name" class="form-control"
-                                    placeholder="Enter Product Name">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Brand Name</label>
-                                <select class="form-control brand_list" name="brand_id">
-                                    <option value="">Select Brand</option>
-                                    <?php
-                                      foreach($brandList as $item) {
-                                        echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
-                                      }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12">
-                            <div class="form-group">
-                                <label>Category Name</label>
-                                <select class="form-control category_list" name="category_id">
-                                    <option value="">Select Category</option>
-                                    <?php
-                                      foreach($cateList as $item) {
-                                        echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
-                                      }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Description</label>
-                                <textarea class="form-control" name="product_desc"
-                                    placeholder="Enter product desc"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Price</label>
-                                <input min="1" type="number" name="product_price" class="form-control"
-                                    placeholder="Enter Product Price">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Oldprice</label>
-                                <input type="number" name="product_oldPrice" class="form-control"
-                                    placeholder="Enter Product OldPrice">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Resolution</label>
-                                <input type="text" name="product_resolution" class="form-control"
-                                    placeholder="Enter Product Resolution">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Image</label>
-                                <input type="text" name="product_image" class="form-control"
-                                    placeholder="Enter Product Image URL">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product discount</label>
-                                <input type="number" name="product_discount" class="form-control"
-                                    placeholder="Enter Product discount">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product status</label>
-                                <input type="text" name="product_status" class="form-control"
-                                    placeholder="Enter Product status">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product storage</label>
-                                <input type="text" name="product_Storage" class="form-control"
-                                    placeholder="Enter Product Storage">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product camera</label>
-                                <input type="number" name="product_Camera" class="form-control"
-                                    placeholder="Enter Product Camera">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product chip</label>
-                                <input type="text" name="product_chip" class="form-control"
-                                    placeholder="Enter Product Chip">
-                            </div>
-                        </div>-->
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Battery</label>
-                                <input type="text" name="product_Battery" class="form-control"
-                                    placeholder="Enter Product Image URL">
-                            </div>
-                            <input type="hidden" name="add_product" value="1">
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary add-product">Add Product</button>
-                            </div>
-                        </div>
-
-                </form>
+            <div class="col-1 my-auto">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
             </div>
         </div>
     </div>
-</div>
-<!-- Add Product Modal end -->
 
-<!-- Edit Product Modal start -->
-<div class="modal fade" id="edit_product_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- Options -->
+    <div class="bg-white p-2">
+        <div class="row">
+            <div class="col-10" style="display: flex; align-items: center">
+                <label>Filter:</label>
+                <a href="?filter=onSale" class="btn btn-outline-success ms-2">On Sale</a>
+                <a href="?filter=popular" class="btn btn-outline-danger ms-2">Popular</a>
+                <a href="?filter=bestSeller" class="btn btn-outline-primary ms-2">Best Seller</a>
             </div>
-            <div class="modal-body">
-                <form id="edit-product-form" enctype="multipart/form-data">
+            <div class="col-2" style="width: 250px; display: flex; align-items: center; justify-content: space-between">
+                <a href="?page=<?=($page - 1)?>" class="btn btn-warning">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </a>
+                <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
+                <div>of <?=ceil($countResult['COUNT(*)'] / 7)?></div>
+                <a href="?page=<?=($page + 1)?>" class="btn btn-warning">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped table-bordered">
+        <tr class="table-dark">
+            <th>#</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Price (VND)</th>
+            <th>Brand</th>
+            <th>Discount</th>
+            <th>Category</th>
+            <th>Storage</th>
+            <th>Chipset</th>
+            <th>Battery</th>
+            <th>Resolution</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <?php
+          if(count($productList) > 0) {
+              $index = $page * 7 - 6;
+              foreach($productList as $item) {
+                echo    '<tr>
+                            <td>'. $index++ .'</th>
+                            <td>'. $item['title'] .'</th>
+                            <td><img src="'. $item['image'] .'" style="width: 75px"></th>
+                            <td>'. number_format($item['price']) .'</th>
+                            <td>'. $item['brand_name'] .'</th>
+                            <td>'. $item['discount'] .'</th>
+                            <td>'. $item['cate_name'] .'</th>
+                            <td>'. $item['storage'] .'</th>
+                            <td>'. $item['chip'] .'</th>
+                            <td>'. $item['battery'] .'</th>
+                            <td>'. $item['resolution'] .'</th>
+                            <td><button class="btn btn-warning">Edit</button></th>
+                            <td><button class="btn btn-danger" onclick="remove('. $item['id'] .')"><ion-icon name="trash-outline"></ion-icon></button></th>
+                        </tr>';
+              }
+          }
+        ?>
+    </table>
+
+    <!-- Modal Box -->
+    <div class="modal fade" id="addModal">
+        <div class="modal-dialog" style="max-width: 750px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Product</h5>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Name</label>
-                                <input type="text" name="e_product_name" class="form-control"
-                                    placeholder="Enter Product Name">
+                        <div class="col-6">
+                            <div class="form-group mb-2">
+                                <label>Title</label>
+                                <input type="text" class="form-control">
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Brand Name</label>
-                                <select class="form-control brand_list" name="e_brand_id">
-                                    <option value="">Select Brand</option>
+                            <div class="form-group mb-2">
+                                <label>Price</label>
+                                <input type="number" class="form-control" min="0">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Discount</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Brand</label>
+                                <select name="" id="" class="form-select">
+                                    <option>Click to select Brand</option>
                                     <?php
-                                      foreach($brandList as $item) {
-                                        echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
+                                      if(count($brandList) > 0) {
+                                          foreach($brandList as $item) {
+                                              echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
+                                          }
+                                      }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Category</label>
+                                <select name="" id="" class="form-select">
+                                    <option>Click to select Category</option>
+                                    <?php
+                                      if(count($cateList) > 0) {
+                                          foreach($cateList as $item) {
+                                              echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
+                                          }
                                       }
                                     ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Category Name</label>
-                                <select class="form-control category_list" name="e_category_id">
-                                    <option value="">Select Category</option>
-                                    <?php
-                                      foreach($cateList as $item) {
-                                        echo '<option value="'. $item['id'] .'">'. $item['name'] .'</option>';
-                                      }
-                                    ?>
-                                </select>
+                        <div class="col-6">
+                            <div class="form-group mb-2">
+                                <label>Storage</label>
+                                <input type="number" class="form-control" min="0">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Camera</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Chipset</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Battery</label>
+                                <input type="number" class="form-control" min="0">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label>Resolution</label>
+                                <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Description</label>
-                                <textarea class="form-control" name="e_product_desc"
-                                    placeholder="Enter product desc"></textarea>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="form-group mb-2">
+                                    <label>Image</label>
+                                    <textarea type="text" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label>Description</label>
+                                    <textarea type="text" class="form-control" style="height: 100px"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>Product Price</label>
-                                <input min="1" type="number" name="e_product_price" class="form-control"
-                                    placeholder="Enter Product Price">
+                            <div class="col-4">
+                                <label>Preview:</label>
+                                <img src="../assets/photos/emptyPicture.jpg" style="width: 100%; object-fit: cover">
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>Product Old price </label>
-                            <input type="text" name="e_product_oldPrice" class="form-control"
-                                placeholder="Enter Product oldprice">
-                        </div>
-                    </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <label>Product Resolution </label>
-                    <input type="text" name="e_product_resolution" class="form-control"
-                        placeholder="Enter Product Resolution">
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <label>Product Image</label>
-                    <input type="text" name="e_product_image" placeholder="Enter Product Image URL"
-                        class="form-control">
-                    <img src="../product_images/1.0x0.jpg" class="img-fluid" width="50">
-                </div>
-            </div>
-
-            <input type="hidden" name="pid">
-            <input type="hidden" name="edit_product" value="1">
-            <div class="col-12">
-                <button type="button" class="btn btn-primary submit-edit-product">Add Product</button>
             </div>
         </div>
-
-        </form>
     </div>
-</div>
-</div>
-</div>
-<!-- Edit Product Modal end -->
+</body>
+<script>
+function remove(id) {
+    actionConfirm = confirm("Are you sure to remove this product?");
 
-<?php include_once("./templates/footer.php"); ?>
+    if (actionConfirm) {
+        $.post("../api/db_api.php", {
+            'id': id,
+            'method': 'remove',
+            function(data) {
+                location.reload();
+            }
+        })
+    }
+}
+</script>
 
-
-
-<script type="text/javascript" src="./js/products.js"></script>
+</html>
