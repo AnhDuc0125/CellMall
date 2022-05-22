@@ -45,7 +45,7 @@
   $countResult = executeResult($countSQL, true);
 
   //get product list
-  $select = "SELECT products.*, brands.name AS brand_name, categories.name AS cate_name FROM products, brands, categories WHERE products.cate_id = categories.id AND products.brand_id = brands.id AND products.id >= ". $page * 7 - 6 ." ORDER BY products.id ASC LIMIT 7";
+  $select = "SELECT products.*, brands.name AS brand_name, categories.name AS cate_name FROM products, brands, categories WHERE products.cate_id = categories.id AND products.brand_id = brands.id AND products.id >= ". $page * 5 - 4 ." ORDER BY products.id ASC LIMIT 5";
   $productList = executeResult($select);
   
   //get brand list
@@ -81,10 +81,10 @@
     <!-- Header -->
     <div class="bg-secondary">
         <div class="row">
-            <div class="col-11">
+            <div class="col-10">
                 <h1>Product Manager (<?=$countResult['COUNT(*)']?>)</h1>
             </div>
-            <div class="col-1 my-auto">
+            <div class="col-2 my-auto">
                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
             </div>
         </div>
@@ -93,13 +93,9 @@
     <!-- Options -->
     <div class="bg-white p-2">
         <div class="row">
-            <div class="col-10" style="display: flex; align-items: center">
-                <!-- <label>Filter:</label>
-                <a href="?filter=onSale" class="btn btn-outline-success ms-2">On Sale</a>
-                <a href="?filter=popular" class="btn btn-outline-danger ms-2">Popular</a>
-                <a href="?filter=bestSeller" class="btn btn-outline-primary ms-2">Best Seller</a> -->
+            <div class="col-9" style="display: flex; align-items: center">
             </div>
-            <div class="col-2" style="display: flex; align-items: center; justify-content: space-between">
+            <div class="col-3" style="display: flex; align-items: center; justify-content: space-between">
                 <a href="?page=1" class="btn btn-warning" style="display: flex; align-items: center;">
                     <ion-icon name="play-back-outline"></ion-icon>
                 </a>
@@ -107,11 +103,11 @@
                     <ion-icon name="chevron-back-outline"></ion-icon>
                 </a>
                 <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
-                <div>of <?=ceil($countResult['COUNT(*)'] / 7)?></div>
+                <div>of <?=ceil($countResult['COUNT(*)'] / 5)?></div>
                 <a href="?page=<?=($page + 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </a>
-                <a href="?page=<?=ceil($countResult['COUNT(*)'] / 7)?>" class="btn btn-warning"
+                <a href="?page=<?=ceil($countResult['COUNT(*)'] / 5)?>" class="btn btn-warning"
                     style="display: flex; align-items: center;">
                     <ion-icon name="play-forward-outline"></ion-icon>
                 </a>
@@ -127,7 +123,6 @@
             <th>Image</th>
             <th>Price (VND)</th>
             <th>Brand</th>
-            <th>Discount</th>
             <th>Category</th>
             <th>Storage</th>
             <th>Chipset</th>
@@ -145,7 +140,6 @@
                             <td><img src="'. $item['image'] .'" style="width: 75px"></th>
                             <td>'. number_format($item['price']) .'</th>
                             <td>'. $item['brand_name'] .'</th>
-                            <td>'. $item['discount'] .'</th>
                             <td>'. $item['cate_name'] .'</th>
                             <td>'. $item['storage'] .'</th>
                             <td>'. $item['chip'] .'</th>
@@ -180,8 +174,8 @@
                                     <input name="price" type="number" class="form-control" min="0">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label>Discount</label>
-                                    <input name="discount" type="number" class="form-control">
+                                    <label>Voucher</label>
+                                    <input name="voucher" type="text" class="form-control">
                                 </div>
                                 <div class="form-group mb-2">
                                     <label>Brand</label>

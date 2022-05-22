@@ -1,0 +1,171 @@
+#main {
+  padding: 10px;
+}
+
+#checkout {
+  width: 100%;
+}
+
+.checkout__header,
+.checkout__body,
+.checkout__footer {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.checkout__title {
+  border-bottom: 3px solid #bf953f;
+  margin-bottom: 15px;
+}
+
+.checkout__address {
+  font-size: 20px;
+}
+
+.checkout__address span {
+  display: flex;
+  align-items: center;
+}
+
+.checkout__address table {
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px 5px 0;
+}
+
+.name.phone {
+  width: 30%;
+}
+
+.address {
+  width: 60%;
+}
+
+.change__btn {
+  cursor: pointer;
+  background-color: #1e242f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  transition: 0.25s;
+}
+
+.change__btn:hover {
+  background-color: #bf953f;
+}
+
+.header__table {
+  color: #bf953f;
+}
+
+.header__table:first-child {
+  width: 200px;
+}
+
+.checkout__item {
+}
+
+.checkout__item table {
+  width: 100%;
+}
+
+.checkout__item table th,
+.checkout__item table td {
+  text-align: center;
+}
+
+.thumbnail {
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail {
+}
+
+.detail__title,
+.detail__storage {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.detail__storage {
+}
+
+.quantity {
+  text-align: center;
+}
+
+.price {
+}
+
+.total_price {
+  /* text-align: right; */
+}
+
+.checkout__footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.methodPayment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.methodForm {
+  width: 150px;
+  height: 40px;
+  border: #bbb 2px solid;
+  outline: none;
+  margin-left: 15px;
+}
+
+.checkout__btn {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #1e242f;
+  font-size: 17px;
+  transition: 0.25s;
+  color: white;
+}
+
+.checkout__btn:hover {
+  background-color: #bf953f;
+}
+
+td.fee {
+  text-align: right;
+}
+
+.fee h2 {
+  color: #bf953f;
+}
+
+tr.checkout__total {
+  border-top: 2px solid #1e242f;
+}
+
+.checkoutBox table tr {
+  height: 40px;
+}

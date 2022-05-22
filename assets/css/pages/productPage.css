@@ -124,6 +124,7 @@
   outline: none;
   cursor: pointer;
   transition: 0.25s;
+  margin-bottom: 0;
 }
 
 .product__addToCart_btn:hover {
@@ -191,4 +192,11 @@
 
 .shortcut__link:hover {
   text-decoration: underline;
+}
+
+.download {
+  padding: 10px 15px;
+  background-color: #bf953f;
+  color: #fff;
+  border-radius: 50px;
 }

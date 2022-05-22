@@ -6,11 +6,33 @@
   $brandList = executeResult($getBrand);
   $result = null;
     if(!empty($_GET)){
+        if(isset($_GET['key'])){
+            $searchByKey = getGet('key');
+            $resultSql = "SELECT * FROM products WHERE title LIKE '%$searchByKey%'";
+            $result = executeResult($resultSql);
+            
+            if(isset($_GET['cate'])){
+                $searchByCate = getGet('cate');
+                $cateSql = "SELECT products.*, categories.name FROM products, categories WHERE products.cate_id = categories.id AND categories.name = '$searchByCate' AND products.title LIKE '%$searchByKey%'";
+                $result = executeResult($cateSql);
+            }
+
+            if(isset($_GET['filter'])){
+                if(isset($_GET['cate'])) {
+                    $resultSql = "SELECT products.*, categories.name FROM products, categories WHERE products.cate_id = categories.id AND categories.name = '$searchByCate' AND products.title LIKE '%$searchByKey%' ORDER BY products.price ".$_GET['filter'];
+                    $result = executeResult($resultSql);
+                } else {
+                    $resultSql = "SELECT * FROM products WHERE products.title LIKE '%$searchByKey%' ORDER BY products.price ". $_GET['filter'] ."";
+                    $result = executeResult($resultSql);
+                }
+            }
+        }
+        
         if(isset($_GET['brand'])){
             $searchByBrand = getGet('brand');
             $resultSql = "SELECT products.*, brands.name FROM products, brands WHERE products.brand_id = brands.id AND brands.name = '$searchByBrand'";
             $result = executeResult($resultSql);
-            $resultByName = null;
+            $resultByKey = null;
 
             if(isset($_GET['cate'])){
                 $searchByCate = getGet('cate');
@@ -28,13 +50,6 @@
                 }
             }
         }
-        
-        if(isset($_GET['key'])){
-            $searchByName = getGet('key');
-            $resultSql = "SELECT * FROM products WHERE title LIKE '%$searchByName%'";
-            $resultByName = executeResult($resultSql);
-        }
-
     }
 ?>
 <!DOCTYPE html>
@@ -130,7 +145,7 @@
         <div class="product result">
             <h1 class="product__title">
                 <?php  
-                if($result == null && $resultByName == null) {
+                if($result == null && $resultByKey == null) {
                     echo "<h1>Oops! Sorry, we don't have that products :(</h1>";
                 }
             ?>
@@ -139,40 +154,34 @@
                 <?php
                 if($result != null) {
                     foreach($result as $item) {
-                        echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
-                                  <div class="card__img">
-                                      <img src="'. $item['image'] .'"
-                                          alt="">
-                                  </div>
-                                  <div class="card__content">
-                                      <h4 class="card__title">'. $item['title'] .'</h4>
-                                      <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                      <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                      <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
-                                      <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                      </div>
-                                  </div>
-                              </a>';
-                    }
-                }
-                if(isset($_GET['key'])){
-                        foreach($resultByName as $item) {
-                            echo '<a href="productPage.php?key='. $item['href_param'] .'" class="card">
+                        echo    '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                     <div class="card__img">
-                                        <img src="'. $item['image'] .'"
-                                            alt="">
+                                        <img src="'. $item['image'] .'">
                                     </div>
                                     <div class="card__content">
                                         <h4 class="card__title">'. $item['title'] .'</h4>
                                         <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                        <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                        <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
-                                        <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                        </div>
+                                        <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                                        <div class="card__voucher">'. $item['voucher'] .'</div>
                                     </div>
                                 </a>';
-                        }
                     }
+                }
+                // if(isset($_GET['key'])){
+                //         foreach($resultByKey as $item) {
+                //             echo    '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
+                //                         <div class="card__img">
+                //                             <img src="'. $item['image'] .'">
+                //                         </div>
+                //                         <div class="card__content">
+                //                             <h4 class="card__title">'. $item['title'] .'</h4>
+                //                             <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
+                //                             <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                //                             <div class="card__voucher">'. $item['voucher'] .'</div>
+                //                         </div>
+                //                     </a>';
+                //         }
+                //     }
                 ?>
             </div>
         </div>

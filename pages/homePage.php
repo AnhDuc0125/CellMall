@@ -54,18 +54,15 @@
             <div class="card__container">
                 <?php
                   foreach($bestSeller as $item) {
-                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
+                      echo  '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
-                                    <img src="'. $item['image'] .'"
-                                        alt="">
+                                    <img src="'. $item['image'] .'">
                                 </div>
                                 <div class="card__content">
                                     <h4 class="card__title">'. $item['title'] .'</h4>
                                     <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                    <p class="card__oldPrice">'. number_format($item['old_price'] + 2000000) .' đ</p>
-                                    <div class="card__voucher">Quà tặng lên đến 500.000 đ</div>
-                                    <div class="card__star">'. rand('4', '5') .'<ion-icon name="star" class="star__icon"></ion-icon>
-                                    </div>
+                                    <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                                    <div class="card__voucher">'. $item['voucher'] .'</div>
                                 </div>
                             </a>';
                   }
@@ -84,18 +81,15 @@
             <div class="card__container">
                 <?php
                   foreach($onSale as $item) {
-                      echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
+                      echo  '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
-                                    <img src="'. $item['image'] .'"
-                                        alt="">
+                                    <img src="'. $item['image'] .'">
                                 </div>
                                 <div class="card__content">
                                     <h4 class="card__title">'. $item['title'] .'</h4>
                                     <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                    <div class="card__voucher">Giảm giá lên đến '. $item['discount'] .' %</div>
-                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                    </div>
+                                    <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                                    <div class="card__voucher">'. $item['voucher'] .'</div>
                                 </div>
                             </a>';
                   }
@@ -116,16 +110,13 @@
                   foreach($popular as $item) {
                       echo '<a href="./productPage.php?key='. $item['href_param'] .'" class="card">
                                 <div class="card__img">
-                                    <img src="'. $item['image'] .'"
-                                        alt="">
+                                    <img src="'. $item['image'] .'">
                                 </div>
                                 <div class="card__content">
                                     <h4 class="card__title">'. $item['title'] .'</h4>
                                     <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                    <div class="card__voucher">Quà tặng lên đến 200.000 đ</div>
-                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                    </div>
+                                    <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                                    <div class="card__voucher">'. $item['voucher'] .'</div>
                                 </div>
                             </a>';
                   }
@@ -182,7 +173,7 @@
                     <img src="../assets/photos/news6.jpg">
                 </div>
                 <div class="news__footer">
-                    <h3 class="news__title">Samsung Galaxy S20 FE thêm bản dùng chip Snapdragon</h3>
+                    <h3 class="news__title">Samsung Galaxy S20 sẽ dùng chip Snapdragon</h3>
                     <p class="news__desc">So với model cũ dùng Exynos 990, Galaxy S20 FE bản 2021 sử dụng chip
                         Snapdragon 865 nhưng vẫn chưa có kết nối 5G.</p>
                 </div>

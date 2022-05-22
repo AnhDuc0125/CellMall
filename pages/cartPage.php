@@ -108,7 +108,8 @@
                         </select>
                     </div>
                 </div>
-                <button class="checkout__btn">CHECKOUT</button>
+                <button class="checkout__btn"><a
+                        href="checkoutPage.php?id_user=<?=$_SESSION['currentUser']['id']?>">CHECKOUT</a></button>
             </div>
         </div>
     </div>

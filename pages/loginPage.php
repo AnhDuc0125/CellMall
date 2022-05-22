@@ -1,15 +1,22 @@
 <?php
   session_start();
 
-  unset($_SESSION['currentUser']);
-
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
+  
+    if(!empty($_GET['logout'])) {
+      unset($_SESSION['currentUser']);
+      header("Location: loginPage.php");
+    }
+    
+    if(isset($_SESSION['currentUser'])) {
+        header("Location: homePage.php");
+    }
+    
 
   if(!empty($_POST)){
       $email = getPost("email");
       $password = getPost("password");
-      $rememberLogin = getPost("rememberLogin");
 
       $password = decodeValue($password);
 
@@ -71,7 +78,7 @@
                         <span class="message"></span>
                     </div>
                     <div class="form__item block checkbox">
-                        <input type="checkbox" class="form__checkbox" id="checkbox" name="rememberLogin" value="yes">
+                        <input type="checkbox" class="form__checkbox" id="checkbox" value="yes">
                         <label>Show password</label>
                     </div>
                 </div>

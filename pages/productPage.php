@@ -4,6 +4,12 @@
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
+    // Check login
+    $haveLog = 0;
+    if(isset($_SESSION['currentUser'])) {
+        $haveLog = 1;
+    }
+
   if(!empty($_GET)) {
       $key = getGet('key');
       $productSQl = "SELECT products.*, brands.name as brand_name FROM products, brands WHERE products.brand_id = brands.id AND href_param = '$key'";
@@ -73,7 +79,16 @@
                         Giá cũ: <span><?=number_format($product['old_price'] + 2000000)?> <u>đ</u></span>
                     </h3>
                     <div class="product__desc">
-                        <?=$product['description']?>
+                        <ul>
+                            <li>Powerful, super-fast with A14 chip, 6GB RAM, high-speed 5G network</li>
+                            <li>
+                                Brilliant, sharp, high brightness - Premium OLED display, Super Retina XDR with HDR10
+                                support,
+                                Dolby Vision
+                            </li>
+                            <li>Super photography - Night Mode, Deep Fusion algorithm, Smart HDR 3, LiDar . camera</li>
+                            <li>Outstanding durability - IP68 waterproof, dustproof, Ceramic Shield back panel</li>
+                        </ul>
                     </div>
                     <button class="product__addToCart_btn" onclick="addToCart(<?=$product['id']?>)">
                         ADD TO CART
@@ -149,6 +164,8 @@
                   }
                 ?>
             </table>
+            <a href="../product_doc.docx" class="download" download="product_document">Download document of
+                <?=$product['title']?></a>
         </div>
         <!-- Related Products -->
         <div class="category popular">
@@ -164,10 +181,8 @@
                                 <div class="card__content">
                                     <h4 class="card__title">'. $item['title'] .'</h4>
                                     <h4 class="card__price">'. number_format($item['price']) .' đ</h4>
-                                    <p class="card__oldPrice">'. number_format($item['old_price']) .' đ</p>
-                                    <div class="card__voucher">Quà tặng lên đến 200.000 đ</div>
-                                    <div class="card__star">4.5 <ion-icon name="star" class="star__icon"></ion-icon>
-                                    </div>
+                                    <p class="card__oldPrice">'. number_format($item['price'] + 2000000) .' đ</p>
+                                    <div class="card__voucher">'. $item['voucher'] .'</div>
                                 </div>
                             </a>';
                   }
@@ -183,10 +198,19 @@
 </body>
 <script>
 function addToCart(id) {
-    $.post("../api/order_api.php", {
-        'id': id,
-        'method': 'add'
-    }, function(data) {})
+    let haveLog = <?=$haveLog?>;
+    if (haveLog) {
+        //add animation class
+        cart = document.querySelector('.symbol.cart');
+        cart.classList.add('success');
+
+        $.post("../api/order_api.php", {
+            'id': id,
+            'method': 'add'
+        }, function(data) {})
+    } else {
+        window.location.replace("loginPage.php")
+    }
 }
 </script>
 

@@ -5,13 +5,15 @@
       header("Location: loginPage.php");  
   }
     
+  $id = '';
+
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
   $method = getPost('method');
-  $id = getPost('id');
   $date = date('Y-m-d H:i:s');
   $userId = $_SESSION['currentUser']['id'];
+  $id = getPost('id');
 
   //get price
   $productSQL = "SELECT * FROM products WHERE id = '$id'"; 
@@ -41,6 +43,11 @@
           execute($minusSQL);
           echo $minusSQL;
           break;
+
+      case 'checkout':
+          $user_id = getPost('user_id');
+          $checkoutSQL = "DELETE FROM order_items WHERE user_id = '$user_id'";
+          execute($checkoutSQL);
   }
 
 ?>

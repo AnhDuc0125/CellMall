@@ -147,14 +147,16 @@ td.price {
   border: none;
   outline: none;
   background-color: #1e242f;
-  color: white;
   font-size: 17px;
   transition: 0.25s;
 }
 
+.checkout__btn a {
+  color: white;
+}
+
 .checkout__btn:hover {
   background-color: #bf953f;
-  color: white;
 }
 
 .highlightText > a {

@@ -5,19 +5,19 @@
   require_once("../database/utility.php");
 
   if(!empty($_POST)){
-    //   $email = getPost("email");
-    //   $password = getPost("password");
-    //   $rememberLogin = getPost("rememberLogin");
+      $oldPassword = getPost('oldPassword');
+      $newPassword = getPost('newPassword');
 
-    //   $password = decodeValue($password);
+      //MD5 password
+      $oldPassword = decodeValue($oldPassword);
+      $newPassword = decodeValue($newPassword);
 
-    //   $login = "select * from users where email = '$email' and password = '$password'";
-    //   $user = executeResult($login, true);
-
-    //   if(!empty($user)) {
-    //     $_SESSION['currentUser'] = $user;
-    //     header("Location: homePage.php");
-    //   }
+    // Check old password  
+      if($oldPassword == $_SESSION['currentUser']['password']) {
+          $resetSQL = "UPDATE users SET password = '$newPassword' WHERE id = ".$_SESSION['currentUser']['id'];
+          execute($resetSQL);
+          header("Location: homePage.php");
+      }
   }
 ?>
 
@@ -89,6 +89,7 @@ Validation({
     'rules': [
         isRequired('#oldPassword'),
         isRequired('#newPassword'),
+        isStrongPw('#newPassword')
     ]
 });
 

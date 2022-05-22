@@ -26,7 +26,7 @@
                     <span class="underline"></span>
                 </a>
                 <a href="../pages/cartPage.php" class="cart">
-                    <ion-icon name="bag-handle-outline" class="symbol"></ion-icon>
+                    <ion-icon name="bag-handle-outline" class="symbol cart"></ion-icon>
                     <div class="content">
                         <p class="item__title">Your Cart</p>
                         <b class="item__detail">Check Cart</b>
@@ -41,9 +41,8 @@
                                     <p class="item__title">Member</p>
                                         <b class="item__detail">'. $_SESSION['currentUser']['username'] .'</b>
                                 </div>
-                                <span class="underline"></span>
                                 <div class="dropdown">
-                                    <a href="loginPage.php" class="dropdown__item">Log out</a>
+                                    <a href="loginPage.php?logout=true" class="dropdown__item">Log out</a>
                                     <a href="../admin/login.php" class="dropdown__item">Admin</a>
                                     <a href="resetPage.php" class="dropdown__item">Reset Password</a>
                                 </div>
@@ -56,10 +55,6 @@
                                         <b class="item__detail">Login/Signup</b>
                                 </div>
                                 <span class="underline"></span>
-                                <div class="dropdown">
-                                    <a href="loginPage.php" class="dropdown__item">Log out</a>
-                                    <a href="../admin/login.php" class="dropdown__item">Admin</a>
-                                </div>
                             </a>';
                     }
                 ?>
