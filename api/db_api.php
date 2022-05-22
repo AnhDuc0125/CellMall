@@ -8,5 +8,6 @@
   switch($method) {
       case 'remove':
         $removeSQL = "DELETE FROM products WHERE id = ".$id;
+        execute($removeSQL);
   }
 ?>
