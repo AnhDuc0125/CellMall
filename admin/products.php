@@ -56,30 +56,20 @@
   $select = "SELECT * FROM categories";
   $cateList = executeResult($select);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Icon -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!--bootstrap 5 and Jquery cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+<!-- Header -->
+<?php
+  include_once("./layouts/header.php");
+?>
 
 <body>
-    <!-- Header -->
-    <div class="bg-secondary">
+    <!-- Aside-start -->
+    <?php
+      include_once("./layouts/aside_start.php");
+    ?>
+
+    <!-- Title -->
+    <div class="">
         <div class="row">
             <div class="col-10">
                 <h1>Product Manager (<?=$countResult['COUNT(*)']?>)</h1>
@@ -92,31 +82,27 @@
 
     <!-- Options -->
     <div class="bg-white p-2">
-        <div class="row">
-            <div class="col-9" style="display: flex; align-items: center">
-            </div>
-            <div class="col-3" style="display: flex; align-items: center; justify-content: space-between">
-                <a href="?page=1" class="btn btn-warning" style="display: flex; align-items: center;">
-                    <ion-icon name="play-back-outline"></ion-icon>
-                </a>
-                <a href="?page=<?=($page - 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </a>
-                <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
-                <div>of <?=ceil($countResult['COUNT(*)'] / 5)?></div>
-                <a href="?page=<?=($page + 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </a>
-                <a href="?page=<?=ceil($countResult['COUNT(*)'] / 5)?>" class="btn btn-warning"
-                    style="display: flex; align-items: center;">
-                    <ion-icon name="play-forward-outline"></ion-icon>
-                </a>
-            </div>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+            <a href="?page=1" class="btn btn-warning" style="display: flex; align-items: center;">
+                <i class='bx bxs-chevrons-left'></i>
+            </a>
+            <a href="?page=<?=($page - 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
+                <i class='bx bxs-chevron-left'></i>
+            </a>
+            <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
+            <div>of <?=ceil($countResult['COUNT(*)'] / 5)?></div>
+            <a href="?page=<?=($page + 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
+                <i class='bx bxs-chevron-right'></i>
+            </a>
+            <a href="?page=<?=ceil($countResult['COUNT(*)'] / 5)?>" class="btn btn-warning"
+                style="display: flex; align-items: center;">
+                <i class='bx bxs-chevrons-right'></i>
+            </a>
         </div>
     </div>
 
     <!-- Table -->
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" style="width: 99%">
         <tr class="table-dark">
             <th>#</th>
             <th>Title</th>
@@ -124,15 +110,11 @@
             <th>Price (VND)</th>
             <th>Brand</th>
             <th>Category</th>
-            <th>Storage</th>
-            <th>Chipset</th>
-            <th>Battery</th>
-            <th>Resolution</th>
             <th colspan="2">Action</th>
         </tr>
         <?php
           if(count($productList) > 0) {
-              $index = $page * 7 - 6;
+              $index = $page * 5 - 4;
               foreach($productList as $item) {
                 echo    '<tr>
                             <td>'. $index++ .'</th>
@@ -141,12 +123,8 @@
                             <td>'. number_format($item['price']) .'</th>
                             <td>'. $item['brand_name'] .'</th>
                             <td>'. $item['cate_name'] .'</th>
-                            <td>'. $item['storage'] .'</th>
-                            <td>'. $item['chip'] .'</th>
-                            <td>'. $item['battery'] .'</th>
-                            <td>'. $item['resolution'] .'</th>
-                            <td><button class="btn btn-warning">Edit</button></th>
-                            <td><button class="btn btn-danger" onclick="remove('. $item['id'] .')"><ion-icon name="trash-outline"></ion-icon></button></th>
+                            <td><button class="btn btn-warning"><i class="bx bxs-pencil" ></i></button></th>
+                            <td><button class="btn btn-danger" onclick="remove('. $item['id'] .')"><i class="bx bx-trash" ></i></button></th>
                         </tr>';
               }
           }
@@ -252,6 +230,10 @@
             </div>
         </div>
     </div>
+    <!-- Aside-end -->
+    <?php
+      include_once("./layouts/aside_end.php");
+    ?>
 </body>
 <script>
 function remove(id) {
@@ -273,4 +255,7 @@ $("textarea[name='image']").on('input', function() {
 })
 </script>
 
-</html>
+<!-- Footer -->
+<?php
+  include_once("./layouts/footer.php");
+?>
