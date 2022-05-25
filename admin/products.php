@@ -69,10 +69,27 @@
     ?>
 
     <!-- Title -->
-    <div class="">
-        <div class="row">
-            <div class="col-10">
-                <h1>Product Manager (<?=$countResult['COUNT(*)']?>)</h1>
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-6">
+                <h1 class="my-0">Product Manager (<?=$countResult['COUNT(*)']?>)</h1>
+            </div>
+            <div class="col-4" style="display: flex; align-items: center; justify-content: space-between"><a
+                    href="?page=1" class="btn btn-warning" style="display: flex; align-items: center;">
+                    <i class='bx bxs-chevrons-left'></i>
+                </a>
+                <a href="?page=<?=($page - 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
+                    <i class='bx bxs-chevron-left'></i>
+                </a>
+                <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
+                <div>of <?=ceil($countResult['COUNT(*)'] / 5)?></div>
+                <a href="?page=<?=($page + 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
+                    <i class='bx bxs-chevron-right'></i>
+                </a>
+                <a href="?page=<?=ceil($countResult['COUNT(*)'] / 5)?>" class="btn btn-warning"
+                    style="display: flex; align-items: center;">
+                    <i class='bx bxs-chevrons-right'></i>
+                </a>
             </div>
             <div class="col-2 my-auto">
                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
@@ -80,29 +97,8 @@
         </div>
     </div>
 
-    <!-- Options -->
-    <div class="bg-white p-2">
-        <div style="display: flex; align-items: center; justify-content: space-between">
-            <a href="?page=1" class="btn btn-warning" style="display: flex; align-items: center;">
-                <i class='bx bxs-chevrons-left'></i>
-            </a>
-            <a href="?page=<?=($page - 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
-                <i class='bx bxs-chevron-left'></i>
-            </a>
-            <input type="number" class="form-control" style="width: 60px" readonly value="<?=$page?>">
-            <div>of <?=ceil($countResult['COUNT(*)'] / 5)?></div>
-            <a href="?page=<?=($page + 1)?>" class="btn btn-warning" style="display: flex; align-items: center;">
-                <i class='bx bxs-chevron-right'></i>
-            </a>
-            <a href="?page=<?=ceil($countResult['COUNT(*)'] / 5)?>" class="btn btn-warning"
-                style="display: flex; align-items: center;">
-                <i class='bx bxs-chevrons-right'></i>
-            </a>
-        </div>
-    </div>
-
     <!-- Table -->
-    <table class="table table-striped table-bordered" style="width: 99%">
+    <table class="table table-striped table-bordered mx-auto" style="width: 85%">
         <tr class="table-dark">
             <th>#</th>
             <th>Title</th>
@@ -123,7 +119,7 @@
                             <td>'. number_format($item['price']) .'</th>
                             <td>'. $item['brand_name'] .'</th>
                             <td>'. $item['cate_name'] .'</th>
-                            <td><button class="btn btn-warning"><i class="bx bxs-pencil" ></i></button></th>
+                            <td><a href="./product-edit.php?id='. $item['id'] .'" class="btn btn-warning"><i class="bx bxs-pencil" ></i></a></th>
                             <td><button class="btn btn-danger" onclick="remove('. $item['id'] .')"><i class="bx bx-trash" ></i></button></th>
                         </tr>';
               }
@@ -230,6 +226,7 @@
             </div>
         </div>
     </div>
+
     <!-- Aside-end -->
     <?php
       include_once("./layouts/aside_end.php");
@@ -242,7 +239,7 @@ function remove(id) {
     if (actionConfirm) {
         $.post("../api/db_api.php", {
             'id': id,
-            'method': 'remove',
+            'method': 'remove_product',
             function(data) {
                 location.reload();
             }

@@ -24,4 +24,9 @@
     <link rel="stylesheet" href="./theme/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="./theme/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./theme/assets/css/demo.css" />
+
+    <!--bootstrap 5 and Jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>

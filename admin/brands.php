@@ -2,47 +2,50 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  if(!empty($_POST)) {
+      $date = date('Y-m-d H:i:s');
+      if(isset($_POST['brand_name'])) {
+        $brandName = getPost('brand_name');
+        $addBrandSQL = "INSERT INTO brands (name, created_at, updated_at) VALUES ('$brandName', '$date', '$date')";
+        execute($addBrandSQL);
+        header("Refesh: 0");
+      } 
+
+      if(isset($_POST['cate_name'])) {
+        $cateName = getPost('cate_name');
+        $addCateSQL = "INSERT INTO categories (name, created_at, updated_at) VALUES ('$cateName', '$date', '$date')";
+        execute($addCateSQL);
+        header("Refesh: 0");
+    } 
+  }
+
   //get brand list
   $brandSQL = "SELECT * FROM brands";
   $brandList = executeResult($brandSQL);
-
-  //count brands
-  $countSQL = "SELECT COUNT(*) FROM brands";
-  $countResult = executeResult($countSQL, true);
 
     //get category list
     $cateSQL = "SELECT * FROM categories";
     $cateList = executeResult($cateSQL);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brands</title>
-    <!-- Icon -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!--bootstrap 5 and Jquery cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+<!-- Header -->
+<?php
+  include_once("./layouts/header.php");
+?>
 
 <body>
+    <!-- Aside-start -->
+    <?php
+      include_once("./layouts/aside_start.php");
+    ?>
+
     <!-- Title -->
-    <div class="bg-secondary">
-        <div class="row">
-            <div class="col-10">
-                <h1>Brand Manager (<?=$countResult['COUNT(*)']?>)</h1>
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-9">
+                <h1 class="my-0">Brand & Category Manager</h1>
             </div>
-            <div class="col-2 my-auto">
+            <div class="col-3 my-auto">
                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addBrandModal">Add
                     Brand</button>
                 <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addCateModal">Add
@@ -52,53 +55,56 @@
     </div>
 
     <!-- Table -->
-    <div class="row">
-        <!-- Brands table -->
-        <div class="col-8">
-            <table class="table table-striped table-bordered">
+    <div class="row mx-auto" style="width: 85%">
+        <div class="col-7">
+            <table class="table table-striped table-bordered container">
                 <tr class="table-dark">
                     <th>#</th>
                     <th>Name Brands</th>
                     <th colspan="2">Action</th>
                 </tr>
                 <?php
-                    if(count($brandList) > 0) {
-                        $index = 1;
-                        foreach($brandList as $item) {
-                            echo    '<tr>
-                            <td>'. $index++ .'</th>
-                            <td>'. $item['name'] .'</th>
-                            <td><button class="btn btn-warning">Edit</button></th>
-                            <td><button class="btn btn-danger" onclick="remove()"><ion-icon name="trash-outline"></ion-icon></button></th>
-                            </tr>';
+                        if(count($brandList) > 0) {
+                            $index = 1;
+                            foreach($brandList as $item) {
+                                echo    '<tr>
+                                <td>'. $index++ .'</th>
+                                <td>'. $item['name'] .'</th>
+                                <td><button class="btn btn-warning"><i class="bx bxs-pencil" ></i></button></th>
+                                <td><button class="btn btn-danger" onclick="removeBrand('. $item['id'] .')"><i class="bx bx-trash" ></i></button></th>
+                                </tr>';
+                                }
                             }
-                        }
-                    ?>
+                        ?>
             </table>
         </div>
-        <div class="col-4">
-            <!-- Category table -->
-            <table class="table table-striped table-bordered">
+        <div class="col-5">
+            <table class="table table-striped table-bordered container">
                 <tr class="table-dark">
                     <th>#</th>
                     <th>Name Category</th>
                     <th colspan="2">Action</th>
                 </tr>
                 <?php
-                if(count($cateList) > 0) {
-                $index = 1;
-                foreach($cateList as $item) {
-                    echo    '<tr>
-                    <td>'. $index++ .'</th>
-                    <td>'. $item['name'] .'</th>
-                    <td><button class="btn btn-warning">Edit</button></th>
-                    <td><button class="btn btn-danger" onclick="remove()"><ion-icon name="trash-outline"></ion-icon></button></th>
-                    </tr>';
+                    if(count($cateList) > 0) {
+                    $index = 1;
+                    foreach($cateList as $item) {
+                        echo    '<tr>
+                        <td>'. $index++ .'</th>
+                        <td>'. $item['name'] .'</th>
+                        <td><button class="btn btn-warning"><i class="bx bxs-pencil" ></i></button></th>
+                        <td><button class="btn btn-danger" onclick="removeCate('. $item['id'] .')"><i class="bx bx-trash" ></i></button></th>
+                        </tr>';
+                        }
                     }
-                }
-                ?>
+                    ?>
             </table>
         </div>
+    </div>
+
+
+    <!-- Table -->
+
     </div>
 
     <!-- Modal Box -->
@@ -112,9 +118,10 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group mb-2">
-                            <label>Name</label>
-                            <input name="name" type="text" class="form-control">
+                            <label>Name Brand:</label>
+                            <input name="brand_name" type="text" class="form-control">
                         </div>
+                        <button class="btn btn-success">Add Brand</button>
                     </form>
                 </div>
             </div>
@@ -130,19 +137,59 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group mb-2">
-                            <label>Name</label>
-                            <input name="name" type="text" class="form-control">
+                            <label>Name Category:</label>
+                            <input name="cate_name" type="text" class="form-control">
                         </div>
+                        <button class="btn btn-success">Add Category</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Aside-end -->
+    <?php
+      include_once("./layouts/aside_end.php");
+    ?>
 </body>
 <script>
-function remove() {
-    alert("Sorry, can not delete brand now!")
+function removeBrand(id) {
+    if (id > 8) {
+        let request = confirm("Do you want to remove this brand?");
+
+        if (request) {
+            $.post("../api/db_api.php", {
+                'id': id,
+                'method': 'remove_brand',
+                function(data) {
+                    location.replace('brands.php');
+                }
+            })
+        }
+    } else {
+        alert("You can't remove this brand now!!!")
+    }
+}
+
+function removeCate(id) {
+    if (id > 3) {
+        let request = confirm("Do you want to remove this category?");
+
+        if (request) {
+            $.post("../api/db_api.php", {
+                'id': id,
+                'method': 'remove_cate',
+                function(data) {
+                    location.replace('brands.php');
+                }
+            })
+        }
+    } else {
+        alert("You can't remove this category now!!!")
+    }
 }
 </script>
 
-</html>
+<!-- Footer -->
+<?php
+  include_once("./layouts/footer.php");
+?>

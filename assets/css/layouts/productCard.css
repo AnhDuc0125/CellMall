@@ -30,7 +30,7 @@
 .card {
   min-width: 160px;
   width: 100%;
-  height: fit-content;
+  height: 330px;
   background-color: #fff;
   padding: 10px;
   cursor: pointer;

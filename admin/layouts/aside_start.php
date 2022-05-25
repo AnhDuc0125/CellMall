@@ -14,7 +14,7 @@
 
             <ul class="menu-inner py-1">
                 <!-- Orders -->
-                <li class="menu-item active">
+                <li class="menu-item">
                     <a href="index.html" class="menu-link">
                         <i class="bx bxs-badge-dollar menu-icon tf-icons"></i>
                         <div data-i18n="Analytics">Orders</div>
@@ -134,4 +134,4 @@
             <!-- / Navbar -->
 
             <!-- Content wrapper -->
-            <div class="content-wrapper">
+            <div>
