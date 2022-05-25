@@ -15,7 +15,7 @@
             <ul class="menu-inner py-1">
                 <!-- Orders -->
                 <li class="menu-item">
-                    <a href="index.html" class="menu-link">
+                    <a href="index.php" class="menu-link">
                         <i class="bx bxs-badge-dollar menu-icon tf-icons"></i>
                         <div data-i18n="Analytics">Orders</div>
                     </a>
@@ -41,7 +41,7 @@
                 </li>
                 <!-- Cards -->
                 <li class="menu-item">
-                    <a href="cards-basic.html" class="menu-link">
+                    <a href="accounts.php" class="menu-link">
                         <i class="bx bxs-user menu-icon tf-icons"></i>
                         <div>Accounts</div>
                     </a>
