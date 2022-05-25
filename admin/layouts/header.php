@@ -11,7 +11,6 @@
     <title>Admin CellMall</title>
 
     <meta name="description" content="" />
-
     <!-- Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -24,9 +23,4 @@
     <link rel="stylesheet" href="./theme/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="./theme/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="./theme/assets/css/demo.css" />
-
-    <!--bootstrap 5 and Jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 </head>

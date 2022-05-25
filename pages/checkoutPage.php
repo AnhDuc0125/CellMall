@@ -8,17 +8,32 @@
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
+    
     // Get orders of user
     $orderSQL = "SELECT order_items.*, products.title AS 'p-title', products.image AS 'p-image', products.storage AS 'p-storage', products.price AS 'p-price', products.href_param AS 'p-href' FROM order_items, products WHERE order_items.product_id = products.id AND order_items.user_id = ". $_SESSION['currentUser']['id'];
     $orderResult = executeResult($orderSQL);
-
+    
     // Get user infomation
     $userSQL = "SELECT * FROM users WHERE id = ".$_SESSION['currentUser']['id'];
     $userResult = executeResult($userSQL, true);
-
+    
     // sub-price
     $subPriceSQL = "SELECT SUM(total_price) AS total_price FROM order_items WHERE user_id = ".$_SESSION['currentUser']['id'];
     $subPriceResult = executeResult($subPriceSQL, true);
+    
+    if(!empty($_POST)) {
+        $recipient = $_SESSION['currentUser']['fullname'];
+        $phone = $_SESSION['currentUser']['phone'];
+        $user_id = $_SESSION['currentUser']['id'];
+        $address = getPost('address');
+        $message = getPost('message');
+        $total_price = getPost('total_price');
+
+        $checkoutSQL = "INSERT INTO orders (recipient, phone, user_id, address, message, total_price) VALUES ('$recipient', '$phone', '$user_id', '$address', '$message', '$total_price')";
+        execute($checkoutSQL);   
+
+        header("Location: homePage.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +61,7 @@
     ?>
 
     <div id="main">
-        <div id="checkout">
+        <form method="post" id="checkout">
             <div class="checkout__header">
                 <h2 class="checkout__title">CHECKOUT</h2>
                 <div class="checkout__address">
@@ -61,8 +76,11 @@
                                     <li class="phone" style="font-size: 15px"><?=$userResult['phone']?></li>
                                 </ul>
                             </th>
-                            <td class="address"><?=$userResult['address']?></td>
-                            <td><button class="change__btn">Change Address</button></td>
+                            <td class="address">
+                                <textarea name="address"
+                                    onfocus="setSelectionRange(0, this.value.length)"><?=$userResult['address']?></textarea>
+                            </td>
+                            <td><button type="button" class="change__btn">Change Address</button></td>
                         </tr>
                     </table>
                 </div>
@@ -105,13 +123,19 @@
                 </div>
             </div>
             <div class="checkout__footer">
-                <div class="methodPayment">
-                    <h2>METHOD PAYMENT</h2>
-                    <select name="method" class="methodForm">
-                        <option value="cash">Cash</option>
-                        <option value="debit">Debit cards</option>
-                        <option value="credit">Credit cards</option>
-                    </select>
+                <div class="beforeCheckout">
+                    <div class="methodPayment">
+                        <h2>METHOD PAYMENT</h2>
+                        <select name="method" class="methodForm">
+                            <option value="cash">Cash</option>
+                            <option value="debit">Debit cards</option>
+                            <option value="credit">Credit cards</option>
+                        </select>
+                    </div>
+                    <div class="messageToShipper">
+                        <label>Message to shipper:</label>
+                        <textarea name="massage" cols="30" rows="10"></textarea>
+                    </div>
                 </div>
                 <div class="checkoutBox">
                     <table>
@@ -129,6 +153,8 @@
                             </th>
                             <td class="fee">
                                 <h2><?=number_format($subPriceResult['total_price'] + 50000)?> đ</h2>
+                                <input type="hidden" name="total_price"
+                                    value="<?=$subPriceResult['total_price'] + 50000?>">
                             </td>
                         </tr>
                     </table>
@@ -136,7 +162,7 @@
                         onclick="checkout(<?=$_SESSION['currentUser']['id']?>)">CHECKOUT</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <!-- Footer -->
@@ -154,6 +180,10 @@ function checkout(user_id) {
         }
     })
 }
+
+$('.change__btn').click(function() {
+    $('[name=address]').focus()
+})
 </script>
 
 </html>

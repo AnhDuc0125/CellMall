@@ -153,6 +153,7 @@ td.price {
 
 .checkout__btn a {
   color: white;
+  padding: 10px 85.605px;
 }
 
 .checkout__btn:hover {

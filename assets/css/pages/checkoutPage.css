@@ -47,6 +47,15 @@ th {
   width: 60%;
 }
 
+.address textarea {
+  width: 50%;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 18px;
+  pointer-events: none;
+}
+
 .change__btn {
   cursor: pointer;
   background-color: #1e242f;
@@ -113,15 +122,25 @@ th {
 .price {
 }
 
-.total_price {
-  /* text-align: right; */
-}
-
 .checkout__footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.messageToShipper label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.messageToShipper textarea {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  padding: 5px;
+  outline: none;
 }
 
 .methodPayment {

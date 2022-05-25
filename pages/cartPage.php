@@ -83,7 +83,7 @@
                              }
                          } else {
                              echo "<h1>You have 0 items in cart :(</h1>";
-                             echo "<h3 class='highlightText'><a href='homePage.php'>Go shopping</a></h3>";
+                             echo "<h3 class='highlightText'><a href='homePage.php'>Go for shopping</a></h3>";
                          }
                         ?>
                     </table>
