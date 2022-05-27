@@ -149,6 +149,11 @@ td.price {
   background-color: #1e242f;
   font-size: 17px;
   transition: 0.25s;
+  pointer-events: none;
+}
+
+.checkout__btn.valid {
+  pointer-events: auto;
 }
 
 .checkout__btn a {

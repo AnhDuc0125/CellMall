@@ -2,6 +2,10 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  if(!isset($_SESSION['adminAccount'])) {
+    header("Location: login.php");
+  }
+
     //Add product
     if(!empty($_POST)) {
         $title = getPost('title');

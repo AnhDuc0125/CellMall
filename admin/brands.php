@@ -2,6 +2,10 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  if(!isset($_SESSION['adminAccount'])) {
+    header("Location: login.php");
+  }
+
   if(!empty($_POST)) {
       $date = date('Y-m-d H:i:s');
       if(isset($_POST['brand_name'])) {

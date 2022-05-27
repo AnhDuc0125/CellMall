@@ -2,6 +2,10 @@
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  if(!isset($_SESSION['adminAccount'])) {
+    header("Location: login.php");
+  }
+
   //get order list
   $accountSQL = "SELECT * FROM users";
   $accountList = executeResult($accountSQL);

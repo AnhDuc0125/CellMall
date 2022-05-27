@@ -1,7 +1,12 @@
 <?php
+session_start();
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
+  if(!isset($_SESSION['adminAccount'])) {
+    header("Location: login.php");
+  }
+  
   //get order list
   $orderSQL = "SELECT * FROM orders";
   $orderList = executeResult($orderSQL);

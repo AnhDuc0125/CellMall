@@ -1,4 +1,13 @@
 <?php
+    session_start();
+
+    if(!empty($_GET)) {
+        if($_GET['logout'] == true) {
+           unset($_SESSION['adminAccount']);
+           header("Location: login.php");
+        }
+}
+
     require_once("../database/dbContext.php");
     require_once("../database/utility.php");
 
@@ -7,6 +16,7 @@
         $password = getPost('password');
 
         if($email == 'admin@gmail.com' && $password == '123456') {
+            $_SESSION['adminAccount'] = true;
             header("Location: index.php");
             die();
         }

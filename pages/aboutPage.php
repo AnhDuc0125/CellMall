@@ -1,4 +1,6 @@
 <?php
+session_start();
+
   require_once("../database/dbContext.php");
   require_once("../database/utility.php");
 
